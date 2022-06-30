@@ -17,34 +17,32 @@ concurrency:
 jobs:
   detox-tests-ios:
     name: "Ledger Live Mobile - iOS Detox Tests"
-    env:
-      NODE_OPTIONS: "--max-old-space-size=7168"
-      TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
-      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
-      FORCE_COLOR: 3
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.event.push.head.sha }}
       - uses: pnpm/action-setup@v2.1.0
         with:
           version: latest
-      - uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: 2.7
-          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
       - uses: actions/setup-node@v3
         with:
-          node-version: 14
+          node-version: 16.x
           cache: pnpm
           cache-dependency-path: "**/pnpm-lock.yaml"
       - name: Install applesimutils
         run: |
           brew tap wix/brew
           brew install applesimutils
-      - name: Bump npm to latest
-        run: npm i -g npm
-      - name: Install dependencies
-        run: pnpm i --filter="live-mobile..." --filter="ledger-live" --no-frozen-lockfile --unsafe-perm
+      - name: bump npm
+        run: npm i -g npm@8.12.2
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.7
+      - name: install dependencies
+        run: pnpm i --filter="live-mobile..." --no-frozen-lockfile --unsafe-perm
+      - name: Build dependencies
+        run: pnpm build:llm:deps
       - name: Rebuild detox
         run: pnpm mobile detox clean-framework-cache && pnpm mobile detox build-framework-cache
       - name: Build iOS app for Detox test run
@@ -60,36 +58,65 @@ jobs:
 
   detox-tests-android:
     name: "Ledger Live Mobile - Android Detox Tests"
+    runs-on: macos-latest
     env:
       NODE_OPTIONS: "--max-old-space-size=7168"
-      TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
-      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
-      FORCE_COLOR: 3
-    runs-on: macos-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: checkout
+        uses: actions/checkout@v3
       - uses: pnpm/action-setup@v2.1.0
         with:
           version: latest
       - uses: actions/setup-node@v3
         with:
-          node-version: 14
+          node-version: 16.x
           cache: pnpm
           cache-dependency-path: "**/pnpm-lock.yaml"
-      - name: Check hash commit deps
-        uses: ledgerhq/actions/packages/has-hash-commit-deps@main
-        id: has-hash-commit-deps
+      - name: bump npm
+        run: npm i -g npm@8.12.2
+      - uses: ruby/setup-ruby@v1
         with:
-          workspace: ${{ github.workspace }}
+          ruby-version: 2.7
+        env:
+          ImageOS: ubuntu20
+      - name: setup JDK 1.8
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.8
+      - name: setup Android SDK
+        uses: android-actions/setup-android@v2.0.6
       - name: Install dependencies
         run: pnpm i --filter="live-mobile..." --filter="ledger-live" --no-frozen-lockfile --unsafe-perm
+      - name: Build dependencies
+        run: pnpm build:llm:deps
+
+      - name: Gradle cache
+        uses: gradle/gradle-build-action@v2
+      - name: AVD cache
+        uses: actions/cache@v3
+        id: avd-cache
+        with:
+          path: |
+            ~/.android/avd/*
+            ~/.android/adb*
+          key: avd-30
+      - name: create AVD and generate snapshot for caching
+        if: steps.avd-cache.outputs.cache-hit != 'true'
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 30
+          force-avd-creation: false
+          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
+          disable-animations: false
+          script: echo "Generated AVD snapshot for caching."
+
       - name: Build iOS app for Detox test run
         run: pnpm mobile e2e:build -c android.emu.release
       - name: Run Android tests
         timeout-minutes: 10
         uses: reactivecircus/android-emulator-runner@v2
         with:
-          api-level: 29
+          api-level: 30
           avd-name: Nexus_6_API_30
           emulator-options: -verbose -no-boot-anim -noaudio
           ram-size: 2048
