@@ -12,7 +12,7 @@ export default class OnboardingSteps {
 
   // change to tap by text
   static async chooseToSetupLedger() {
-    await testHelpers.tapByText("SET UP MY LEDGER");
+    await testHelpers.tapByText("Set up my Ledger");
     // await testHelpers.tap("Onboarding PostWelcome - Selection|SetupLedger");
   }
 

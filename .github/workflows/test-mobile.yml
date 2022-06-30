@@ -43,8 +43,6 @@ jobs:
         run: pnpm i --filter="live-mobile..." --filter="ledger-live" --no-frozen-lockfile --unsafe-perm
       - name: Build dependencies
         run: pnpm build:llm:deps
-      - name: Rebuild detox
-        run: pnpm mobile detox clean-framework-cache && pnpm mobile detox build-framework-cache
       - name: Build iOS app for Detox test run
         run: pnpm mobile e2e:build -c ios.sim.release
       - name: Test iOS app
@@ -125,9 +123,6 @@ jobs:
           emulator-options: -verbose -no-snapshot-save -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
           ram-size: 2048
           script: |
-            mkdir ./temp
-            curl -f -o ./temp/test-butler-app.apk https://repo1.maven.org/maven2/com/linkedin/testbutler/test-butler-app/2.2.1/test-butler-app-2.2.1.apk
-            adb install ./temp/test-butler-app.apk || adb install ./e2e/test-butler-app.apk
             pnpm mobile e2e:test -c android.emu.release --loglevel verbose --record-logs failing --record-timeline all --take-screenshots all --record-videos failing --detectOpenHandles
       - name: Upload test artifacts
         uses: actions/upload-artifact@v2
