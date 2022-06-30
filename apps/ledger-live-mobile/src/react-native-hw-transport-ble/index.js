@@ -12,7 +12,7 @@ const transport = Config.MOCK
       // TODO E2E: This could be dynamically set in bridge/server.js
       createTransportDeviceMock: (id, name, serviceUUID) => {
         names[id] = name;
-        const serviceUUIDs=[serviceUUID];
+        const serviceUUIDs = [serviceUUID];
         const apduMock = createAPDUMock({
           setDeviceName: name => {
             names[id] = name;
