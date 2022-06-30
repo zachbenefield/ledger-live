@@ -5,6 +5,7 @@ describe("Onboarding", () => {
   it("should be able to connect a Nano X", async () => {
     await OnboardingSteps.waitForPageToBeVisible();
     await OnboardingSteps.startOnboarding();
+    await OnboardingSteps.DoIOwnDevice(true);
     await OnboardingSteps.chooseToSetupLedger();
     await OnboardingSteps.selectYourDevice("NANO X");
     await OnboardingSteps.chooseToConnectYourNano();

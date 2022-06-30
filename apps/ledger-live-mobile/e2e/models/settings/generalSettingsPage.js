@@ -2,17 +2,9 @@ import * as testHelpers from "../../helpers";
 
 export default class GeneralSettingsPage {
   static async togglePassword() {
-    if (device.getPlatform() === "ios") {
-      await element(by.type("RCTSwitch"))
-        .atIndex(0)
-        .tap();
-    }
-
-    if (device.getPlatform() === "android") {
-      await element(by.type("android.widget.Switch"))
-        .atIndex(0)
-        .tap();
-    }
+    await element(by.id("password-settings-switch"))
+      .atIndex(0)
+      .tap();
   }
 
   static async enterNewPassword(passwordText) {
