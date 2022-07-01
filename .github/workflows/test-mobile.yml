@@ -101,7 +101,7 @@ jobs:
         if: steps.avd-cache.outputs.cache-hit != 'true'
         uses: reactivecircus/android-emulator-runner@v2
         with:
-          api-level: 30
+          api-level: 28
           arch: x86_64
           target: google_apis
           force-avd-creation: false
@@ -114,15 +114,13 @@ jobs:
       - name: Run Android tests
         uses: reactivecircus/android-emulator-runner@v2
         with:
-          api-level: 30
+          api-level: 28
           arch: x86_64
           target: google_apis
-          avd-name: Nexus_6_API_30
+          avd-name: Nexus_6
           emulator-options: -verbose -no-snapshot-save -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
           ram-size: 2048
-          script: |
-            pnpm mobile e2e:test -c android.emu.release --loglevel verbose --record-logs failing --record-timeline all --take-screenshots all --record-videos failing
-            echo $?
+          script: pnpm mobile e2e:test -c android.emu.release --loglevel verbose --record-logs failing --record-timeline all --take-screenshots all --record-videos failing
       - name: Upload test artifacts
         uses: actions/upload-artifact@v2
         with:
