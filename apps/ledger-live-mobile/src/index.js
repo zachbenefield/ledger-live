@@ -20,6 +20,7 @@ import {
   Appearance,
   AppState,
   Platform,
+  LogBox,
 } from "react-native";
 import SplashScreen from "react-native-splash-screen";
 import { SafeAreaProvider } from "react-native-safe-area-context";
@@ -128,6 +129,7 @@ const styles = StyleSheet.create({
 Text.defaultProps = Text.defaultProps || {};
 // $FlowFixMe
 Text.defaultProps.allowFontScaling = false;
+LogBox.ignoreAllLogs();
 
 type AppProps = {
   importDataString?: string,

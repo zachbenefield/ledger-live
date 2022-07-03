@@ -4,7 +4,7 @@
 
 import React, { Component } from "react";
 import { Observable } from "rxjs";
-import TransportBLE from "../../react-native-hw-transport-ble";
+import BleTransport from "../../hw-transport-react-native-ble";
 import RequiresLocationOnAndroid from "./RequiresLocationOnAndroid";
 import BluetoothDisabled from "./BluetoothDisabled";
 
@@ -18,13 +18,13 @@ type State = {
 
 class RequiresBLE extends Component<Props, State> {
   state = {
-    type: "Unknown",
+    type: "PoweredOn",
   };
 
   sub: *;
 
   componentDidMount() {
-    this.sub = Observable.create(TransportBLE.observeState).subscribe({
+    this.sub = Observable.create(BleTransport.observeState).subscribe({
       next: ({ type }) => this.setState({ type }),
     });
   }
