@@ -27,7 +27,6 @@ setSupportedCurrencies([
   "zcash",
   "decred",
   "digibyte",
-  "algorand",
   "qtum",
   "bitcoin_gold",
   "komodo",

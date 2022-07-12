@@ -1,5 +1,3 @@
-import algorand from "../../families/algorand/bridge/js";
-
 import bitcoin from "../../families/bitcoin/bridge/js";
 
 import cardano from "../../families/cardano/bridge/js";
@@ -34,7 +32,6 @@ import tron from "../../families/tron/bridge/js";
 
 
 export default {
-  algorand,
   bitcoin,
   cardano,
   celo,

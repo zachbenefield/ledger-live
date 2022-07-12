@@ -22,7 +22,7 @@ addTokens(polygonTokens.map(convertERC20));
 addTokens(trc10tokens.map(convertTRONTokens("trc10")));
 addTokens(trc20tokens.map(convertTRONTokens("trc20")));
 addTokens(bep20tokens.map(convertBEP20));
-addTokens(asatokens.map(convertAlgorandASATokens));
+//addTokens(asatokens.map(convertAlgorandASATokens));
 addTokens(esdttokens.map(convertElrondESDTTokens));
 //addTokens(spltokens.map(convertSplTokens));
 type TokensListOptions = {
@@ -250,7 +250,7 @@ function convertBEP20([
     ],
   };
 }
-
+/*
 function convertAlgorandASATokens([
   id,
   abbr,
@@ -276,7 +276,7 @@ function convertAlgorandASATokens([
       },
     ],
   };
-}
+}*/
 
 function convertTRONTokens(type: "trc10" | "trc20") {
   return ([

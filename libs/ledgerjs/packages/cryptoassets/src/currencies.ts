@@ -160,6 +160,7 @@ const cryptocurrenciesById: Record<string, CryptoCurrency> = {
       },
     ],
   },
+  /*
   algorand: {
     type: "CryptoCurrency",
     id: "algorand",
@@ -187,7 +188,7 @@ const cryptocurrenciesById: Record<string, CryptoCurrency> = {
         tx: "https://algoexplorer.io/tx/$hash",
       },
     ],
-  },
+  },*/
   ark: {
     type: "CryptoCurrency",
     id: "ark",

@@ -447,13 +447,13 @@ export function genAccount(
       walletAccount: undefined,
     };
   }
-
+/*
   if (currency.family === "algorand") {
     account.algorandResources = {
       rewards: new BigNumber(0),
       nbAssets: account.subAccounts?.length ?? 0,
     };
-  }
+  }*/
 
   if (currency.family === "polkadot") {
     account.polkadotResources = {

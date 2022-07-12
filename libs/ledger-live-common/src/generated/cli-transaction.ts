@@ -1,5 +1,3 @@
-import algorand from "../families/algorand/cli-transaction";
-
 import bitcoin from "../families/bitcoin/cli-transaction";
 
 import cardano from "../families/cardano/cli-transaction";
@@ -32,7 +30,6 @@ import tron from "../families/tron/cli-transaction";
 
 
 export default {
-  algorand,
   bitcoin,
   cardano,
   celo,

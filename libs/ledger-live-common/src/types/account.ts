@@ -11,10 +11,11 @@ import type {
   CosmosResources,
   CosmosResourcesRaw,
 } from "../families/cosmos/types";
+/*
 import type {
   AlgorandResources,
   AlgorandResourcesRaw,
-} from "../families/algorand/types";
+} from "../families/algorand/types";*/
 import type {
   PolkadotResources,
   PolkadotResourcesRaw,
@@ -212,7 +213,7 @@ export type Account = {
   bitcoinResources?: BitcoinResources;
   tronResources?: TronResources;
   cosmosResources?: CosmosResources;
-  algorandResources?: AlgorandResources;
+  //algorandResources?: AlgorandResources;
   polkadotResources?: PolkadotResources;
   tezosResources?: TezosResources;
   elrondResources?: ElrondResources;
@@ -303,7 +304,7 @@ export type AccountRaw = {
   bitcoinResources?: BitcoinResourcesRaw;
   tronResources?: TronResourcesRaw;
   cosmosResources?: CosmosResourcesRaw;
-  algorandResources?: AlgorandResourcesRaw;
+  //algorandResources?: AlgorandResourcesRaw;
   polkadotResources?: PolkadotResourcesRaw;
   elrondResources?: ElrondResourcesRaw;
   tezosResources?: TezosResourcesRaw;

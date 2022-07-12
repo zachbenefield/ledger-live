@@ -1,5 +1,3 @@
-import algorand from "../families/algorand/hw-getAddress";
-
 import bitcoin from "../families/bitcoin/hw-getAddress";
 
 import cardano from "../families/cardano/hw-getAddress";
@@ -34,7 +32,6 @@ import tron from "../families/tron/hw-getAddress";
 
 
 export default {
-  algorand,
   bitcoin,
   cardano,
   celo,

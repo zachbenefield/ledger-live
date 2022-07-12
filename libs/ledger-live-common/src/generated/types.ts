@@ -1,5 +1,3 @@
-import { Transaction as algorandTransaction } from "../families/algorand/types";
-import { TransactionRaw as algorandTransactionRaw } from "../families/algorand/types";
 import { Transaction as bitcoinTransaction } from "../families/bitcoin/types";
 import { TransactionRaw as bitcoinTransactionRaw } from "../families/bitcoin/types";
 import { Transaction as cardanoTransaction } from "../families/cardano/types";
@@ -34,7 +32,6 @@ import { Transaction as tronTransaction } from "../families/tron/types";
 import { TransactionRaw as tronTransactionRaw } from "../families/tron/types";
 
 export type Transaction =
-  | algorandTransaction
   | bitcoinTransaction
   | cardanoTransaction
   | celoTransaction
@@ -52,7 +49,6 @@ export type Transaction =
   | tezosTransaction
   | tronTransaction
 export type TransactionRaw =
-  | algorandTransactionRaw
   | bitcoinTransactionRaw
   | cardanoTransactionRaw
   | celoTransactionRaw

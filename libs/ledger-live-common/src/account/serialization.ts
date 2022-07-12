@@ -29,10 +29,6 @@ import {
   fromCosmosResourcesRaw,
 } from "../families/cosmos/serialization";
 import {
-  toAlgorandResourcesRaw,
-  fromAlgorandResourcesRaw,
-} from "../families/algorand/serialization";
-import {
   toPolkadotResourcesRaw,
   fromPolkadotResourcesRaw,
 } from "../families/polkadot/serialization";
@@ -73,7 +69,7 @@ import {
 } from "../families/cardano/serialization";
 
 export { toCosmosResourcesRaw, fromCosmosResourcesRaw };
-export { toAlgorandResourcesRaw, fromAlgorandResourcesRaw };
+
 export { toBitcoinResourcesRaw, fromBitcoinResourcesRaw };
 export { toPolkadotResourcesRaw, fromPolkadotResourcesRaw };
 export { toTezosResourcesRaw, fromTezosResourcesRaw };
@@ -715,7 +711,6 @@ export function fromAccountRaw(rawAccount: AccountRaw): Account {
     tezosResources,
     bitcoinResources,
     swapHistory,
-    algorandResources,
     syncHash,
     polkadotResources,
     elrondResources,
@@ -823,10 +818,6 @@ export function fromAccountRaw(rawAccount: AccountRaw): Account {
     res.swapHistory = swapHistory.map(fromSwapOperationRaw);
   }
 
-  if (algorandResources) {
-    res.algorandResources = fromAlgorandResourcesRaw(algorandResources);
-  }
-
   if (polkadotResources) {
     res.polkadotResources = fromPolkadotResourcesRaw(polkadotResources);
   }
@@ -884,7 +875,6 @@ export function toAccountRaw({
   bitcoinResources,
   tezosResources,
   swapHistory,
-  algorandResources,
   syncHash,
   polkadotResources,
   elrondResources,
@@ -956,10 +946,6 @@ export function toAccountRaw({
 
   if (swapHistory) {
     res.swapHistory = swapHistory.map(toSwapOperationRaw);
-  }
-
-  if (algorandResources) {
-    res.algorandResources = toAlgorandResourcesRaw(algorandResources);
   }
 
   if (polkadotResources) {

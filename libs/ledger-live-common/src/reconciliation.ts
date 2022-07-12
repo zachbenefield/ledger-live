@@ -21,7 +21,7 @@ import {
   fromCosmosResourcesRaw,
   fromBitcoinResourcesRaw,
   fromBalanceHistoryRawMap,
-  fromAlgorandResourcesRaw,
+  //fromAlgorandResourcesRaw,
   fromPolkadotResourcesRaw,
   fromTezosResourcesRaw,
   fromElrondResourcesRaw,
@@ -324,7 +324,7 @@ export function patchAccount(
     next.cosmosResources = fromCosmosResourcesRaw(updatedRaw.cosmosResources);
     changed = true;
   }
-
+  /*
   if (
     updatedRaw.algorandResources &&
     // @ts-expect-error check if this is valid for deep equal check
@@ -334,7 +334,7 @@ export function patchAccount(
       updatedRaw.algorandResources
     );
     changed = true;
-  }
+  }*/
 
   if (
     updatedRaw.bitcoinResources &&

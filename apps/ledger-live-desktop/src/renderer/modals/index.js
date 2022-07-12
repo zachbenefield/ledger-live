@@ -49,9 +49,9 @@ import MODAL_COSMOS_CLAIM_REWARDS from "../families/cosmos/ClaimRewardsFlowModal
 import MODAL_COSMOS_REDELEGATE from "../families/cosmos/RedelegationFlowModal";
 import MODAL_COSMOS_UNDELEGATE from "../families/cosmos/UndelegationFlowModal";
 
-import MODAL_ALGORAND_OPT_IN from "../families/algorand/OptInFlowModal";
-import MODAL_ALGORAND_CLAIM_REWARDS from "../families/algorand/Rewards/ClaimRewardsFlowModal";
-import MODAL_ALGORAND_EARN_REWARDS_INFO from "../families/algorand/Rewards/EarnRewardsInfoModal";
+//import MODAL_ALGORAND_OPT_IN from "../families/algorand/OptInFlowModal";
+//import MODAL_ALGORAND_CLAIM_REWARDS from "../families/algorand/Rewards/ClaimRewardsFlowModal";
+//import MODAL_ALGORAND_EARN_REWARDS_INFO from "../families/algorand/Rewards/EarnRewardsInfoModal";
 
 import MODAL_POLKADOT_MANAGE from "../families/polkadot/ManageModal";
 import MODAL_POLKADOT_REWARDS_INFO from "../families/polkadot/EarnRewardsInfoModal";
@@ -118,9 +118,9 @@ const modals: { [_: string]: React$ComponentType<any> } = {
   MODAL_COSMOS_UNDELEGATE,
   MODAL_EXCHANGE_CRYPTO_DEVICE,
   MODAL_SELL_CRYPTO_DEVICE,
-  MODAL_ALGORAND_OPT_IN,
-  MODAL_ALGORAND_CLAIM_REWARDS,
-  MODAL_ALGORAND_EARN_REWARDS_INFO,
+  //MODAL_ALGORAND_OPT_IN,
+  //MODAL_ALGORAND_CLAIM_REWARDS,
+  //MODAL_ALGORAND_EARN_REWARDS_INFO,
   MODAL_POLKADOT_MANAGE,
   MODAL_POLKADOT_REWARDS_INFO,
   MODAL_POLKADOT_SIMPLE_OPERATION,
