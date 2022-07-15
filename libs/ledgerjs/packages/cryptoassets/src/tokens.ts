@@ -5,14 +5,9 @@ import trc10tokens from "../data/trc10";
 import trc20tokens from "../data/trc20";
 import bep20tokens from "../data/bep20";
 import polygonTokens from "../data/polygon-erc20";
-//import asatokens from "../data/asa";
 import esdttokens from "../data/esdt";
 import { families } from "./currencyFamilies";
-//import { tokens } from "algorand_ledger";
 
-//const convertAlgorandASATokens=require("algorand_ledger").convertAlgorandASATokens;
-
-//import spltokens from "../data/spl";
 const emptyArray = [];
 const tokensArray: TokenCurrency[] = [];
 const tokensArrayWithDelisted: TokenCurrency[] = [];
@@ -28,8 +23,6 @@ addTokens(trc10tokens.map(convertTRONTokens("trc10")));
 addTokens(trc20tokens.map(convertTRONTokens("trc20")));
 addTokens(bep20tokens.map(convertBEP20));
 addTokens(esdttokens.map(convertElrondESDTTokens));
-//addTokens(tokens);
-//addTokens(spltokens.map(convertSplTokens));
 
 
 families.forEach((family)=>{
@@ -262,34 +255,6 @@ function convertBEP20([
     ],
   };
 }
-
-/*
-function convertAlgorandASATokens([
-  id,
-  abbr,
-  name,
-  contractAddress,
-  precision,
-  enableCountervalues,
-]): TokenCurrency {
-  return {
-    type: "TokenCurrency",
-    id: `algorand/asa/${id}`,
-    contractAddress,
-    parentCurrency: getCryptoCurrencyById("algorand"),
-    tokenType: "asa",
-    name,
-    ticker: abbr,
-    disableCountervalue: !enableCountervalues,
-    units: [
-      {
-        name,
-        code: abbr,
-        magnitude: precision,
-      },
-    ],
-  };
-}*/
 
 function convertTRONTokens(type: "trc10" | "trc20") {
   return ([

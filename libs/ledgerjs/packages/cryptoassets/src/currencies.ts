@@ -22,9 +22,6 @@
  */
 import type { CryptoCurrency, Unit } from "./types";
 import { families } from "./currencyFamilies";
-//import { currency } from "algorand_ledger";
-
-
 const makeTestnetUnit = (u) => ({ ...u, code: `𝚝${u.code}` });
 
 const bitcoinUnits: Unit[] = [
