@@ -5,7 +5,6 @@ import { Trans } from "react-i18next";
 import type { TokenCurrency } from "@ledgerhq/live-common/types/index";
 
 import { listTokensForCryptoCurrency } from "@ledgerhq/live-common/currencies/index";
-import { extractTokenId } from "@ledgerhq/live-common/families/algorand/tokens";
 
 import Box from "~/renderer/components/Box";
 import FirstLetterIcon from "~/renderer/components/FirstLetterIcon";
@@ -13,6 +12,10 @@ import Select from "~/renderer/components/Select";
 import Text from "~/renderer/components/Text";
 import ToolTip from "~/renderer/components/Tooltip";
 import ExclamationCircleThin from "~/renderer/icons/ExclamationCircleThin";
+
+const extractTokenId = (tokenId) => {
+  return tokenId.split("/")[2];
+};
 
 const renderItem = ({
   data: { id, name },

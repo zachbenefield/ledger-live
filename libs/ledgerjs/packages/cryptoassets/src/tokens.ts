@@ -5,8 +5,13 @@ import trc10tokens from "../data/trc10";
 import trc20tokens from "../data/trc20";
 import bep20tokens from "../data/bep20";
 import polygonTokens from "../data/polygon-erc20";
-import asatokens from "../data/asa";
+//import asatokens from "../data/asa";
 import esdttokens from "../data/esdt";
+import { families } from "./currencyFamilies";
+//import { tokens } from "algorand_ledger";
+
+//const convertAlgorandASATokens=require("algorand_ledger").convertAlgorandASATokens;
+
 //import spltokens from "../data/spl";
 const emptyArray = [];
 const tokensArray: TokenCurrency[] = [];
@@ -22,9 +27,16 @@ addTokens(polygonTokens.map(convertERC20));
 addTokens(trc10tokens.map(convertTRONTokens("trc10")));
 addTokens(trc20tokens.map(convertTRONTokens("trc20")));
 addTokens(bep20tokens.map(convertBEP20));
-addTokens(asatokens.map(convertAlgorandASATokens));
 addTokens(esdttokens.map(convertElrondESDTTokens));
+//addTokens(tokens);
 //addTokens(spltokens.map(convertSplTokens));
+
+
+families.forEach((family)=>{
+  const tokens = require(family).tokens;
+  addTokens(tokens);
+});
+
 type TokensListOptions = {
   withDelisted: boolean;
 };
@@ -251,6 +263,7 @@ function convertBEP20([
   };
 }
 
+/*
 function convertAlgorandASATokens([
   id,
   abbr,
@@ -276,7 +289,7 @@ function convertAlgorandASATokens([
       },
     ],
   };
-}
+}*/
 
 function convertTRONTokens(type: "trc10" | "trc20") {
   return ([

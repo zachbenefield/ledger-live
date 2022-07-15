@@ -5,9 +5,27 @@ import type { Step } from "~/renderer/components/Stepper";
 
 import type { Account, TransactionStatus, Operation } from "@ledgerhq/live-common/types/index";
 
-import type { Transaction } from "@ledgerhq/live-common/families/algorand/types";
+//import type { Transaction } from "@ledgerhq/live-common/families/algorand/types";
 
 export type StepId = "assets" | "connectDevice" | "confirmation";
+
+export type TransactionCommon = {
+  amount: BigNumber;
+  recipient: string;
+  useAllAmount?: boolean;
+  subAccountId?: string | null | undefined;
+  feesStrategy?: "slow" | "medium" | "fast" | "custom" | null;
+};
+
+export type AlgorandOperationMode = "send" | "optIn" | "claimReward";
+
+export type AlgorandTransaction = TransactionCommon & {
+  family: "algorand";
+  mode: AlgorandOperationMode;
+  fees: BigNumber | null | undefined;
+  assetId: string | null | undefined;
+  memo: string | null | undefined;
+};
 
 export type StepProps = {
   t: TFunction,
@@ -22,10 +40,10 @@ export type StepProps = {
   error: *,
   warning: *,
   signed: boolean,
-  transaction: ?Transaction,
+  transaction: ?AlgorandTransaction,
   status: TransactionStatus,
-  onChangeTransaction: Transaction => void,
-  onUpdateTransaction: ((Transaction) => Transaction) => void,
+  onChangeTransaction: AlgorandTransaction => void,
+  onUpdateTransaction: ((AlgorandTransaction) => AlgorandTransaction) => void,
   onTransactionError: Error => void,
   onOperationBroadcasted: Operation => void,
   setSigned: boolean => void,

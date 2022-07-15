@@ -21,6 +21,9 @@
  * if bitcoin family, supportsSegwit defines if it supports segwit.
  */
 import type { CryptoCurrency, Unit } from "./types";
+import { families } from "./currencyFamilies";
+//import { currency } from "algorand_ledger";
+
 
 const makeTestnetUnit = (u) => ({ ...u, code: `𝚝${u.code}` });
 
@@ -75,7 +78,7 @@ const ethereumUnits = (name, code) => [
   },
 ];
 
-const cryptocurrenciesById: Record<string, CryptoCurrency> = {
+let cryptocurrenciesById: Record<string, CryptoCurrency> = {
   near: {
     type: "CryptoCurrency",
     id: "near",
@@ -3275,6 +3278,12 @@ const cryptocurrenciesById: Record<string, CryptoCurrency> = {
     ],
   },
 };
+
+families.forEach((family:string)=>{
+  const currency = require(family).currency;
+  cryptocurrenciesById[family] = currency as CryptoCurrency;
+});
+
 const cryptocurrenciesByScheme: Record<string, CryptoCurrency> = {};
 const cryptocurrenciesByTicker: Record<string, CryptoCurrency> = {};
 const cryptocurrenciesArray: CryptoCurrency[] = [];

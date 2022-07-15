@@ -5,7 +5,11 @@ import type { Step } from "~/renderer/components/Stepper";
 
 import type { Account, TransactionStatus, Operation } from "@ledgerhq/live-common/types/index";
 
-import type { Transaction } from "@ledgerhq/live-common/families/algorand/types";
+//import type { Transaction } from "@ledgerhq/live-common/families/algorand/types";
+
+import type { AlgorandTransaction } from "../../OptInFlowModal/types";
+
+
 
 export type StepId = "info" | "connectDevice" | "confirmation";
 
@@ -22,10 +26,10 @@ export type StepProps = {
   error: *,
   warning: *,
   signed: boolean,
-  transaction: ?Transaction,
+  transaction: ?AlgorandTransaction,
   status: TransactionStatus,
-  onChangeTransaction: Transaction => void,
-  onUpdateTransaction: ((Transaction) => Transaction) => void,
+  onChangeTransaction: AlgorandTransaction => void,
+  onUpdateTransaction: ((AlgorandTransaction) => AlgorandTransaction) => void,
   onTransactionError: Error => void,
   onOperationBroadcasted: Operation => void,
   setSigned: boolean => void,
