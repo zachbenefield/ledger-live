@@ -9,11 +9,11 @@ export default class GeneralSettingsPage {
 
   static async enterNewPassword(passwordText) {
     if (device.getPlatform() === "ios") {
-      await element(by.type("RCTUITextField")).typeText(passwordText);
+      await element(by.id("password-text-input")).typeText(passwordText);
     }
 
     if (device.getPlatform() === "android") {
-      await element(by.type("android.widget.TextView")).typeText(passwordText);
+      await element(by.id("password-text-input")).typeText(passwordText);
     }
     await testHelpers.tapByText("Confirm");
   }
