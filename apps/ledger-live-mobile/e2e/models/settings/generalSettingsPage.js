@@ -8,13 +8,7 @@ export default class GeneralSettingsPage {
   }
 
   static async enterNewPassword(passwordText) {
-    if (device.getPlatform() === "ios") {
-      await element(by.id("password-text-input")).typeText(passwordText);
-    }
-
-    if (device.getPlatform() === "android") {
-      await element(by.id("password-text-input")).typeText(passwordText);
-    }
+    await element(by.id("password-text-input")).typeText(passwordText);
     await testHelpers.tapByText("Confirm");
   }
 
