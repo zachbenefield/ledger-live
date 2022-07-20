@@ -1,0 +1,217 @@
+name: "[Test] Desktop App"
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+      - release
+      - hotfix
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  pr-is-fork:
+    name: "Check if the PR is a fork"
+    uses: ./.github/workflows/pr-is-fork.yml
+    with:
+      non-pr-result: true
+    secrets:
+      token: ${{ secrets.COMMON_READ_ORG }}
+
+  typecheck:
+    name: "Ledger Live Desktop TypeCheck"
+    env:
+      NODE_OPTIONS: "--max-old-space-size=7168"
+      INSTRUMENT_BUILD: true
+      FORCE_COLOR: 3
+      # DEBUG: "pw:browser*"
+      # DEBUG_LOGS: 1
+      CI_OS: ubuntu-latest
+
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.inputs.ref || github.ref }}
+      - uses: ./tools/actions/composites/setup-test-desktop
+        id: setup-test-desktop
+      - name: TurboRepo local server
+        uses: felixmosh/turborepo-gh-artifacts@v1
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          server-token: "yolo"
+      - name: Install dependencies
+        run: pnpm i --filter="ledger-live-desktop..." --filter="ledger-live" --frozen-lockfile --unsafe-perm
+      - name: Build dependencies
+        run: pnpm build:lld:deps --api="http://127.0.0.1:9080" --token="yolo" --team="foo"
+      - name: Run code checkers
+        run: pnpm desktop test:codecheck
+
+  matrix_prep:
+    needs: [pr-is-fork]
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+      - id: set-matrix
+        run: |
+          if [[ "${{ needs.pr-is-fork.outputs.pr-is-fork }}" == "true" ]]; then
+            echo "::set-output name=matrix::{\"os\": [\"ubuntu-latest\", \"windows-latest\", \"macos-latest\"]}"
+          else
+            echo "::set-output name=matrix::{\"os\": [\"ubuntu-latest\", \"windows-latest\"]}"
+          fi
+
+  test-desktop-app:
+    name: "Ledger Live Desktop Tests"
+    needs: [matrix_prep]
+    env:
+      NODE_OPTIONS: "--max-old-space-size=7168"
+      INSTRUMENT_BUILD: true
+      FORCE_COLOR: 3
+      CI_OS: ${{ matrix.os }}
+      PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: 1
+      # DEBUG: "pw:browser*"
+      # DEBUG_LOGS: 1
+    strategy:
+      fail-fast: false
+      matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: format os name
+        id: os
+        uses: actions/github-script@v6
+        with:
+          result-encoding: string
+          script: |
+            if ("${{ matrix.os }}" === "ubuntu-latest") {
+              return "linux"
+            } else if ("${{ matrix.os }}" === "macos-latest") {
+              return "macos"
+            } else if ("${{ matrix.os }}" === "windows-latest") {
+              return "windows"
+            }
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.inputs.ref || github.ref }}
+      - uses: ./tools/actions/composites/setup-test-desktop
+        id: setup-test-desktop
+      - name: TurboRepo local server
+        uses: felixmosh/turborepo-gh-artifacts@v1
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          server-token: "yolo"
+      - uses: ./tools/actions/composites/test-desktop
+        id: test-desktop
+        with:
+          os: ${{ steps.os.outputs.result }}
+
+  test-desktop-app-mac-internal:
+    name: "Ledger Live Desktop Tests (macos-latest)"
+    needs: [pr-is-fork]
+    if: ${{ !fromJSON(needs.pr-is-fork.outputs.pr-is-fork) }}
+    runs-on: [ledger-live, macos]
+    env:
+      NODE_OPTIONS: "--max-old-space-size=7168"
+      INSTRUMENT_BUILD: true
+      FORCE_COLOR: 3
+      CI_OS: "macos-latest"
+      PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: 1
+      # DEBUG: "pw:browser*"
+      # DEBUG_LOGS: 1
+    steps:
+      - name: format os name
+        id: os
+        uses: actions/github-script@v6
+        with:
+          result-encoding: string
+          script: return "macos"
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.inputs.ref || github.ref }}
+      - uses: ./tools/actions/composites/setup-test-desktop
+        id: setup-test-desktop
+        with:
+          skip_python: true
+          skip_ruby: true
+      - name: TurboRepo local server
+        uses: felixmosh/turborepo-gh-artifacts@v1
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          server-token: "yolo"
+      - uses: ./tools/actions/composites/test-desktop
+        id: test-desktop
+        with:
+          os: ${{ steps.os.outputs.result }}
+
+  report:
+    needs: [test-desktop-app, test-desktop-app-mac-internal]
+    runs-on: ubuntu-latest
+    if: ${{ always()  && !cancelled() && github.event.pull_request != '' }}
+    steps:
+      - uses: actions/checkout@v3
+      - name: check if comment already exists exists
+        uses: actions/github-script@v6
+        id: exists
+        with:
+          result-encoding: string
+          script: |
+            const comments = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+            });
+
+            const exists = comments.data.find(comment => comment.user.login === 'github-actions[bot]');
+
+            return exists?.id ?? 'false';
+      - name: download images artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: images
+      - name: parse images
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const fs = require("fs");
+
+            const files = ["images-linux", "images-windows", "images-macos"];
+
+            let result = {};
+            for (const file of files) {
+              try {
+                const raw = JSON.parse(fs.readFileSync("${{github.workspace}}/" + file + ".json"));
+                const key = file.replace("images-", "").replace("-latest", "").trim()
+                result[key] = raw;
+              } catch (err) {
+                console.log(err);
+              }
+            }
+
+            fs.writeFileSync("./images.json", JSON.stringify(result, null, 2));
+      - name: prepare comment with screenshots
+        id: comment
+        uses: ledgerhq/ledger-live/tools/actions/prepare-comment-screenshots@develop
+        with:
+          images: images.json
+      - name: edit comment
+        uses: actions/github-script@v6
+        if: ${{ steps.exists.outputs.result != 'false' }}
+        with:
+          script: |
+            await github.rest.issues.updateComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              comment_id: ${{ steps.exists.outputs.result }},
+              body: `${{ steps.comment.outputs.body }}`
+            });
+      - name: create comment
+        if: ${{ steps.exists.outputs.result == 'false' }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh pr comment ${{ github.event.number }} --body "${{ steps.comment.outputs.body }}"
