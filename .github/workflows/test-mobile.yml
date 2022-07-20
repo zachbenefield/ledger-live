@@ -85,10 +85,10 @@ jobs:
       - name: Install dependencies
         run: pnpm i --filter="live-mobile..." --filter="ledger-live" --no-frozen-lockfile --unsafe-perm
 
-      - name: Run linter
-        run: pnpm lint --filter="live-mobile" --api="http://127.0.0.1:9080" --token="yolo" --team="foo"
-      - name: Run flow
-        run: pnpm mobile flow
+      # - name: Run linter
+      #   run: pnpm lint --filter="live-mobile" --api="http://127.0.0.1:9080" --token="yolo" --team="foo"
+      # - name: Run flow
+      #   run: pnpm mobile flow
       # - name: Run code checkers
       #   run: pnpm typecheck --filter="live-mobile" --api="http://127.0.0.1:9080" --token="yolo" --team="foo"
 
@@ -97,6 +97,7 @@ jobs:
 
       - name: Gradle cache
         uses: gradle/gradle-build-action@v2
+
       - name: AVD cache
         uses: actions/cache@v3
         id: avd-cache
@@ -105,6 +106,7 @@ jobs:
             ~/.android/avd/*
             ~/.android/adb*
           key: avd-30
+
       - name: create AVD and generate snapshot for caching
         if: steps.avd-cache.outputs.cache-hit != 'true'
         uses: reactivecircus/android-emulator-runner@v2
@@ -115,7 +117,10 @@ jobs:
           force-avd-creation: false
           emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
           disable-animations: false
-          script: echo "Generated AVD snapshot for caching."
+          ram-size: 4096M
+          script: |
+            emulator -list-avds
+            echo "Generated AVD snapshot for caching."
 
       - name: Build Android app for Detox test run
         run: pnpm mobile e2e:build -c android.emu.release
@@ -127,8 +132,10 @@ jobs:
           target: google_apis
           avd-name: Nexus_6
           emulator-options: -verbose -no-snapshot-save -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
-          ram-size: 2048
-          script: pnpm mobile e2e:test -c android.emu.release --loglevel verbose --record-logs failing --record-timeline all --take-screenshots all --record-videos failing
+          ram-size: 4096M
+          script: |
+            emulator -list-avds
+            pnpm mobile e2e:test -c android.emu.release --loglevel verbose --record-logs failing --record-timeline all --take-screenshots all --record-videos failing
       - name: Upload test artifacts
         uses: actions/upload-artifact@v2
         with:
