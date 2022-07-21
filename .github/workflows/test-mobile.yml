@@ -122,7 +122,10 @@ jobs:
           emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
           disable-animations: false
           ram-size: 4096M
-          script: echo "Generated AVD snapshot for caching."
+          script: |
+            emulator -list-avds
+            avdmanager list device
+            echo "Generated AVD snapshot for caching."
 
       - name: Build Android app for Detox test run
         run: pnpm mobile e2e:build -c android.emu.release
@@ -132,11 +135,14 @@ jobs:
         with:
           api-level: 28
           arch: x86_64
-          target: default
+          target: google_apis
           avd-name: Nexus_6
           emulator-options: -verbose -no-snapshot-save -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
           ram-size: 4096M
-          script: pnpm mobile e2e:test -c android.emu.release --loglevel verbose --record-logs failing --record-timeline all --take-screenshots all --record-videos failing
+          script: |
+            emulator -list-avds
+            avdmanager list device
+            pnpm mobile e2e:test -c android.emu.release --loglevel verbose --record-logs failing --record-timeline all --take-screenshots all --record-videos failing
       - name: Upload test artifacts
         uses: actions/upload-artifact@v2
         with:
