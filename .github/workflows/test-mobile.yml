@@ -18,6 +18,8 @@ jobs:
   detox-tests-ios:
     name: "Ledger Live Mobile - iOS Detox Tests"
     runs-on: macos-latest
+    env:
+      NODE_OPTIONS: "--max-old-space-size=7168"
     steps:
       - uses: actions/checkout@v3
         with:
@@ -76,10 +78,12 @@ jobs:
           ruby-version: 2.7
         env:
           ImageOS: ubuntu20
-      - name: setup JDK 1.8
-        uses: actions/setup-java@v1
+      - name: setup JDK 11
+        uses: actions/setup-java@v3
         with:
-          java-version: 1.8
+          # distribution: 'temurin'
+          java-version: '11'
+          cache: 'gradle'
       - name: setup Android SDK
         uses: android-actions/setup-android@v2.0.6
       - name: Install dependencies
@@ -95,8 +99,8 @@ jobs:
       - name: Build dependencies
         run: pnpm build:llm:deps
 
-      - name: Gradle cache
-        uses: gradle/gradle-build-action@v2
+      # - name: Gradle cache
+      #   uses: gradle/gradle-build-action@v2
 
       - name: AVD cache
         uses: actions/cache@v3
