@@ -11,7 +11,7 @@ beforeAll(async () => {
     },
     newInstance: true,
   });
-});
+}, 600000);
 
 afterAll(async () => {
   bridge.close();

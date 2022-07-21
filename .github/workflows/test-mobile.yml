@@ -131,6 +131,7 @@ jobs:
         run: pnpm mobile e2e:build -c android.emu.release
       - name: Run Android tests
         uses: reactivecircus/android-emulator-runner@v2
+        timeout-minutes: 20
         with:
           api-level: 28
           arch: x86_64
