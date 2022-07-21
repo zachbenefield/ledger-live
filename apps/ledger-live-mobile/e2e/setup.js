@@ -9,6 +9,7 @@ beforeAll(async () => {
       language: "en-US",
       locale: "en-US",
     },
+    newInstance: true,
   });
 });
 
