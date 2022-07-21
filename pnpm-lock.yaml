@@ -4971,7 +4971,7 @@ packages:
     engines: {node: ^8.13.0 || >=10.10.0}
     dependencies:
       '@grpc/proto-loader': 0.6.13
-      '@types/node': 18.0.6
+      '@types/node': 16.11.12
     dev: false
 
   /@grpc/proto-loader/0.6.13:
@@ -5474,7 +5474,7 @@ packages:
     dependencies:
       '@types/istanbul-lib-coverage': 2.0.4
       '@types/istanbul-reports': 3.0.1
-      '@types/node': 18.0.6
+      '@types/node': 16.11.12
       '@types/yargs': 16.0.4
       chalk: 4.1.2
 
@@ -9387,7 +9387,7 @@ packages:
   /@types/bn.js/5.1.0:
     resolution: {integrity: sha512-QSSVYj7pYFN49kW77o2s9xTCwZ8F2xLbjLLSEVh8D2F4JUhZtPAGOFLTD+ffqksBx/u4cE/KImFjyhqCjn/LIA==}
     dependencies:
-      '@types/node': 18.0.6
+      '@types/node': 16.11.12
     dev: false
 
   /@types/bs58/4.0.1:
@@ -9490,7 +9490,7 @@ packages:
     resolution: {integrity: sha512-qwQgQqXXTRv2h2AlJef+tMEszLFkCB9dWnrJYIdAwqjubERXEc/geB+S3apRw0yQyTVnsBf8r6BhlrE8vx+3WQ==}
     dependencies:
       '@types/bn.js': 5.1.0
-      '@types/node': 18.0.6
+      '@types/node': 16.11.12
     dev: false
 
   /@types/eventsource/1.1.9:
@@ -9616,7 +9616,7 @@ packages:
   /@types/ledgerhq__hw-transport/4.21.4:
     resolution: {integrity: sha512-vep+6yZnGv6owAthIY0w3f72w4dJIb4+yE5PCHveInTlZE9wukvU6Wc5Eig0OUUxcdhTazzeZx1xUaNVLqyQSg==}
     dependencies:
-      '@types/node': 18.0.6
+      '@types/node': 16.11.12
     dev: false
 
   /@types/lodash/4.14.182:
@@ -9733,7 +9733,7 @@ packages:
   /@types/randombytes/2.0.0:
     resolution: {integrity: sha512-bz8PhAVlwN72vqefzxa14DKNT8jK/mV66CSjwdVQM/k3Th3EPKfUtdMniwZgMedQTFuywAsfjnZsg+pEnltaMA==}
     dependencies:
-      '@types/node': 18.0.6
+      '@types/node': 16.11.12
     dev: false
 
   /@types/range-parser/1.2.4:
@@ -25892,7 +25892,7 @@ packages:
       '@protobufjs/pool': 1.1.0
       '@protobufjs/utf8': 1.1.0
       '@types/long': 4.0.2
-      '@types/node': 18.0.6
+      '@types/node': 16.11.12
       long: 4.0.0
     dev: false
 
@@ -27207,7 +27207,7 @@ packages:
     dependencies:
       object-assign: 4.1.1
       react: 17.0.2
-      react-is: 18.2.0
+      react-is: 17.0.2
     dev: true
 
   /react-syntax-highlighter/15.5.0_react@17.0.2:
