@@ -30,6 +30,441 @@ importers:
       pnpm-utils: link:tools/pnpm-utils
       turbo: 1.3.1
 
+  apps/cli:
+    specifiers:
+      '@ledgerhq/cryptoassets': workspace:^
+      '@ledgerhq/errors': workspace:^
+      '@ledgerhq/hw-app-btc': workspace:^
+      '@ledgerhq/hw-transport': workspace:^
+      '@ledgerhq/hw-transport-http': workspace:^
+      '@ledgerhq/hw-transport-mocker': workspace:^
+      '@ledgerhq/hw-transport-node-ble': workspace:^
+      '@ledgerhq/hw-transport-node-hid': workspace:^
+      '@ledgerhq/hw-transport-node-speculos': workspace:^
+      '@ledgerhq/live-common': workspace:^
+      '@ledgerhq/logs': workspace:^
+      '@types/command-line-args': ^5.2.0
+      '@types/lodash': ^4.14.177
+      '@types/node': ^17.0.15
+      '@walletconnect/client': ^1.7.1
+      asciichart: ^1.5.25
+      bignumber.js: ^9.0.1
+      bip39: ^3.0.4
+      body-parser: ^1.19.1
+      command-line-args: ^5.2.1
+      cors: ^2.8.5
+      express: ^4.17.2
+      invariant: ^2.2.4
+      lodash: ^4.17.21
+      lodash.product: ^18.9.19
+      qrcode-terminal: ^0.12.0
+      qrloop: ^1.2.0
+      react: ^17.0.2
+      react-dom: ^17.0.2
+      react-redux: ^7.2.6
+      rxjs: ^6.6.7
+      ts-node: ^10.4.0
+      typescript: ^4.5.5
+      winston: ^3.5.1
+      ws: ^8.6.0
+    dependencies:
+      '@ledgerhq/cryptoassets': link:../../libs/ledgerjs/packages/cryptoassets
+      '@ledgerhq/errors': link:../../libs/ledgerjs/packages/errors
+      '@ledgerhq/hw-app-btc': link:../../libs/ledgerjs/packages/hw-app-btc
+      '@ledgerhq/hw-transport': link:../../libs/ledgerjs/packages/hw-transport
+      '@ledgerhq/hw-transport-http': link:../../libs/ledgerjs/packages/hw-transport-http
+      '@ledgerhq/hw-transport-mocker': link:../../libs/ledgerjs/packages/hw-transport-mocker
+      '@ledgerhq/hw-transport-node-hid': link:../../libs/ledgerjs/packages/hw-transport-node-hid
+      '@ledgerhq/hw-transport-node-speculos': link:../../libs/ledgerjs/packages/hw-transport-node-speculos
+      '@ledgerhq/live-common': link:../../libs/ledger-live-common
+      '@ledgerhq/logs': link:../../libs/ledgerjs/packages/logs
+      '@walletconnect/client': 1.7.8
+      asciichart: 1.5.25
+      bignumber.js: 9.0.2
+      bip39: 3.0.4
+      body-parser: 1.20.0
+      command-line-args: 5.2.1
+      cors: 2.8.5
+      express: 4.18.1
+      invariant: 2.2.4
+      lodash: 4.17.21
+      lodash.product: 18.9.19_lodash@4.17.21
+      qrcode-terminal: 0.12.0
+      qrloop: 1.2.0
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
+      react-redux: 7.2.8_sfoxds7t5ydpegc3knd667wn6m
+      rxjs: 6.6.7
+      winston: 3.7.2
+      ws: 8.6.0
+    optionalDependencies:
+      '@ledgerhq/hw-transport-node-ble': link:../../libs/ledgerjs/packages/hw-transport-node-ble
+    devDependencies:
+      '@types/command-line-args': 5.2.0
+      '@types/lodash': 4.14.182
+      '@types/node': 17.0.32
+      ts-node: 10.7.0_sm5zkxj4s52nbddwl76qwfh6ya
+      typescript: 4.6.4
+
+  apps/ledger-live-desktop:
+    specifiers:
+      '@actions/core': ^1.6.0
+      '@actions/github': ^5.0.0
+      '@babel/core': ^7.15.8
+      '@babel/plugin-proposal-class-properties': ^7.13.0
+      '@babel/plugin-proposal-export-default-from': ^7.12.13
+      '@babel/plugin-proposal-export-namespace-from': ^7.12.13
+      '@babel/plugin-proposal-private-methods': ^7.16.7
+      '@babel/plugin-proposal-private-property-in-object': ^7.16.7
+      '@babel/plugin-syntax-dynamic-import': ^7.8.3
+      '@babel/plugin-syntax-import-meta': ^7.10.1
+      '@babel/preset-env': ^7.15.8
+      '@babel/preset-flow': ^7.13.13
+      '@babel/preset-react': ^7.13.13
+      '@babel/preset-typescript': ^7.15.0
+      '@bunchtogether/vite-plugin-flow': ^1.0.2
+      '@electron/remote': ^2
+      '@ledgerhq/devices': workspace:^
+      '@ledgerhq/electron-updater': ^4.2.2
+      '@ledgerhq/errors': workspace:^
+      '@ledgerhq/hw-transport': workspace:^
+      '@ledgerhq/hw-transport-http': workspace:^
+      '@ledgerhq/hw-transport-node-hid-singleton': workspace:^
+      '@ledgerhq/live-common': workspace:^
+      '@ledgerhq/logs': workspace:^
+      '@ledgerhq/react-ui': workspace:^
+      '@mapbox/node-pre-gyp': ^1.0.8
+      '@octokit/rest': ^18.12.0
+      '@playwright/test': 1.22.2
+      '@polkadot/react-identicon': 0.89.2
+      '@sentry/cli': ^2.5.0
+      '@sentry/electron': ^3.0.7
+      '@sentry/node': ^7.7.0
+      '@sentry/tracing': ^7.7.0
+      '@storybook/addon-actions': ^6.3.12
+      '@storybook/addon-essentials': ^6.3.12
+      '@storybook/addon-links': ^6.3.12
+      '@storybook/react': ^6.3.12
+      '@tippyjs/react': ^4.2.6
+      '@trust/keyto': ^1.0.1
+      '@types/react-router-dom': ^5.3.2
+      '@types/react-select': ^4
+      '@types/redux-actions': ^2.6.2
+      '@types/serve-handler': ^6.1.1
+      '@typescript-eslint/eslint-plugin': ^5.28.0
+      '@typescript-eslint/parser': 5.28.0
+      '@vitejs/plugin-react': ^1.3.2
+      '@xstate/inspect': ^0.4.1
+      '@xstate/react': ^1.6.3
+      animated: ^0.2.2
+      async: ^3.2.2
+      axios: ^0.25.0
+      babel-cli: ^6.26.0
+      babel-eslint: ^10.1.0
+      babel-jest: ^27.3.1
+      babel-plugin-module-resolver: ^4.1.0
+      bignumber.js: ^9.0.2
+      canvas-confetti: ^1.4.0
+      chalk: ^4.1.2
+      chart.js: ^2.9.4
+      codecov: ^3.8.3
+      color: ^3.1.3
+      cross-env: ^7.0.3
+      css-loader: ^3.5.3
+      debug: ^4.3.3
+      dotenv: ^8.2.0
+      electron: ^15
+      electron-builder: 23.0.3
+      electron-context-menu: ^2.5.2
+      electron-devtools-installer: ^3.2.0
+      electron-notarize: ^1.1.0
+      esbuild-loader: ^2.19.0
+      esbuild-utils: workspace:*
+      eslint: ^7.32.0
+      eslint-config-prettier: ^7.2.0
+      eslint-config-standard: ^16.0.3
+      eslint-import-resolver-typescript: ^2.7.1
+      eslint-plugin-flowtype: ^5.9.0
+      eslint-plugin-import: ^2.25.3
+      eslint-plugin-jest: ^24.4.0
+      eslint-plugin-json: ^3.1.0
+      eslint-plugin-node: ^11.1.0
+      eslint-plugin-prettier: ^3.4.0
+      eslint-plugin-promise: ^5.1.1
+      eslint-plugin-react: ^7.29.2
+      eslint-plugin-react-hooks: ^4.3.0
+      eslint-plugin-standard: ^5.0.0
+      ethereumjs-tx: ^2.1.2
+      execa: ^4.0.2
+      express: ^4.17.1
+      file-loader: ^6.2.0
+      firebase: ^9.6.6
+      flow-bin: 0.120.1
+      flow-typed: ^2.6.2
+      focus-trap: ^6.6.1
+      form-data: ^3.0.0
+      fuse.js: ^3.6.1
+      getos: ^3.2.1
+      git-rev-sync: ^2.0.0
+      hasha: ^5.2.2
+      i18next: ^19.9.2
+      invariant: ^2.2.4
+      ip: ^1.1.5
+      isomorphic-unfetch: ^3.1.0
+      istanbul-instrumenter-loader: ^3.0.1
+      jest: ^28.1.1
+      json-rpc-2.0: ^0.2.19
+      jsqr: ^1.4.0
+      listr: ^0.14.3
+      listr-verbose-renderer: ^0.6.0
+      lodash: ^4.17.21
+      lru-cache: ^5.1.1
+      measure-scrollbar: ^1.1.0
+      moment: ^2.29.1
+      native-modules-tools: workspace:*
+      nyc: ^15.1.0
+      openpgp: ^4.10.10
+      playwright: 1.22.2
+      prando: ^5.1.2
+      prebuild-install: ^7.0.0
+      prettier: ^1.19.1
+      prop-types: ^15.8.1
+      qrcode: ^1.4.4
+      qrloop: ^1.2.0
+      qs: ^6.10.1
+      react: ^17.0.2
+      react-dom: ^17.0.2
+      react-i18next: ^11.15.5
+      react-intersection-observer: ^8.32.4
+      react-is: ^17.0.2
+      react-key-handler: ^1.2.0-beta.3
+      react-lottie: ^1.2.3
+      react-markdown: ^4.3.0
+      react-motion: ^0.5.2
+      react-prismazoom: ^3.0.0
+      react-redux: ^7.2.6
+      react-refresh: ^0.11.0
+      react-router: ^5.2.0
+      react-router-dom: ^5.2.0
+      react-select: ^3.2.0
+      react-spring: ^8.0.27
+      react-transition-group: ^4.4.2
+      react-virtualized-auto-sizer: ^1.0.6
+      react-window: ^1.8.6
+      react-window-infinite-loader: ^1.0.7
+      redux: ^4.1.2
+      redux-actions: ^2.6.5
+      redux-thunk: ^2.4.0
+      remove-flow-types-loader: ^1.1.0
+      reselect: ^4.1.4
+      rimraf: ^3.0.2
+      rxjs: ^6.6.7
+      secp256k1: ^4.0.2
+      semver: ^7.1.3
+      serve-handler: ^6.1.3
+      sleep-promise: ^8.0.1
+      smoothscroll-polyfill: ^0.4.4
+      source-map-support: ^0.5.21
+      style-loader: ^1.2.1
+      styled-components: ^5.2.3
+      styled-system: ^5.1.5
+      timemachine: ^0.3.2
+      tippy.js: ^6.3.7
+      tree-kill: ^1.2.2
+      typescript: ^4.4.4
+      uncontrollable: ^7.2.1
+      url-loader: ^4.1.1
+      uuid: ^8.3.2
+      v8-to-istanbul: ^8.1.0
+      vite: ^2.9.10
+      vite-plugin-electron: ^0.4.8
+      winston: ^3.2.1
+      winston-transport: ^4.3.0
+      write-file-atomic: ^3.0.3
+      ws: ^7.5.3
+      xstate: ^4.30.2
+      yargs: ^15.3.1
+      zxcvbn: ^4.4.2
+    dependencies:
+      '@electron/remote': 2.0.8_electron@15.5.7
+      '@ledgerhq/devices': link:../../libs/ledgerjs/packages/devices
+      '@ledgerhq/electron-updater': 4.2.2
+      '@ledgerhq/errors': link:../../libs/ledgerjs/packages/errors
+      '@ledgerhq/hw-transport': link:../../libs/ledgerjs/packages/hw-transport
+      '@ledgerhq/hw-transport-http': link:../../libs/ledgerjs/packages/hw-transport-http
+      '@ledgerhq/hw-transport-node-hid-singleton': link:../../libs/ledgerjs/packages/hw-transport-node-hid-singleton
+      '@ledgerhq/live-common': link:../../libs/ledger-live-common
+      '@ledgerhq/logs': link:../../libs/ledgerjs/packages/logs
+      '@ledgerhq/react-ui': link:../../libs/ui/packages/react
+      '@polkadot/react-identicon': 0.89.2_fane7jikarojcev26y27hpbhu4
+      '@sentry/electron': 3.0.7
+      '@sentry/node': 7.7.0
+      '@sentry/tracing': 7.7.0
+      '@tippyjs/react': 4.2.6_sfoxds7t5ydpegc3knd667wn6m
+      '@trust/keyto': 1.0.1
+      '@xstate/inspect': 0.4.1_ws@7.5.7
+      '@xstate/react': 1.6.3_react@17.0.2+xstate@4.32.0
+      animated: 0.2.2_sfoxds7t5ydpegc3knd667wn6m
+      async: 3.2.3
+      axios: 0.25.0
+      bignumber.js: 9.0.2
+      canvas-confetti: 1.5.1
+      chart.js: 2.9.4
+      color: 3.2.1
+      debug: 4.3.4
+      dotenv: 8.6.0
+      electron-context-menu: 2.5.2
+      ethereumjs-tx: 2.1.2
+      firebase: 9.8.1
+      focus-trap: 6.9.2
+      form-data: 3.0.1
+      fuse.js: 3.6.1
+      getos: 3.2.1
+      i18next: 19.9.2
+      invariant: 2.2.4
+      ip: 1.1.8
+      isomorphic-unfetch: 3.1.0
+      json-rpc-2.0: 0.2.19
+      jsqr: 1.4.0
+      lodash: 4.17.21
+      lru-cache: 5.1.1
+      measure-scrollbar: 1.1.0
+      moment: 2.29.3
+      openpgp: 4.10.10
+      prando: 5.1.2
+      prop-types: 15.8.1
+      qrcode: 1.5.0
+      qrloop: 1.2.0
+      qs: 6.10.3
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
+      react-i18next: 11.16.9_r4vbf6j3grmryggditgyffazwe
+      react-intersection-observer: 8.34.0_react@17.0.2
+      react-is: 17.0.2
+      react-key-handler: 1.2.0-beta.3_eslint@7.32.0+react@17.0.2
+      react-lottie: 1.2.3_at7mkepldmzoo6silmqc5bca74
+      react-markdown: 4.3.1_react@17.0.2
+      react-motion: 0.5.2_react@17.0.2
+      react-prismazoom: 3.0.3_oxfzelaz5ynxsop2v2nu2h2m64
+      react-redux: 7.2.8_sfoxds7t5ydpegc3knd667wn6m
+      react-router: 5.3.1_react@17.0.2
+      react-router-dom: 5.3.1_react@17.0.2
+      react-select: 3.2.0_sfoxds7t5ydpegc3knd667wn6m
+      react-spring: 8.0.27_sfoxds7t5ydpegc3knd667wn6m
+      react-transition-group: 4.4.2_sfoxds7t5ydpegc3knd667wn6m
+      react-virtualized-auto-sizer: 1.0.6_sfoxds7t5ydpegc3knd667wn6m
+      react-window: 1.8.7_sfoxds7t5ydpegc3knd667wn6m
+      react-window-infinite-loader: 1.0.7_sfoxds7t5ydpegc3knd667wn6m
+      redux: 4.2.0
+      redux-actions: 2.6.5
+      redux-thunk: 2.4.1_redux@4.2.0
+      reselect: 4.1.5
+      rimraf: 3.0.2
+      rxjs: 6.6.7
+      secp256k1: 4.0.3
+      semver: 7.3.7
+      sleep-promise: 8.0.1
+      smoothscroll-polyfill: 0.4.4
+      source-map-support: 0.5.21
+      styled-components: 5.3.5_fane7jikarojcev26y27hpbhu4
+      styled-system: 5.1.5
+      timemachine: 0.3.2
+      tippy.js: 6.3.7
+      tree-kill: 1.2.2
+      uncontrollable: 7.2.1_react@17.0.2
+      uuid: 8.3.2
+      vite: 2.9.13
+      winston: 3.7.2
+      winston-transport: 4.5.0
+      write-file-atomic: 3.0.3
+      ws: 7.5.7
+      xstate: 4.32.0
+      zxcvbn: 4.4.2
+    devDependencies:
+      '@actions/core': 1.8.0
+      '@actions/github': 5.0.1
+      '@babel/core': 7.17.10
+      '@babel/plugin-proposal-class-properties': 7.16.7_@babel+core@7.17.10
+      '@babel/plugin-proposal-export-default-from': 7.16.7_@babel+core@7.17.10
+      '@babel/plugin-proposal-export-namespace-from': 7.16.7_@babel+core@7.17.10
+      '@babel/plugin-proposal-private-methods': 7.16.11_@babel+core@7.17.10
+      '@babel/plugin-proposal-private-property-in-object': 7.16.7_@babel+core@7.17.10
+      '@babel/plugin-syntax-dynamic-import': 7.8.3_@babel+core@7.17.10
+      '@babel/plugin-syntax-import-meta': 7.10.4_@babel+core@7.17.10
+      '@babel/preset-env': 7.17.10_@babel+core@7.17.10
+      '@babel/preset-flow': 7.16.7_@babel+core@7.17.10
+      '@babel/preset-react': 7.16.7_@babel+core@7.17.10
+      '@babel/preset-typescript': 7.16.7_@babel+core@7.17.10
+      '@bunchtogether/vite-plugin-flow': 1.0.2
+      '@mapbox/node-pre-gyp': 1.0.9
+      '@octokit/rest': 18.12.0
+      '@playwright/test': 1.22.2
+      '@sentry/cli': 2.5.0
+      '@storybook/addon-actions': 6.4.22_sfoxds7t5ydpegc3knd667wn6m
+      '@storybook/addon-essentials': 6.4.22_xhrc4i4yvz6ygksqsyy5bus5sy
+      '@storybook/addon-links': 6.4.22_sfoxds7t5ydpegc3knd667wn6m
+      '@storybook/react': 6.4.22_xukv4uznet4ikv7tocanvygrou
+      '@types/react-router-dom': 5.3.3
+      '@types/react-select': 4.0.18
+      '@types/redux-actions': 2.6.2
+      '@types/serve-handler': 6.1.1
+      '@typescript-eslint/eslint-plugin': 5.30.5_spbve6n7dex5r2tzlzjv7mwvh4
+      '@typescript-eslint/parser': 5.28.0_e4zyhrvfnqudwdx5bevnvkluy4
+      '@vitejs/plugin-react': 1.3.2
+      babel-cli: 6.26.0
+      babel-eslint: 10.1.0_eslint@7.32.0
+      babel-jest: 27.5.1_@babel+core@7.17.10
+      babel-plugin-module-resolver: 4.1.0
+      chalk: 4.1.2
+      codecov: 3.8.3
+      cross-env: 7.0.3
+      css-loader: 3.6.0
+      electron: 15.5.7
+      electron-builder: 23.0.3_lodash@4.17.21
+      electron-devtools-installer: 3.2.0
+      electron-notarize: 1.2.1
+      esbuild-loader: 2.19.0
+      esbuild-utils: link:../../tools/esbuild-utils
+      eslint: 7.32.0
+      eslint-config-prettier: 7.2.0_eslint@7.32.0
+      eslint-config-standard: 16.0.3_wnerebu6rbpsve3qx7qqwvcqtq
+      eslint-import-resolver-typescript: 2.7.1_hpmu7kn6tcn2vnxpfzvv33bxmy
+      eslint-plugin-flowtype: 5.10.0_eslint@7.32.0
+      eslint-plugin-import: 2.26.0_zhtk6rij7obli3ams3sxis7j7e
+      eslint-plugin-jest: 24.7.0_teuzx4d4kjdnrobbbvx2ltyzkm
+      eslint-plugin-json: 3.1.0
+      eslint-plugin-node: 11.1.0_eslint@7.32.0
+      eslint-plugin-prettier: 3.4.1_kydadsiwltm5d4nusfzccmmebq
+      eslint-plugin-promise: 5.2.0_eslint@7.32.0
+      eslint-plugin-react: 7.29.4_eslint@7.32.0
+      eslint-plugin-react-hooks: 4.5.0_eslint@7.32.0
+      eslint-plugin-standard: 5.0.0_eslint@7.32.0
+      execa: 4.1.0
+      express: 4.18.1
+      file-loader: 6.2.0
+      flow-bin: 0.120.1
+      flow-typed: 2.6.2
+      git-rev-sync: 2.1.0
+      hasha: 5.2.2
+      istanbul-instrumenter-loader: 3.0.1
+      jest: 28.1.1
+      listr: 0.14.3
+      listr-verbose-renderer: 0.6.0
+      native-modules-tools: link:../../tools/native-modules-tools
+      nyc: 15.1.0
+      playwright: 1.22.2
+      prebuild-install: 7.1.0
+      prettier: 1.19.1
+      react-refresh: 0.11.0
+      remove-flow-types-loader: 1.1.0
+      serve-handler: 6.1.3
+      style-loader: 1.3.0
+      typescript: 4.6.4
+      url-loader: 4.1.1_file-loader@6.2.0
+      v8-to-istanbul: 8.1.1
+      vite-plugin-electron: 0.4.9
+      yargs: 15.4.1
+
   apps/ledger-live-mobile:
     specifiers:
       '@actions/core': ^1.5.0
@@ -7163,9 +7598,9 @@ packages:
       - supports-color
     dev: false
 
-  /@sentry/cli/1.74.5:
-    resolution: {integrity: sha512-Ze1ec306ZWHtrxKypOJ8nhtFqkrx2f/6bRH+DcJzEQ3bBePQ0ZnqJTTe4BBHADYBtxFIaUWzCZ6DquLz2Zv/sw==}
-    engines: {node: '>= 8'}
+  /@sentry/cli/2.5.0:
+    resolution: {integrity: sha512-vogUTzJyrGcl5AZ3cH08li1PgWSjoARXAbXwnmsrzu1yE2lWBRNnpFVBkRUXXrZsrDD2dgntEr8tgrxE3zQYlw==}
+    engines: {node: '>= 12'}
     hasBin: true
     requiresBuild: true
     dependencies:
@@ -7191,12 +7626,63 @@ packages:
       tslib: 1.14.1
     dev: false
 
+  /@sentry/core/7.7.0:
+    resolution: {integrity: sha512-Z15ACiuiFINFcK4gbMrnejLn4AVjKBPJOWKrrmpIe8mh+Y9diOuswt5mMUABs+jhpZvqht3PBLLGBL0WMsYMYA==}
+    engines: {node: '>=8'}
+    dependencies:
+      '@sentry/hub': 7.7.0
+      '@sentry/types': 7.7.0
+      '@sentry/utils': 7.7.0
+      tslib: 1.14.1
+    dev: false
+
+  /@sentry/electron/3.0.7:
+    resolution: {integrity: sha512-Rahi1jgvjHnx1jGkkPPvDCxSCAME7xc2eBcFCLb4R/WDuNblR7tgJUuAtzv9JpxUgRHy1oLNct0wcvIu1mcXoA==}
+    dependencies:
+      '@sentry/browser': 6.19.2
+      '@sentry/core': 6.19.2
+      '@sentry/node': 6.19.2
+      '@sentry/types': 6.19.2
+      '@sentry/utils': 6.19.2
+      deepmerge: 4.2.2
+      tslib: 2.4.0
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
+
+  /@sentry/hub/6.19.2:
+    resolution: {integrity: sha512-W7KCgNBgdBIMagOxy5J5KQPe+maYxSqfE8a5ncQ3R8BcZDQEKnkW/1FplNbfRLZqA/tL/ndKb7pTPqVtzsbARw==}
+    engines: {node: '>=6'}
+    dependencies:
+      '@sentry/types': 6.19.2
+      '@sentry/utils': 6.19.2
+      tslib: 1.14.1
+    dev: false
+
+  /@sentry/hub/6.19.7:
+    resolution: {integrity: sha512-y3OtbYFAqKHCWezF0EGGr5lcyI2KbaXW2Ik7Xp8Mu9TxbSTuwTe4rTntwg8ngPjUQU3SUHzgjqVB8qjiGqFXCA==}
+    engines: {node: '>=6'}
+    dependencies:
+      '@sentry/types': 6.19.7
+      '@sentry/utils': 6.19.7
+      tslib: 1.14.1
+    dev: false
+
   /@sentry/hub/7.6.0:
     resolution: {integrity: sha512-TbieNZInpnR5STXykT1zXoKVAsm8ju1RZyzMqYR8nzURbjlMVVEzFRglNY1Ap5MRkbEuYpAc6zUvgLQe8b6Q3w==}
     engines: {node: '>=8'}
     dependencies:
       '@sentry/types': 7.6.0
       '@sentry/utils': 7.6.0
+      tslib: 1.14.1
+    dev: false
+
+  /@sentry/hub/7.7.0:
+    resolution: {integrity: sha512-6gydK234+a0nKhBRDdIJ7Dp42CaiW2juTiHegUVDq+482balVzbZyEAmESCmuzKJhx5BhlCElVxs/cci1NjMpg==}
+    engines: {node: '>=8'}
+    dependencies:
+      '@sentry/types': 7.7.0
+      '@sentry/utils': 7.7.0
       tslib: 1.14.1
     dev: false
 
@@ -7208,6 +7694,72 @@ packages:
       '@sentry/utils': 7.6.0
       localforage: 1.10.0
       tslib: 1.14.1
+    dev: false
+
+  /@sentry/minimal/6.19.2:
+    resolution: {integrity: sha512-ClwxKm77iDHET7kpzv1JvzDx1er5DoNu+EUjst0kQzARIrXvu9xuZuE2/CnBWycQWqw8o3HoGoKz65uIhsUCzQ==}
+    engines: {node: '>=6'}
+    dependencies:
+      '@sentry/hub': 6.19.2
+      '@sentry/types': 6.19.2
+      tslib: 1.14.1
+    dev: false
+
+  /@sentry/minimal/6.19.7:
+    resolution: {integrity: sha512-wcYmSJOdvk6VAPx8IcmZgN08XTXRwRtB1aOLZm+MVHjIZIhHoBGZJYTVQS/BWjldsamj2cX3YGbGXNunaCfYJQ==}
+    engines: {node: '>=6'}
+    dependencies:
+      '@sentry/hub': 6.19.7
+      '@sentry/types': 6.19.7
+      tslib: 1.14.1
+    dev: false
+
+  /@sentry/node/6.19.2:
+    resolution: {integrity: sha512-Z1qREpTpYHxaeWjc1zMUk8ZTAp1WbxMiI2TVNc+a14DVT19Z2xNXb06MiRfeLgNc9lVGdmzR62dPmMBjVgPJYg==}
+    engines: {node: '>=6'}
+    dependencies:
+      '@sentry/core': 6.19.2
+      '@sentry/hub': 6.19.2
+      '@sentry/types': 6.19.2
+      '@sentry/utils': 6.19.2
+      cookie: 0.4.2
+      https-proxy-agent: 5.0.1
+      lru_map: 0.3.3
+      tslib: 1.14.1
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
+
+  /@sentry/node/6.19.7:
+    resolution: {integrity: sha512-gtmRC4dAXKODMpHXKfrkfvyBL3cI8y64vEi3fDD046uqYcrWdgoQsffuBbxMAizc6Ez1ia+f0Flue6p15Qaltg==}
+    engines: {node: '>=6'}
+    dependencies:
+      '@sentry/core': 6.19.7
+      '@sentry/hub': 6.19.7
+      '@sentry/types': 6.19.7
+      '@sentry/utils': 6.19.7
+      cookie: 0.4.2
+      https-proxy-agent: 5.0.1
+      lru_map: 0.3.3
+      tslib: 1.14.1
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
+
+  /@sentry/node/7.7.0:
+    resolution: {integrity: sha512-i62x23NHEhLe6CJ6l9E30uRCUMm0VMz9aUmmrjW+9uxS1mZhHTG2kpbU16ozyh9KTLswKDOSE75Z+MzQpGSQ/Q==}
+    engines: {node: '>=8'}
+    dependencies:
+      '@sentry/core': 7.7.0
+      '@sentry/hub': 7.7.0
+      '@sentry/types': 7.7.0
+      '@sentry/utils': 7.7.0
+      cookie: 0.4.2
+      https-proxy-agent: 5.0.1
+      lru_map: 0.3.3
+      tslib: 1.14.1
+    transitivePeerDependencies:
+      - supports-color
     dev: false
 
   /@sentry/react-native/4.1.3_zqxy7fpkavjkgz5xll7ed4r6rq:
@@ -7259,9 +7811,50 @@ packages:
       tslib: 1.14.1
     dev: false
 
+  /@sentry/tracing/7.7.0:
+    resolution: {integrity: sha512-HNmvTwemuc21q/K6HXsSp9njkne6N1JQ71TB+QGqYU5VtxsVgYSUhhYqV6WcHz7LK4Hj6TvNFoeu69/rO0ysgw==}
+    engines: {node: '>=8'}
+    dependencies:
+      '@sentry/hub': 7.7.0
+      '@sentry/types': 7.7.0
+      '@sentry/utils': 7.7.0
+      tslib: 1.14.1
+    dev: false
+
+  /@sentry/types/6.19.2:
+    resolution: {integrity: sha512-XO5qmVBdTs+7PdCz7fAwn1afWxSnRE2KLBFg5/vOdKosPSSHsSHUURSkxiEZc2QsR+JpRB4AeQ26AkIRX38qTg==}
+    engines: {node: '>=6'}
+    dev: false
+
+  /@sentry/types/6.19.7:
+    resolution: {integrity: sha512-jH84pDYE+hHIbVnab3Hr+ZXr1v8QABfhx39KknxqKWr2l0oEItzepV0URvbEhB446lk/S/59230dlUUIBGsXbg==}
+    engines: {node: '>=6'}
+    dev: false
+
   /@sentry/types/7.6.0:
     resolution: {integrity: sha512-POimbDwr9tmHSKksJTXe5VQpvjkFO4/UWUptigwqf8684rkS7Ie2BT2uyp5GD2EgYFf0BwUOWi98FTYTvUGT+Q==}
     engines: {node: '>=8'}
+    dev: false
+
+  /@sentry/types/7.7.0:
+    resolution: {integrity: sha512-4x8O7uerSGLnYC10krHl9t8h7xXHn5FextqKYbTCXCnx2hC8D+9lz8wcbQAFo0d97wiUYqI8opmEgFVGx7c5hQ==}
+    engines: {node: '>=8'}
+    dev: false
+
+  /@sentry/utils/6.19.2:
+    resolution: {integrity: sha512-2DQQ2OJaxjtyxGq5FmMlqb6hptsqMs2xoBiVRMkTS/rvyTrk1oQdKZ8ePwjtgX3nJ728ni3IXIyXV+vfGp4EBw==}
+    engines: {node: '>=6'}
+    dependencies:
+      '@sentry/types': 6.19.2
+      tslib: 1.14.1
+    dev: false
+
+  /@sentry/utils/6.19.7:
+    resolution: {integrity: sha512-z95ECmE3i9pbWoXQrD/7PgkBAzJYR+iXtPuTkpBjDKs86O3mT+PXOT3BAn79w2wkn7/i3vOGD2xVr1uiMl26dA==}
+    engines: {node: '>=6'}
+    dependencies:
+      '@sentry/types': 6.19.7
+      tslib: 1.14.1
     dev: false
 
   /@sentry/utils/7.6.0:
@@ -7269,6 +7862,14 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       '@sentry/types': 7.6.0
+      tslib: 1.14.1
+    dev: false
+
+  /@sentry/utils/7.7.0:
+    resolution: {integrity: sha512-fD+ROSFpeJlK7bEvUT2LOW7QqgjBpXJwVISKZ0P2fuzclRC3KoB2pbZgBM4PXMMTiSzRGWhvfRRjBiBvQJBBJQ==}
+    engines: {node: '>=8'}
+    dependencies:
+      '@sentry/types': 7.7.0
       tslib: 1.14.1
     dev: false
 
@@ -15884,7 +16485,7 @@ packages:
     dependencies:
       confusing-browser-globals: 1.0.11
       eslint: 7.32.0
-      eslint-plugin-import: 2.26.0_ffi3uiz42rv3jyhs6cr7p7qqry
+      eslint-plugin-import: 2.26.0_eslint@7.32.0
       object.assign: 4.1.2
       object.entries: 1.1.5
     dev: true
@@ -15901,10 +16502,10 @@ packages:
     dependencies:
       eslint: 7.32.0
       eslint-config-airbnb-base: 14.2.1_hpmu7kn6tcn2vnxpfzvv33bxmy
-      eslint-plugin-import: 2.26.0_ffi3uiz42rv3jyhs6cr7p7qqry
-      eslint-plugin-jsx-a11y: 6.6.0_eslint@7.32.0
-      eslint-plugin-react: 7.30.1_eslint@7.32.0
-      eslint-plugin-react-hooks: 4.6.0_eslint@7.32.0
+      eslint-plugin-import: 2.26.0_eslint@7.32.0
+      eslint-plugin-jsx-a11y: 6.5.1_eslint@7.32.0
+      eslint-plugin-react: 7.29.4_eslint@7.32.0
+      eslint-plugin-react-hooks: 4.5.0_eslint@7.32.0
       object.assign: 4.1.2
       object.entries: 1.1.5
     dev: true
@@ -32595,7 +33196,7 @@ packages:
   /wide-align/1.1.5:
     resolution: {integrity: sha512-eDMORYaPNZ4sQIuuYPDHdQvf4gyCF9rEEV/yPxGfwPkRodwEgiMUUXTx/dex+Me0wxx53S+NgUHaP7y3MGlDmg==}
     dependencies:
-      string-width: 1.0.2
+      string-width: 4.2.3
 
   /widest-line/3.1.0:
     resolution: {integrity: sha512-NsmoXalsWVDMGupxZ5R08ka9flZjjiLvHVAWYOKtiKM8ujtZWr9cRffak+uSE48+Ob8ObalXpwyeUiyDD6QFgg==}
