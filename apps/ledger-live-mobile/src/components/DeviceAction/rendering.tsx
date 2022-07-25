@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { View } from "react-native";
 import { useDispatch } from "react-redux";
 import styled from "styled-components/native";
 import { WrongDeviceForAccount } from "@ledgerhq/errors";

@@ -53,6 +53,9 @@ export const defaultFeatures: DefaultFeatures = {
   currencyFlareMobile: {
     enabled: false,
   },
+  deviceInitialApps: {
+    enabled: false,
+  },
   ratings: {
     enabled: false,
     params: {

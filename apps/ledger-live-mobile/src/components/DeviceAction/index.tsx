@@ -17,6 +17,7 @@ import {
   renderRequestQuitApp,
   renderRequiresAppInstallation,
   renderAllowManager,
+  renderInlineInstallProgress,
   renderInWrongAppForAccount,
   renderError,
   renderBootloaderStep,
