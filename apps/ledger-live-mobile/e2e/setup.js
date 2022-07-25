@@ -2,7 +2,7 @@ import { execSync } from "child_process";
 import * as bridge from "./bridge/server";
 
 beforeAll(async () => {
-  // bridge.init();
+  bridge.init();
   setDemoMode();
   await device.launchApp({
     languageAndLocale: {
