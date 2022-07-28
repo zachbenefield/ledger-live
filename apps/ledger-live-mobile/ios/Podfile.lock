@@ -429,7 +429,7 @@ PODS:
     - react-native-video/Video (= 5.2.0)
   - react-native-video/Video (5.2.0):
     - React-Core
-  - react-native-webview (11.22.7):
+  - react-native-webview (11.23.0):
     - React-Core
   - React-perflogger (0.68.2)
   - React-RCTActionSheet (0.68.2):
@@ -556,12 +556,12 @@ PODS:
   - RNScreens (3.15.0):
     - React-Core
     - React-RCTImage
-  - RNSentry (4.1.3):
+  - RNSentry (4.2.2):
     - React-Core
-    - Sentry (= 7.20.0)
+    - Sentry (= 7.22.0)
   - RNShare (6.5.0):
     - React-Core
-  - RNSVG (12.4.0):
+  - RNSVG (12.4.3):
     - React-Core
   - RNVectorIcons (8.1.0):
     - React-Core
@@ -571,9 +571,9 @@ PODS:
   - SDWebImageWebPCoder (0.8.5):
     - libwebp (~> 1.0)
     - SDWebImage/Core (~> 5.10)
-  - Sentry (7.20.0):
-    - Sentry/Core (= 7.20.0)
-  - Sentry/Core (7.20.0)
+  - Sentry (7.22.0):
+    - Sentry/Core (= 7.22.0)
+  - Sentry/Core (7.22.0)
   - SocketRocket (0.6.0)
   - Storyly (1.24.0)
   - storyly-react-native (1.24.0):
@@ -660,7 +660,7 @@ DEPENDENCIES:
   - "react-native-udp (from `../../../node_modules/.pnpm/react-native-udp@4.1.5/node_modules/react-native-udp`)"
   - "react-native-version-number (from `../../../node_modules/.pnpm/react-native-version-number@0.3.6/node_modules/react-native-version-number`)"
   - "react-native-video (from `../../../node_modules/.pnpm/react-native-video@5.2.0/node_modules/react-native-video`)"
-  - "react-native-webview (from `../../../node_modules/.pnpm/react-native-webview@11.22.7_zqxy7fpkavjkgz5xll7ed4r6rq/node_modules/react-native-webview`)"
+  - "react-native-webview (from `../../../node_modules/.pnpm/react-native-webview@11.23.0_zqxy7fpkavjkgz5xll7ed4r6rq/node_modules/react-native-webview`)"
   - "React-perflogger (from `../../../node_modules/.pnpm/react-native@0.68.2_shn3lkepuadv4od4dudas6ijbq/node_modules/react-native/ReactCommon/reactperflogger`)"
   - "React-RCTActionSheet (from `../../../node_modules/.pnpm/react-native@0.68.2_shn3lkepuadv4od4dudas6ijbq/node_modules/react-native/Libraries/ActionSheetIOS`)"
   - "React-RCTAnimation (from `../../../node_modules/.pnpm/react-native@0.68.2_shn3lkepuadv4od4dudas6ijbq/node_modules/react-native/Libraries/NativeAnimation`)"
@@ -681,15 +681,15 @@ DEPENDENCIES:
   - "RNFastImage (from `../../../node_modules/.pnpm/react-native-fast-image@8.5.11_zqxy7fpkavjkgz5xll7ed4r6rq/node_modules/react-native-fast-image`)"
   - "RNFBApp (from `../../../node_modules/.pnpm/@react-native-firebase+app@14.11.1_zqxy7fpkavjkgz5xll7ed4r6rq/node_modules/@react-native-firebase/app`)"
   - "RNFBRemoteConfig (from `../../../node_modules/.pnpm/@react-native-firebase+remote-config@14.11.1_kijl5j5a34ibxr2pv5igp3eaii/node_modules/@react-native-firebase/remote-config`)"
-  - "RNGestureHandler (from `../../../node_modules/.pnpm/react-native-gesture-handler@2.5.0_3r4xcwc6263csn2qalx7yanfae/node_modules/react-native-gesture-handler`)"
+  - "RNGestureHandler (from `../../../node_modules/.pnpm/react-native-gesture-handler@2.5.0_dacoobdgzppfdk5ef7ton7t63y/node_modules/react-native-gesture-handler`)"
   - "RNKeychain (from `../../../node_modules/.pnpm/react-native-keychain@7.0.0/node_modules/react-native-keychain`)"
   - "RNLocalize (from `../../../node_modules/.pnpm/react-native-localize@2.2.2_zqxy7fpkavjkgz5xll7ed4r6rq/node_modules/react-native-localize`)"
   - "RNOS (from `../../../node_modules/.pnpm/react-native-os@1.2.6/node_modules/react-native-os`)"
   - "RNReanimated (from `../../../node_modules/.pnpm/react-native-reanimated@2.9.1_zqg5olr4b7h5hlpjuj6yf3rr6u/node_modules/react-native-reanimated`)"
   - "RNScreens (from `../../../node_modules/.pnpm/react-native-screens@3.15.0_zqxy7fpkavjkgz5xll7ed4r6rq/node_modules/react-native-screens`)"
-  - "RNSentry (from `../../../node_modules/.pnpm/@sentry+react-native@4.1.3_zqxy7fpkavjkgz5xll7ed4r6rq/node_modules/@sentry/react-native`)"
+  - "RNSentry (from `../../../node_modules/.pnpm/@sentry+react-native@4.2.2_zqxy7fpkavjkgz5xll7ed4r6rq/node_modules/@sentry/react-native`)"
   - "RNShare (from `../../../node_modules/.pnpm/react-native-share@6.5.0/node_modules/react-native-share`)"
-  - "RNSVG (from `../../../node_modules/.pnpm/react-native-svg@12.4.0_zqxy7fpkavjkgz5xll7ed4r6rq/node_modules/react-native-svg`)"
+  - "RNSVG (from `../../../node_modules/.pnpm/react-native-svg@12.4.3_zqxy7fpkavjkgz5xll7ed4r6rq/node_modules/react-native-svg`)"
   - "RNVectorIcons (from `../../../node_modules/.pnpm/react-native-vector-icons@8.1.0/node_modules/react-native-vector-icons`)"
   - "storyly-react-native (from `../../../node_modules/.pnpm/storyly-react-native@1.24.0_zqxy7fpkavjkgz5xll7ed4r6rq/node_modules/storyly-react-native`)"
   - "TcpSockets (from `../../../node_modules/.pnpm/react-native-tcp@4.0.0_react-native@0.68.2/node_modules/react-native-tcp`)"
@@ -822,7 +822,7 @@ EXTERNAL SOURCES:
   react-native-video:
     :path: "../../../node_modules/.pnpm/react-native-video@5.2.0/node_modules/react-native-video"
   react-native-webview:
-    :path: "../../../node_modules/.pnpm/react-native-webview@11.22.7_zqxy7fpkavjkgz5xll7ed4r6rq/node_modules/react-native-webview"
+    :path: "../../../node_modules/.pnpm/react-native-webview@11.23.0_zqxy7fpkavjkgz5xll7ed4r6rq/node_modules/react-native-webview"
   React-perflogger:
     :path: "../../../node_modules/.pnpm/react-native@0.68.2_shn3lkepuadv4od4dudas6ijbq/node_modules/react-native/ReactCommon/reactperflogger"
   React-RCTActionSheet:
@@ -864,7 +864,7 @@ EXTERNAL SOURCES:
   RNFBRemoteConfig:
     :path: "../../../node_modules/.pnpm/@react-native-firebase+remote-config@14.11.1_kijl5j5a34ibxr2pv5igp3eaii/node_modules/@react-native-firebase/remote-config"
   RNGestureHandler:
-    :path: "../../../node_modules/.pnpm/react-native-gesture-handler@2.5.0_3r4xcwc6263csn2qalx7yanfae/node_modules/react-native-gesture-handler"
+    :path: "../../../node_modules/.pnpm/react-native-gesture-handler@2.5.0_dacoobdgzppfdk5ef7ton7t63y/node_modules/react-native-gesture-handler"
   RNKeychain:
     :path: "../../../node_modules/.pnpm/react-native-keychain@7.0.0/node_modules/react-native-keychain"
   RNLocalize:
@@ -876,11 +876,11 @@ EXTERNAL SOURCES:
   RNScreens:
     :path: "../../../node_modules/.pnpm/react-native-screens@3.15.0_zqxy7fpkavjkgz5xll7ed4r6rq/node_modules/react-native-screens"
   RNSentry:
-    :path: "../../../node_modules/.pnpm/@sentry+react-native@4.1.3_zqxy7fpkavjkgz5xll7ed4r6rq/node_modules/@sentry/react-native"
+    :path: "../../../node_modules/.pnpm/@sentry+react-native@4.2.2_zqxy7fpkavjkgz5xll7ed4r6rq/node_modules/@sentry/react-native"
   RNShare:
     :path: "../../../node_modules/.pnpm/react-native-share@6.5.0/node_modules/react-native-share"
   RNSVG:
-    :path: "../../../node_modules/.pnpm/react-native-svg@12.4.0_zqxy7fpkavjkgz5xll7ed4r6rq/node_modules/react-native-svg"
+    :path: "../../../node_modules/.pnpm/react-native-svg@12.4.3_zqxy7fpkavjkgz5xll7ed4r6rq/node_modules/react-native-svg"
   RNVectorIcons:
     :path: "../../../node_modules/.pnpm/react-native-vector-icons@8.1.0/node_modules/react-native-vector-icons"
   storyly-react-native:
@@ -963,7 +963,7 @@ SPEC CHECKSUMS:
   react-native-udp: 8864b1211857e9d8224ae5cbaf8580970fb99de1
   react-native-version-number: b415bbec6a13f2df62bf978e85bc0d699462f37f
   react-native-video: a4c2635d0802f983594b7057e1bce8f442f0ad28
-  react-native-webview: 227ba9205abb8579116b69ea5774d9744267c65a
+  react-native-webview: e771bc375f789ebfa02a26939a57dbc6fa897336
   React-perflogger: a18b4f0bd933b8b24ecf9f3c54f9bf65180f3fe6
   React-RCTActionSheet: 547fe42fdb4b6089598d79f8e1d855d7c23e2162
   React-RCTAnimation: bc9440a1c37b06ae9ebbb532d244f607805c6034
@@ -990,13 +990,13 @@ SPEC CHECKSUMS:
   RNOS: 6f2f9a70895bbbfbdad7196abd952e7b01d45027
   RNReanimated: 5c8c17e26787fd8984cd5accdc70fef2ca70aafd
   RNScreens: 4a1af06327774490d97342c00aee0c2bafb497b7
-  RNSentry: 49ac40f818ad2bb65f3578d400e2474767e12a5b
+  RNSentry: f03937a2cf86c7029ba31fbbf5618c55d223cd62
   RNShare: 047d42214f875d731bde73a2b67418638af85ad9
-  RNSVG: 3dd44d99d1c18e1342aee4bfa53ab3f6a8c4865f
+  RNSVG: f3b60aeeaa81960e2e0536c3a9eef50b667ef3a9
   RNVectorIcons: 31cebfcf94e8cf8686eb5303ae0357da64d7a5a4
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
   SDWebImageWebPCoder: 908b83b6adda48effe7667cd2b7f78c897e5111d
-  Sentry: 9e8ec837fa37e7b397f19f75542800461b138d0e
+  Sentry: 30b51086ca9aac23337880152e95538f7e177f7f
   SocketRocket: fccef3f9c5cedea1353a9ef6ada904fde10d6608
   Storyly: a532af158a58795a0c3efe6f13e7545b087fe3d9
   storyly-react-native: 15a66fc16250e2f5edce786126a02438182d89f9
