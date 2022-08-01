@@ -105,7 +105,7 @@ export interface AccountBridge<T extends Transaction> {
       subAccountId?: string;
       freshAddressIndex?: number;
     }
-  ): Observable<{
+  ): Observable<{fdsafs
     address: string;
     path: string;
   }>;

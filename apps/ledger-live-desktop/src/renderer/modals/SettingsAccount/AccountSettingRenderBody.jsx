@@ -10,7 +10,7 @@ import { withTranslation, Trans } from "react-i18next";
 import type { Account, Unit } from "@ledgerhq/live-common/types/index";
 import { validateNameEdition } from "@ledgerhq/live-common/account/index";
 import { AccountNameRequiredError } from "@ledgerhq/errors";
-import { getEnv } from "@ledgerhq/live-common/env";
+import { getEnv } from "@ledgerhq/live-common/lib/env";
 import { urls } from "~/config/urls";
 import { setDataModal } from "~/renderer/actions/modals";
 import { removeAccount, updateAccount } from "~/renderer/actions/accounts";

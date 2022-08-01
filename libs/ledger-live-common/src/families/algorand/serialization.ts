@@ -1,8 +1,8 @@
 import { BigNumber } from "bignumber.js";
 import type { AlgorandResourcesRaw, AlgorandResources } from "./types";
 export function toAlgorandResourcesRaw(
-  r: AlgorandResources
-): AlgorandResourcesRaw {
+  r: any
+): any {
   const { rewards, nbAssets } = r;
   return {
     rewards: rewards.toString(),
@@ -10,8 +10,8 @@ export function toAlgorandResourcesRaw(
   };
 }
 export function fromAlgorandResourcesRaw(
-  r: AlgorandResourcesRaw
-): AlgorandResources {
+  r: any
+): any {
   const { rewards, nbAssets } = r;
   return {
     rewards: new BigNumber(rewards),
