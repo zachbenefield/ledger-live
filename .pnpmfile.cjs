@@ -149,6 +149,11 @@ function readPackage(pkg, context) {
       addDependencies("react-native-locale", {
         fbjs: "*",
       }),
+      addDependencies("postcss-loader", {
+        "postcss-flexbugs-fixes": "*",
+        "postcss-preset-env": "*",
+        "postcss-normalize": "*",
+      }),
       addPeerDependencies("any-observable", {
         rxjs: "*",
       }),
