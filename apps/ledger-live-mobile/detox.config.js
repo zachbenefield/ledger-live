@@ -1,7 +1,7 @@
 // NOTE: It seems that we can't build the ios app in arm64 on M1
 const iosArch = "x86_64";
 // NOTE: Pass CI=1 if you want to build locally when you don't have a mac M1. This works better if you do export CI=1 for the whole session.
-const androidArch = process.env.CI ? "x86" : "arm64-v8a";
+const androidArch = process.env.CI ? "x86_64" : "arm64-v8a";
 
 module.exports = {
   testRunner: "jest",

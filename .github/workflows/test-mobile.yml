@@ -112,7 +112,7 @@
       #   uses: reactivecircus/android-emulator-runner@v2
       #   with:
       #     api-level: 28
-      #     arch: x86
+      #     arch: x86_64
       #     target: google_apis
       #     force-avd-creation: false
       #     emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
@@ -126,7 +126,7 @@
       #   timeout-minutes: 15
       #   with:
       #     api-level: 28
-      #     arch: x86
+      #     arch: x86_64
       #     target: google_apis
       #     avd-name: Nexus_6
       #     emulator-options: -verbose -no-snapshot-save -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
