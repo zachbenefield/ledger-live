@@ -42,8 +42,8 @@ jobs:
         run: pnpm lint --filter="live-mobile" --api="http://127.0.0.1:9080" --token="yolo" --team="foo"
       - name: Run flow
         run: pnpm mobile flow
-      - name: Run code checkers
-        run: pnpm typecheck --filter="live-mobile" --api="http://127.0.0.1:9080" --token="yolo" --team="foo"
+      # - name: Run code checkers
+      #   run: pnpm typecheck --filter="live-mobile" --api="http://127.0.0.1:9080" --token="yolo" --team="foo"
 # jobs:
 #   detox-tests-ios:
 #     name: "Ledger Live Mobile - iOS Detox Tests"
