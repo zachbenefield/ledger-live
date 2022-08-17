@@ -6,7 +6,16 @@ import Config from "react-native-config";
 const animations: { [modelId in DeviceModelId]: any } = {
   nanoS: {},
   nanoSP: {},
-  nanoX: {},
+  nanoX: {
+    blePairing: {
+      light: require("../../animations/nanoX/BlePairing/light.json"),
+      dark: require("../../animations/nanoX/BlePairing/dark.json"),
+    },
+    blePaired: {
+      light: require("../../animations/nanoX/BlePaired/light.json"),
+      dark: require("../../animations/nanoX/BlePaired/dark.json"),
+    },
+  },
   blue: {},
   nanoFTS: {
     blePairing: {

@@ -21,25 +21,26 @@ type Props = StackScreenProps<
 export const DeviceModelSelection = ({ navigation }: Props) => {
   const { t } = useTranslation();
 
-  const setupNanoFTS = useCallback(() => {
-    // Prompts user to enable bluetooth. Not necessary as next screen handles the ble requirement, but it smooths the transition
-    NativeModules.BluetoothHelperModule.prompt()
-      .then(() =>
-        navigation.navigate(
-          ScreenName.BleDevicesScanning as "BleDevicesScanning",
-          { filterByModelId: DeviceModelId.nanoFTS },
-        ),
-      )
-      .catch(() => {
-        // ignore
-      });
-  }, [navigation]);
+  const setupDevice = useCallback(
+    (deviceModelId: DeviceModelId) => {
+      // Prompts user to enable bluetooth. Not necessary as next screen handles the ble requirement, but it smooths the transition
+      NativeModules.BluetoothHelperModule.prompt()
+        .then(() =>
+          navigation.navigate(
+            ScreenName.BleDevicesScanning as "BleDevicesScanning",
+            { filterByModelId: deviceModelId },
+          ),
+        )
+        .catch(() => {
+          // ignore
+        });
+    },
+    [navigation],
+  );
 
   const handleNavigateBack = useCallback(() => {
     navigation.goBack();
   }, [navigation]);
-
-  const setupNanoX = () => {};
 
   return (
     <SafeAreaView>
@@ -61,7 +62,7 @@ export const DeviceModelSelection = ({ navigation }: Props) => {
             title={t("syncOnboarding.deviceSelection.nanoFTS.title")}
             titleProps={{ variant: "h3" }}
             subTitle={t("syncOnboarding.deviceSelection.nanoFTS.description")}
-            onPress={setupNanoFTS}
+            onPress={() => setupDevice(DeviceModelId.nanoFTS)}
             cardProps={{ mx: 0, mb: 4 }}
             Image={
               <Illustration
@@ -75,7 +76,7 @@ export const DeviceModelSelection = ({ navigation }: Props) => {
             title={t("syncOnboarding.deviceSelection.nanoX.title")}
             titleProps={{ variant: "h3" }}
             subTitle={t("syncOnboarding.deviceSelection.nanoX.description")}
-            onPress={setupNanoX}
+            onPress={() => setupDevice(DeviceModelId.nanoX)}
             cardProps={{ mx: 0 }}
             Image={
               <Illustration
