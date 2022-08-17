@@ -308,7 +308,7 @@ export const SyncOnboarding = ({ navigation, route }: Props) => {
           isOpen={isDesyncDrawerOpen}
           onClose={handleDesyncClose}
           navigation={navigation}
-          productName={productName}
+          device={device}
         />
         <Flex
           flexDirection="row"
