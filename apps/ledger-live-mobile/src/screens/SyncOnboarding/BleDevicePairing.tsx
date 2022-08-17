@@ -20,7 +20,6 @@ import {
 } from "@ledgerhq/native-ui/assets/icons";
 import { SyncOnboardingStackParamList } from "../../components/RootNavigator/SyncOnboardingNavigator";
 import { ScreenName } from "../../const";
-import OnboardingView from "../Onboarding/OnboardingView";
 import RequiresBLE from "../../components/RequiresBLE";
 import Animation from "../../components/Animation";
 import { getDeviceAnimation } from "../../helpers/getDeviceAnimation";

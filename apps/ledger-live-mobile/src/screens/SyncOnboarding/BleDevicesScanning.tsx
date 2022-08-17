@@ -17,7 +17,6 @@ import { useTranslation } from "react-i18next";
 import { knownDevicesSelector } from "../../reducers/ble";
 import { SyncOnboardingStackParamList } from "../../components/RootNavigator/SyncOnboardingNavigator";
 import { ScreenName } from "../../const";
-import OnboardingView from "../Onboarding/OnboardingView";
 import DeviceItem from "../../components/SelectDevice/DeviceItem";
 import TransportBLE from "../../react-native-hw-transport-ble";
 import { BLE_SCANNING_NOTHING_TIMEOUT } from "../../constants";
@@ -92,6 +91,7 @@ export const BleDeviceScanning = ({ navigation, route }: Props) => {
       };
       // Replace to avoid going back to this screen without re-rendering
       // to make sure the list of scanning devices is reset
+      // TODO: here is why the navigation does not come back to scanning. Are we sure it is what we want ?
       navigation.replace(ScreenName.BleDevicePairing as "BleDevicePairing", {
         deviceToPair,
       });

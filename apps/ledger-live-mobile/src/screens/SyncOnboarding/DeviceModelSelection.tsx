@@ -7,7 +7,6 @@ import { ArrowLeftMedium } from "@ledgerhq/native-ui/assets/icons";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { SyncOnboardingStackParamList } from "../../components/RootNavigator/SyncOnboardingNavigator";
 import { ScreenName } from "../../const";
-// TODO: to put OnboardingView in components/move it in root ?
 import DiscoverCard from "../Discover/DiscoverCard";
 import Illustration from "../../images/illustration/Illustration";
 
