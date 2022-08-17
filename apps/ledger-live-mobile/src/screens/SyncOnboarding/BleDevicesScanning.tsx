@@ -1,6 +1,5 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { FlatList } from "react-native";
-import { useSelector } from "react-redux";
 import { StackScreenProps } from "@react-navigation/stack";
 import { Flex, InfiniteLoader, Text, Button } from "@ledgerhq/native-ui";
 import {
@@ -11,10 +10,9 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { BleErrorCode } from "react-native-ble-plx";
 import { useBleDevicesScanning } from "@ledgerhq/live-common/ble/hooks/useBleDevicesScanning";
 import { ScannedDevice } from "@ledgerhq/live-common/ble/types";
-import { DeviceModelId } from "@ledgerhq/devices";
+import { getDeviceModel } from "@ledgerhq/devices";
 import { useTranslation } from "react-i18next";
 
-import { knownDevicesSelector } from "../../reducers/ble";
 import { SyncOnboardingStackParamList } from "../../components/RootNavigator/SyncOnboardingNavigator";
 import { ScreenName } from "../../const";
 import DeviceItem from "../../components/SelectDevice/DeviceItem";
@@ -41,8 +39,10 @@ type Props = StackScreenProps<
 
 export const BleDeviceScanning = ({ navigation, route }: Props) => {
   const { t } = useTranslation();
+  const { filterByModelId } = route.params;
+  const productName =
+    getDeviceModel(filterByModelId).productName || filterByModelId;
 
-  // const { filterByModelId } = route.params;
   const [locationDisabledError, setLocationDisabledError] = useState<boolean>(
     false,
   );
@@ -51,11 +51,13 @@ export const BleDeviceScanning = ({ navigation, route }: Props) => {
   >(false);
   const [stopBleScanning, setStopBleScanning] = useState<boolean>(false);
 
+  // If we want to filter on known devices:
   // const knownDeviceIds = useSelector(knownDevicesSelector).map((device) => device.id);
 
   const { scannedDevices, scanningBleError } = useBleDevicesScanning({
     bleTransportListen: TransportBLE.listen,
     stopBleScanning,
+    filterByModelIds: [filterByModelId],
   });
 
   // Handles scanning error
@@ -152,7 +154,7 @@ export const BleDeviceScanning = ({ navigation, route }: Props) => {
             </Flex>
             <Text mb={3} textAlign="center" variant="h4" fontWeight="semiBold">
               {t("syncOnboarding.scanning.title", {
-                productName: "Nano", // TODO
+                productName,
               })}
             </Text>
             <Text
@@ -163,7 +165,7 @@ export const BleDeviceScanning = ({ navigation, route }: Props) => {
               fontWeight="medium"
             >
               {t("syncOnboarding.scanning.description", {
-                productName: "Nano", // TODO
+                productName,
               })}
             </Text>
             <FlatList

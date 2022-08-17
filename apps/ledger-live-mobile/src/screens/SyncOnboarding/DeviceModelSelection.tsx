@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import { Flex, Text, Button } from "@ledgerhq/native-ui";
 import { ArrowLeftMedium } from "@ledgerhq/native-ui/assets/icons";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { DeviceModelId } from "@ledgerhq/types-devices";
 import { SyncOnboardingStackParamList } from "../../components/RootNavigator/SyncOnboardingNavigator";
 import { ScreenName } from "../../const";
 import DiscoverCard from "../Discover/DiscoverCard";
@@ -26,6 +27,7 @@ export const DeviceModelSelection = ({ navigation }: Props) => {
       .then(() =>
         navigation.navigate(
           ScreenName.BleDevicesScanning as "BleDevicesScanning",
+          { filterByModelId: DeviceModelId.nanoFTS },
         ),
       )
       .catch(() => {
