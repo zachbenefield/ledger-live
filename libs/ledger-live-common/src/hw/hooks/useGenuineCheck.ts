@@ -1,11 +1,12 @@
 import { useCallback, useEffect, useState } from "react";
-import { from } from "rxjs";
-import { mergeMap } from "rxjs/operators";
 import { UserRefusedAllowManager } from "@ledgerhq/errors";
-import type { SocketEvent, DeviceId } from "@ledgerhq/types-live";
-import getDeviceInfo from "../getDeviceInfo";
-import { withDevice } from "../deviceAccess";
-import genuineCheck from "../genuineCheck";
+import type { DeviceId } from "@ledgerhq/types-live";
+import { getGenuineCheckFromDeviceId as defaultGetGenuineCheckFromDeviceId } from "../getGenuineCheckFromDeviceId";
+import type {
+  GetGenuineCheckFromDeviceIdArgs,
+  GetGenuineCheckFromDeviceIdResult,
+  GetGenuineCheckFromDeviceIdOutput,
+} from "../getGenuineCheckFromDeviceId";
 
 export type GenuineState = "unchecked" | "genuine" | "non-genuine";
 export type DevicePermissionState =
@@ -20,6 +21,12 @@ export type UseGenuineCheckArgs = {
   isHookEnabled?: boolean;
   deviceId: DeviceId;
   lockedDeviceTimeoutMs?: number;
+};
+
+export type UseGenuineCheckDependencies = {
+  getGenuineCheckFromDeviceId?: (
+    args: GetGenuineCheckFromDeviceIdArgs
+  ) => GetGenuineCheckFromDeviceIdOutput;
 };
 
 export type UseGenuineCheckResult = {
@@ -41,10 +48,12 @@ export type UseGenuineCheckResult = {
  * - error: any error that occurred during the genuine check, or null
  */
 export const useGenuineCheck = ({
+  getGenuineCheckFromDeviceId = defaultGetGenuineCheckFromDeviceId,
   isHookEnabled = true,
   deviceId,
   lockedDeviceTimeoutMs = 1000,
-}: UseGenuineCheckArgs): UseGenuineCheckResult => {
+}: UseGenuineCheckArgs &
+  UseGenuineCheckDependencies): UseGenuineCheckResult => {
   const [genuineState, setGenuineState] = useState<GenuineState>("unchecked");
   const [devicePermissionState, setDevicePermisionState] =
     useState<DevicePermissionState>("unrequested");
@@ -57,41 +66,37 @@ export const useGenuineCheck = ({
 
   useEffect(() => {
     if (isHookEnabled) {
-      // Notifies the hook consumer once the device is considered unresponsive.
-      // As we're not timing out inside the genuineCheckObservable flow (with rxjs timeout for ex)
-      // once the device is unlock, getDeviceInfo should return the device info and
-      // the flow will continue. No need to handle a retry strategy
-      const lockedDeviceTimeout = setTimeout(() => {
-        setDevicePermisionState("unlock-needed");
-      }, lockedDeviceTimeoutMs);
-
-      // withDevice handles the unsubscribing cleaning when leaving the useEffect
-      const genuineCheckObservable = withDevice(deviceId)((t) =>
-        from(getDeviceInfo(t)).pipe(
-          mergeMap((deviceInfo) => {
-            clearTimeout(lockedDeviceTimeout);
-            setDevicePermisionState("unlocked");
-            return genuineCheck(t, deviceInfo);
-          })
-        )
-      );
-
-      genuineCheckObservable.subscribe({
-        next: (socketEvent: SocketEvent) => {
-          switch (socketEvent.type) {
-            case "device-permission-requested":
-              setDevicePermisionState("requested");
-              break;
-            case "device-permission-granted":
-              setDevicePermisionState("granted");
-              break;
-            case "result":
-              if (socketEvent.payload === "0000") {
-                setGenuineState("genuine");
-              } else {
-                setGenuineState("non-genuine");
-              }
-              break;
+      getGenuineCheckFromDeviceId({
+        deviceId,
+        lockedDeviceTimeoutMs,
+      }).subscribe({
+        next: ({
+          socketEvent,
+          deviceIsLocked,
+        }: GetGenuineCheckFromDeviceIdResult) => {
+          if (socketEvent) {
+            switch (socketEvent.type) {
+              case "device-permission-requested":
+                setDevicePermisionState("requested");
+                break;
+              case "device-permission-granted":
+                setDevicePermisionState("granted");
+                break;
+              case "result":
+                if (socketEvent.payload === "0000") {
+                  setGenuineState("genuine");
+                } else {
+                  setGenuineState("non-genuine");
+                }
+                break;
+            }
+          } else {
+            // If no socketEvent, the device is locked or has been unlocked
+            if (deviceIsLocked) {
+              setDevicePermisionState("unlock-needed");
+            } else {
+              setDevicePermisionState("unlocked");
+            }
           }
         },
         error: (e: any) => {
@@ -106,7 +111,12 @@ export const useGenuineCheck = ({
         },
       });
     }
-  }, [isHookEnabled, deviceId, lockedDeviceTimeoutMs]);
+  }, [
+    isHookEnabled,
+    deviceId,
+    lockedDeviceTimeoutMs,
+    getGenuineCheckFromDeviceId,
+  ]);
 
   return {
     genuineState,
