@@ -318,6 +318,8 @@ export const ScreenName = {
   BleDevicesScanning: "BleDevicesScanning",
   BleDevicePairing: "BleDevicePairing",
 
+  BleDevicePairingFlow: "BleDevicePairingFlow",
+
   PlatformCatalog: "PlatformCatalog",
   PlatformApp: "PlatformApp",
   PlatformStartExchange: "PlatformStartExchange",
