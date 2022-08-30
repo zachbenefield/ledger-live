@@ -323,6 +323,14 @@
     "InvalidRecipient" : {
       "title" : "Ungültiger Empfänger"
     },
+    "LanguageInstallRefusedOnDevice" : {
+      "title" : "Sprachinstallation auf dem Gerät abgelehnt",
+      "description" : "Bitte versuchen Sie es erneut. Wenn das Problem weiterhin besteht, speichern Sie bitte Ihre Protokolle über die Schaltfläche unten und stellen Sie sie dem Ledger-Support zur Verfügung."
+    },
+    "LanguageNotFound" : {
+      "title" : "Die Sprache wurde nicht gefunden",
+      "description" : "Die Sprache, die Sie installieren möchten, wurde nicht gefunden. Bitte versuchen Sie, eine andere Sprache zu installieren."
+    },
     "LatestMCUInstalledError" : {
       "title" : "Entschuldigung, es gibt nichts zu aktualisieren",
       "description" : "Bitte kontaktieren Sie den Ledger-Support, wenn Sie Ihr Gerät nicht verwenden können."
@@ -1750,7 +1758,8 @@
       "validatorsCount" : "Validatoren ({{number}})",
       "storageLimit" : "Speicherlimit",
       "gasLimit" : "Gaslimit",
-      "id" : "ID"
+      "id" : "ID",
+      "autoClaimedRewards" : "Automatisch beanspruchte Prämien"
     },
     "multipleAddresses" : "Warum mehrere Adressen?",
     "tokenName" : "Token-Name",
@@ -1771,6 +1780,17 @@
     "subaccountCount_plural" : "+{{count}} Unterkonten"
   },
   "account" : {
+    "subHeader" : {
+      "moreInfo" : "Mehr Infos",
+      "cardTitle" : "Powered by {{team}}",
+      "drawer" : {
+        "title" : "{{family}}-Integration",
+        "subTitle" : "Die {{family}}-Integration wurde vom {{team}}-Team durchgeführt",
+        "description" : "Ledger Live ist eine Open-Source-Plattform.",
+        "description2" : "Entwickler aus aller Welt können sich mit unserem Ledger Live integrieren",
+        "description3" : "Diese Integration wurde von {{team}} in Zusammenarbeit mit Ledger durchgeführt"
+      }
+    },
     "tokens" : {
       "contractAddress" : "Vertragsadresse",
       "viewInExplorer" : "Im Explorer ansehen",
@@ -2169,6 +2189,15 @@
       "customManifest" : {
         "title" : "Benutzerdefiniertes Plattform-Manifest laden"
       }
+    },
+    "debug" : {
+      "featureFlagsTitle" : "In Ledger Live verwendete definierte Feature-Flags",
+      "featureFlagsDesc" : "Überschriebene Werte werden zurückgesetzt, wenn die App neu gestartet wird. Es werden nur gültige JSON-Zeichenfolgen akzeptiert.",
+      "featureFlagsOverride" : "Überschreiben",
+      "featureFlagsEdit" : "Bearbeiten",
+      "featureFlagsRestore" : "Wiederherstellen",
+      "featureFlagsDisplayValue" : "Wert anzeigen",
+      "featureFlagsHideValue" : "Wert ausblenden"
     }
   },
   "notifications" : {
@@ -3431,6 +3460,19 @@
       "de" : "Deutsch"
     }
   },
+  "deviceLocalization" : {
+    "language" : "Sprache",
+    "deviceLanguage" : "Geräte-Sprache",
+    "changeLanguage" : "Sprache wechseln",
+    "allowLanguageInstallation" : "Sprachinstallation zulassen",
+    "languageInstalled" : "Gerätesprache auf {{language}} gewechselt",
+    "installingLanguage" : "Sprache installieren",
+    "languages" : {
+      "english" : "Englisch",
+      "french" : "Französisch",
+      "spanish" : "Spanisch"
+    }
+  },
   "FirmwareUpdateCheckId" : {
     "title" : "Kennung",
     "description" : "Bitte drücken Sie beide Tasten gleichzeitig auf Ihrem {{fullDeviceName}}, wenn es die gleiche Kennung anzeigt:"
@@ -3537,6 +3579,31 @@
       "available" : {
         "title" : "CELO verfügbar",
         "description" : "Dieser Betrag ist verfügbar."
+      }
+    }
+  },
+  "osmosis" : {
+    "info" : {
+      "available" : {
+        "title" : "OSMO verfügbar"
+      },
+      "delegated" : {
+        "description" : "Übertragene Vermögenswerte werden für Osmosis-Abstimmungen verwendet. Dies ist Ihre Gesamtzahl der Stimmen."
+      },
+      "undelegating" : {
+        "description" : "Nicht delegierte Vermögenswerte sind in einer Zeitsperre von 14 Tagen, bevor sie verfügbar sind."
+      }
+    },
+    "delegation" : {
+      "flow" : {
+        "steps" : {
+          "starter" : {
+            "description" : "Delegieren Sie Ihr OSMO, um sicher Prämien zu verdienen und behalten Sie die Kontrolle über Ihr Vermögen.",
+            "steps" : {
+              "1" : "Sie müssen 14 Tage warten, bis die Delegierung vollständig beendet ist."
+            }
+          }
+        }
       }
     }
   },
@@ -3740,33 +3807,6 @@
             "broadcastError" : "Ihre Transaktion ist möglicherweise fehlgeschlagen. Bitte warten Sie einen Moment und prüfen Sie den Transaktionsverlauf, bevor Sie es erneut versuchen."
           }
         }
-      }
-    }
-  },
-  "cryptoOrg" : {
-    "account" : {
-      "subHeader" : {
-        "cardTitle" : "Powered by Crypto.org",
-        "moreInfo" : "Mehr Infos",
-        "drawerTitle" : "Crypto.org Integration",
-        "title" : "Der Crypto.org (CRO) Token ist jetzt auf Ledger Live verfügbar",
-        "description" : "Sie können jetzt damit beginnen, Ihre Crypto.org (CRO) Token zu verwalten und sie über Ledger Live zu sichern.",
-        "description2" : "Der Crypto.org-Token (CRO) ist nativ in der Crypto.org-Chain und wird für alle Transaktionen verwendet, auch für Staking und viele noch kommende Features.",
-        "website" : "Kryptowährung in jeder Wallet"
-      }
-    }
-  },
-  "elrond" : {
-    "account" : {
-      "subHeader" : {
-        "cardTitle" : "Betrieben von Elrond",
-        "drawerTitle" : "Elrond Integration",
-        "moreInfo" : "Mehr Infos",
-        "title" : "Elrond eGold (EGLD) Token ist jetzt auf Ledger Live verfügbar",
-        "description" : "Sie können jetzt Ihre eGold (EGLD) Token sicher sichern und über Ledger Live verwalten.",
-        "description2" : "Der Elrond eGold (EGLD) Token ist nativ im Elrond Netzwerk und wird für alle Transaktionen verwendet staken, intelligente Verträge, Governance und Validator-Belohnungen.",
-        "description3" : "Wir arbeiten aktiv mit dem Elrond Team zusammen, um mehr Funktionalitäten wie Staking, native ESDT (Elrond Standard Digital Token) Unterstützung und mehr hinzuzufügen.",
-        "website" : "Die Internet Scale Blockchain"
       }
     }
   },
@@ -4303,6 +4343,11 @@
         "redelegate" : "Sie müssen 21 Tage warten, bis die nicht delegierten Guthaben wieder auf dem verfügbaren Guthaben sind.",
         "undelegate" : "Sie müssen 21 Tage warten, bis die nicht delegierten Guthaben wieder auf dem verfügbaren Guthaben sind."
       },
+      "osmosis" : {
+        "claimReward" : "Wenn der ausgewählte Validator ausstehende Prämien hat, werden diese automatisch eingefordert.",
+        "redelegate" : "Sie müssen 14 Tage warten, bis die nicht delegierten Guthaben wieder auf dem verfügbaren Guthaben sind.",
+        "undelegate" : "Sie müssen 14 Tage warten, bis die nicht delegierten Guthaben wieder auf dem verfügbaren Guthaben sind."
+      },
       "lending" : "Überprüfen Sie die Vorgangsdetails auf Ihrem Gerät, bevor Sie sie senden."
     },
     "amount" : "Betrag",
@@ -4312,6 +4357,7 @@
     "redelegationAmount" : "Zurückdelegierter Betrag",
     "gas" : "Gas",
     "validatorAddress" : "Validator-Adresse",
+    "validatorName" : "Name des Validators",
     "rewardAmount" : "Prämienbetrag",
     "undelegatedAmount" : "Nicht delegierter Betrag",
     "memo" : "Memo"

@@ -323,6 +323,14 @@
     "InvalidRecipient" : {
       "title" : "유효하지 않은 수령인"
     },
+    "LanguageInstallRefusedOnDevice" : {
+      "title" : "장치에서 언어 설치가 거부되었습니다",
+      "description" : "다시 시도해 주세요. 문제가 지속될 경우, 아래 버튼을 이용해 로그를 저장하고 Ledger 지원 부서로 보내주세요."
+    },
+    "LanguageNotFound" : {
+      "title" : "언어를 찾을 수 없습니다",
+      "description" : "설치하려는 언어를 찾을 수 없습니다. 다른 언어를 설치해 보세요."
+    },
     "LatestMCUInstalledError" : {
       "title" : "죄송하지만 업데이트가 필요한 항목이 없습니다",
       "description" : "장치를 사용할 수 없다면 Ledger 지원 부서에 문의하세요."
@@ -1750,7 +1758,8 @@
       "validatorsCount" : "검증인 ({{number}})",
       "storageLimit" : "저장공간 한계",
       "gasLimit" : "가스 한도",
-      "id" : "Id"
+      "id" : "Id",
+      "autoClaimedRewards" : "자동으로 청구된 보상"
     },
     "multipleAddresses" : "왜 주소가 여러 개인가요?",
     "tokenName" : "토큰명",
@@ -1771,6 +1780,17 @@
     "subaccountCount_plural" : "+{{count}} 서브 계정"
   },
   "account" : {
+    "subHeader" : {
+      "moreInfo" : "자세한 정보",
+      "cardTitle" : "{{team}} 기반",
+      "drawer" : {
+        "title" : "{{family}} 통합",
+        "subTitle" : "{{family}} 통합은 {{team}} 팀에서 수행했습니다.",
+        "description" : "Ledger Live는 오픈 소스 플랫폼입니다.",
+        "description2" : "전 세계 어디에서나 개발자가 Ledger Live와 통합할 수 있습니다.",
+        "description3" : "이 통합은 Ledger와 협력을 통해 {{team}} 에서 수행했습니다."
+      }
+    },
     "tokens" : {
       "contractAddress" : "계약 주소",
       "viewInExplorer" : "탐색기에서 보기",
@@ -2169,6 +2189,15 @@
       "customManifest" : {
         "title" : "커스텀 플랫폼 Manifest 불러오기"
       }
+    },
+    "debug" : {
+      "featureFlagsTitle" : "Ledger Live에서 사용되는 정의된 기능 플래그",
+      "featureFlagsDesc" : "앱을 다시 실행하면 재정의된 값이 다시 설정됩니다. 유효한 JSON 문자열만 허용됩니다.",
+      "featureFlagsOverride" : "재정의",
+      "featureFlagsEdit" : "편집",
+      "featureFlagsRestore" : "복구",
+      "featureFlagsDisplayValue" : "값 표시하기",
+      "featureFlagsHideValue" : "값 숨기기"
     }
   },
   "notifications" : {
@@ -2269,7 +2298,7 @@
         "cancel" : {
           "title" : "이 주소를 거부했습니다.",
           "subtitle" : "실수로 주소를 거부했다면 아래 버튼을 클릭하여 재시도하세요.",
-          "info" : "주소 불일치가 확인될 경우 귀하의 핸드폰에 손상이 있을 수 있습니다. <0>가능한 한 빨리 당사로 문의</0>할 것을 권고드립니다."
+          "info" : "주소 불일치가 확인될 경우 귀하의 핸드폰에 손상이 있을 수 있습니다. <0>가능한 한 빨리 당사로 문의</0>할 것을 권장드립니다."
         }
       },
       "receiveConfirmation" : {
@@ -3402,8 +3431,8 @@
     "drawerUpdate" : {
       "title" : "펌웨어 업데이트",
       "description" : "Ledger Nano 펌웨어를 Ledger Live 데스크탑 애플리케이션에 연결해 업데이트하세요",
-      "pleaseConnectUsbTitle" : "USB cable needed",
-      "pleaseConnectUsbDescription" : "To start the firmware update, plug your {{deviceName}} to your mobile phone using a USB cable."
+      "pleaseConnectUsbTitle" : "USB 케이블이 필요합니다",
+      "pleaseConnectUsbDescription" : "펌웨어 업데이트를 시작하려면 USB 케이블로 {{deviceName}} 장치를 핸드폰에 연결하세요."
     }
   },
   "FirmwareUpdateReleaseNotes" : {
@@ -3429,6 +3458,19 @@
       "es" : "스페인어",
       "zh" : "중국어",
       "de" : "독일어"
+    }
+  },
+  "deviceLocalization" : {
+    "language" : "언어",
+    "deviceLanguage" : "장치 언어",
+    "changeLanguage" : "언어 변경",
+    "allowLanguageInstallation" : "언어 설치 허용",
+    "languageInstalled" : "장치 언어가 {{language}}로 변경되었습니다",
+    "installingLanguage" : "언어 설치 중",
+    "languages" : {
+      "english" : "영어",
+      "french" : "프랑스어",
+      "spanish" : "스페인어"
     }
   },
   "FirmwareUpdateCheckId" : {
@@ -3537,6 +3579,31 @@
       "available" : {
         "title" : "CELO 이용 가능",
         "description" : "가처분 금액입니다."
+      }
+    }
+  },
+  "osmosis" : {
+    "info" : {
+      "available" : {
+        "title" : "OSMO 사용 가능"
+      },
+      "delegated" : {
+        "description" : "위임된 자산은 오스모시스(Osmosis) 투표에 사용됩니다. 이는 사용차의 총 투표 수입니다."
+      },
+      "undelegating" : {
+        "description" : "위임 해제 자산은 14일 후 타임락이 해제되면 사용 가능합니다."
+      }
+    },
+    "delegation" : {
+      "flow" : {
+        "steps" : {
+          "starter" : {
+            "description" : "OSMO를 위임하여 안전하게 보상을 받으면서, 자산에 대한 통제 권한도 유지하세요.",
+            "steps" : {
+              "1" : "위임 해제가 완료되려면 14일을 기다려야 합니다."
+            }
+          }
+        }
       }
     }
   },
@@ -3740,33 +3807,6 @@
             "broadcastError" : "트랜잭션이 실패한 것 같습니다. 잠시 기다려 트랜잭션 내역을 확인한 후 다시 시도하세요."
           }
         }
-      }
-    }
-  },
-  "cryptoOrg" : {
-    "account" : {
-      "subHeader" : {
-        "cardTitle" : "Crypto.org에서 제공됨",
-        "moreInfo" : "자세한 정보",
-        "drawerTitle" : "Crypto.org 통합",
-        "title" : "이제 Ledger Live에서 Crypto.org(CRO) 토큰을 사용할 수 있습니다",
-        "description" : "이제 CRO(Crypto.org) 토큰 관리를 시작하고 Ledger Live를 통해 토큰을 보호할 수 있습니다.",
-        "description2" : "Crypto.org(CRO) 토큰은 Crypto.org 체인의 기본 토큰이며 트랜잭션, 스테이킹 및 향후 많은 기능에 사용됩니다.",
-        "website" : "모든 지갑의 암호화폐"
-      }
-    }
-  },
-  "elrond" : {
-    "account" : {
-      "subHeader" : {
-        "cardTitle" : "Elrond 제공",
-        "drawerTitle" : "Elrond 통합",
-        "moreInfo" : "자세한 정보",
-        "title" : "이제 Ledger Live에서 Elrond eGold(EGLD) 토큰을 이용할 수 있습니다",
-        "description" : "이제 Ledger Live로 eGold(EGLD) 토큰을 안전하게 보관하고 관리할 수 있습니다.",
-        "description2" : "Elrond eGold(EGLD) 토큰은 Elrond 네트워크의 네이티브 토큰으로, 트랜잭션, 스테이킹, 스마트 계약, 거버넌스, 검증인 보상 등 모든 분야에 사용됩니다.",
-        "description3" : "본사는 스테이킹, 네이티브 ESDT(Elrond 스탠다드 디지털 토큰) 지원 등의 다양한 기능을 추가하기 위해 Ellrond 팀과 활발히 협업 중입니다.",
-        "website" : "인터넷 스케일 블록체인"
       }
     }
   },
@@ -4303,6 +4343,11 @@
         "redelegate" : "위임 해제 자산은 21일 후에 가용 잔금으로 되돌아옵니다.",
         "undelegate" : "위임 해제 자산은 21일 후에 가용 잔금으로 되돌아옵니다."
       },
+      "osmosis" : {
+        "claimReward" : "선택된 검증인에게 대기 중 보상이 있으면, 자동으로 수령됩니다.",
+        "redelegate" : "위임 해제 자산은 14일 후에 이용 가능 잔액으로 되돌아옵니다.",
+        "undelegate" : "위임 해제 자산은 14일 후에 이용 가능 잔액으로 되돌아옵니다."
+      },
       "lending" : "장치에서 거래 세부사항을 확인한 후 전송하세요."
     },
     "amount" : "금액",
@@ -4312,6 +4357,7 @@
     "redelegationAmount" : "재위임된 금액",
     "gas" : "가스",
     "validatorAddress" : "검증인 주소",
+    "validatorName" : "검증인 이름",
     "rewardAmount" : "보상 금액",
     "undelegatedAmount" : "위임 해제 금액",
     "memo" : "메모"

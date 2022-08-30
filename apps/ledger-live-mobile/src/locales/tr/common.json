@@ -323,6 +323,14 @@
     "InvalidRecipient" : {
       "title" : "Geçersiz alıcı"
     },
+    "LanguageInstallRefusedOnDevice" : {
+      "title" : "Dil yüklemesi cihaz tarafından reddedildi",
+      "description" : "Lütfen tekrar deneyin. Sorun devam ederse, lütfen aşağıdaki butonu kullanarak loglarınızı kaydedin ve Ledger Destek'e gönderin."
+    },
+    "LanguageNotFound" : {
+      "title" : "Dil bulunamadı",
+      "description" : "Yüklemek istediğiniz dil bulunamadı. Lütfen farklı bir dil yüklemeyi deneyin."
+    },
     "LatestMCUInstalledError" : {
       "title" : "Üzgünüz, güncellenecek bir şey yok",
       "description" : "Cihazınızı kullanamıyorsanız lütfen Ledger Destek ile iletişime geçin."
@@ -965,8 +973,8 @@
         "desc" : "Pasif gelir elde edin ve kripto varlıklarınızı artırın"
       },
       "mint" : {
-        "title" : "Mintleyin",
-        "desc" : "[ L ] Market'teki özel iş birliklerini kullanarak NFT'ler mintleyin"
+        "title" : "Mint'leyin",
+        "desc" : "[ L ] Market'teki özel iş birliklerini kullanarak NFT'ler mint'leyin"
       }
     },
     "comingSoon" : "Çok yakında",
@@ -1750,7 +1758,8 @@
       "validatorsCount" : "Doğrulayıcılar ({{number}})",
       "storageLimit" : "Depolama Limiti",
       "gasLimit" : "Gas limiti",
-      "id" : "Kimlik (ID)"
+      "id" : "Kimlik (ID)",
+      "autoClaimedRewards" : "Otomatik Alınan Ödüller"
     },
     "multipleAddresses" : "Neden birden fazla adres var?",
     "tokenName" : "Token Adı",
@@ -1771,6 +1780,17 @@
     "subaccountCount_plural" : "+{{count}} alt hesap"
   },
   "account" : {
+    "subHeader" : {
+      "moreInfo" : "Daha fazla bilgi",
+      "cardTitle" : "{{team}} desteğiyle",
+      "drawer" : {
+        "title" : "{{family}} entegrasyonu",
+        "subTitle" : "{{family}} entegrasyonu {{team}} ekibi tarafından yapıldı",
+        "description" : "Ledger Live, açık kaynaklı bir platformdur.",
+        "description2" : "Dünyanın her yerinden developer'lar Ledger Live ile entegre olabilir",
+        "description3" : "Bu entegrasyon, {{team}} tarafından Ledger ile işbirliği içinde gerçekleştirilmiştir."
+      }
+    },
     "tokens" : {
       "contractAddress" : "Sözleşme adresi",
       "viewInExplorer" : "Tarayıcıda görüntüle",
@@ -2169,6 +2189,15 @@
       "customManifest" : {
         "title" : "Özel Platform Manifest Dosyası Yükle"
       }
+    },
+    "debug" : {
+      "featureFlagsTitle" : "Ledger Live'da kullanılan tanımlı özellik bayrakları",
+      "featureFlagsDesc" : "Uygulama yeniden başlatılırsa geçersiz bırakılan değerler sıfırlanacaktır. Sadece geçerli JSON dizeleri kabul edilecektir.",
+      "featureFlagsOverride" : "Geçersiz bırak",
+      "featureFlagsEdit" : "Düzenle",
+      "featureFlagsRestore" : "Geri yükle",
+      "featureFlagsDisplayValue" : "Değeri göster",
+      "featureFlagsHideValue" : "Değeri gizle"
     }
   },
   "notifications" : {
@@ -3402,8 +3431,8 @@
     "drawerUpdate" : {
       "title" : "Donanım Yazılımı Güncellemesi",
       "description" : "Ledger Nano donanım yazılımını güncellemek için cihazınızı bilgisayarınızdaki Ledger Live uygulamasına bağlayın",
-      "pleaseConnectUsbTitle" : "USB cable needed",
-      "pleaseConnectUsbDescription" : "To start the firmware update, plug your {{deviceName}} to your mobile phone using a USB cable."
+      "pleaseConnectUsbTitle" : "USB kablosu gerekli",
+      "pleaseConnectUsbDescription" : "Donanım yazılımı güncellemesini başlatmak için {{deviceName}} cihazınızı bir USB kablosuyla cep telefonunuza bağlayın."
     }
   },
   "FirmwareUpdateReleaseNotes" : {
@@ -3429,6 +3458,19 @@
       "es" : "İspanyolca",
       "zh" : "Çince",
       "de" : "Almanca"
+    }
+  },
+  "deviceLocalization" : {
+    "language" : "Dil",
+    "deviceLanguage" : "Cihaz Dili",
+    "changeLanguage" : "Dili değiştir",
+    "allowLanguageInstallation" : "Dilin yüklenmesine izin verin",
+    "languageInstalled" : "Cihaz dili {{language}} oldu",
+    "installingLanguage" : "Dil yükleniyor",
+    "languages" : {
+      "english" : "İngilizce",
+      "french" : "Fransızca",
+      "spanish" : "İspanyolca"
     }
   },
   "FirmwareUpdateCheckId" : {
@@ -3537,6 +3579,31 @@
       "available" : {
         "title" : "CELO mevcut",
         "description" : "Bu tutar, kullanabileceğiniz fondur."
+      }
+    }
+  },
+  "osmosis" : {
+    "info" : {
+      "available" : {
+        "title" : "OSMO mevcut"
+      },
+      "delegated" : {
+        "description" : "Yetkisi devredilen varlıklar Osmosis oylaması için kullanılır. Bu tutar toplam oy sayınızdır."
+      },
+      "undelegating" : {
+        "description" : "Yetkisi iptal edilen varlıklar, kullanıma açılmadan önce 14 gün boyunca zaman kilidinde tutulurlar."
+      }
+    },
+    "delegation" : {
+      "flow" : {
+        "steps" : {
+          "starter" : {
+            "description" : "OSMO'larınızla yetki devri yaparak hem güvenle ödül kazanın hem de varlıklarınızın kontrolünü muhafaza edin edin.",
+            "steps" : {
+              "1" : "Yetki iptallerinin tamamlanması için 14 gün beklemeniz gerekir."
+            }
+          }
+        }
       }
     }
   },
@@ -3740,33 +3807,6 @@
             "broadcastError" : "İşleminiz başarısız olmuş olabilir. Lütfen biraz bekleyin ve tekrar denemeden önce işlem geçmişini kontrol edin."
           }
         }
-      }
-    }
-  },
-  "cryptoOrg" : {
-    "account" : {
-      "subHeader" : {
-        "cardTitle" : "Crypto.org desteğiyle",
-        "moreInfo" : "Daha fazla bilgi",
-        "drawerTitle" : "Crypto.org entegrasyonu",
-        "title" : "Crypto.org (CRO) token'ı artık Ledger Live'da",
-        "description" : "Crypto.org (CRO) token'larınızı artık Ledger Live üzerinden gönül rahatlığıyla güvenceye alabilir ve yönetebilirsiniz.",
-        "description2" : "Crypto.org (CRO), Crypto.org zincirinin ana token'ıdır ve ağ üzerindeki işlemler, staking ve yakında çıkacak pek çok özellik için kullanılır.",
-        "website" : "Her cüzdanda kripto para"
-      }
-    }
-  },
-  "elrond" : {
-    "account" : {
-      "subHeader" : {
-        "cardTitle" : "Elrond desteğiyle",
-        "drawerTitle" : "Elrond entegrasyonu",
-        "moreInfo" : "Daha fazla bilgi",
-        "title" : "Elrond eGold (EGLD) token'ı artık Ledger Live'da kullanılabilir",
-        "description" : "eGold (EGLD) token'larınızı artık Ledger Live üzerinden gönül rahatlığıyla güvenceye alabilir ve yönetebilirsiniz.",
-        "description2" : "Elrond Network'e özgü olan Elrond eGold (EGLD) Token, bu ağ üzerindeki her türlü işlem, staking, akıllı sözleşme, yönetişim ve doğrulayıcı ödülleri için kullanılır.",
-        "description3" : "Elrond ekibiyle aktif bir işbirliği gerçekleştirerek staking işlemleri, dahili ESDT (Elrond Standart Dijital Token) desteği ve daha birçok işlevi eklemek için çalışıyoruz.",
-        "website" : "İnternet Ölçeğinde Blok Zinciri"
       }
     }
   },
@@ -4303,6 +4343,11 @@
         "redelegate" : "Yetkisi iptal edilen varlıkların kullanılabilir bakiyeye geri dönmesi için 21 gün beklemeniz gerekir.",
         "undelegate" : "Yetkisi iptal edilen varlıkların kullanılabilir bakiyeye geri dönmesi için 21 gün beklemeniz gerekir."
       },
+      "osmosis" : {
+        "claimReward" : "Seçilen doğrulayıcıda bekleyen ödüller varsa ödüller otomatik olarak alınır.",
+        "redelegate" : "Yetkisi iptal edilen varlıkların kullanılabilir bakiyeye geri dönmesi için 14 gün beklemeniz gerekir.",
+        "undelegate" : "Yetkisi iptal edilen varlıkların kullanılabilir bakiyeye geri dönmesi için 14 gün beklemeniz gerekir."
+      },
       "lending" : "Göndermeden önce işlem bilgilerini cihazınızdan doğrulayın."
     },
     "amount" : "Tutar",
@@ -4312,6 +4357,7 @@
     "redelegationAmount" : "Yetkisi devredilen tutar",
     "gas" : "Gas",
     "validatorAddress" : "Doğrulayıcı adresi",
+    "validatorName" : "Doğrulayıcı adı",
     "rewardAmount" : "Ödül tutarı",
     "undelegatedAmount" : "Yetkisi iptal edilen tutar",
     "memo" : "Memo"
@@ -4341,7 +4387,7 @@
       "tabTitle" : "Satın Al",
       "selectCurrency" : "Bir para birimi seçin",
       "selectAccount" : "Bir hesap seçin",
-      "wantToBuy" : "Satın almak istiyorum",
+      "wantToBuy" : "Almak istediğim varlık:",
       "connectDevice" : "Cihazınızı bağlayın",
       "title" : "Ortağımız üzerinden kripto satın alın",
       "coinifyTitle" : "Ortağımız üzerinden kripto satın alın",

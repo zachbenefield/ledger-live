@@ -323,6 +323,14 @@
     "InvalidRecipient" : {
       "title" : "无效的接收方"
     },
+    "LanguageInstallRefusedOnDevice" : {
+      "title" : "语言安装被设备端拒绝",
+      "description" : "请重试。如果问题依旧存在，请使用下面的按钮保存您的日志，并将其提供给 Ledger 客服。"
+    },
+    "LanguageNotFound" : {
+      "title" : "未找到语言",
+      "description" : "未找到您尝试安装的语言。请尝试安装其他语言。"
+    },
     "LatestMCUInstalledError" : {
       "title" : "对不起，没有可更新的内容",
       "description" : "如果设备无法使用，请联系 Ledger 客服。"
@@ -1750,7 +1758,8 @@
       "validatorsCount" : "验证者 ({{number}})",
       "storageLimit" : "存储空间限制",
       "gasLimit" : "矿工费限值",
-      "id" : "Id"
+      "id" : "Id",
+      "autoClaimedRewards" : "自动领取的奖励"
     },
     "multipleAddresses" : "为什么有多个地址？",
     "tokenName" : "代币名称",
@@ -1771,6 +1780,17 @@
     "subaccountCount_plural" : "+{{count}} 个子账户"
   },
   "account" : {
+    "subHeader" : {
+      "moreInfo" : "更多信息",
+      "cardTitle" : "由 {{team}} 提供支持",
+      "drawer" : {
+        "title" : "{{family}} 集成",
+        "subTitle" : "{{family}} 集成已由 {{team}} 团队完成",
+        "description" : "Ledger Live 是一个开源平台。",
+        "description2" : "全球各地的开发者都可以与我们的 Ledger Live 相集成",
+        "description3" : "此集成由 {{team}} 与 Ledger 协作实施。"
+      }
+    },
     "tokens" : {
       "contractAddress" : "合约地址",
       "viewInExplorer" : "在浏览器中查看",
@@ -2169,6 +2189,15 @@
       "customManifest" : {
         "title" : "加载自定义平台清单"
       }
+    },
+    "debug" : {
+      "featureFlagsTitle" : "Ledger Live 中使用的已定义功能标志",
+      "featureFlagsDesc" : "如果重新启动应用程序，将重置覆盖的值。仅接受有效的 JSON 字符串。",
+      "featureFlagsOverride" : "覆盖",
+      "featureFlagsEdit" : "编辑",
+      "featureFlagsRestore" : "重置",
+      "featureFlagsDisplayValue" : "显示值",
+      "featureFlagsHideValue" : "隐藏值"
     }
   },
   "notifications" : {
@@ -2405,7 +2434,7 @@
       },
       "payoutModal" : {
         "title" : "支出费用",
-        "description" : "支出费用不显示在设备上并被从该数额中扣除。",
+        "description" : "支付费用不会显示在设备上并从金额中扣除。",
         "cta" : "关闭"
       },
       "pendingOperation" : {
@@ -3431,6 +3460,19 @@
       "de" : "Deutsch"
     }
   },
+  "deviceLocalization" : {
+    "language" : "语言",
+    "deviceLanguage" : "设备语言",
+    "changeLanguage" : "更改语言",
+    "allowLanguageInstallation" : "允许安装语言",
+    "languageInstalled" : "设备语言已更改为 {{language}}",
+    "installingLanguage" : "正在安装语言",
+    "languages" : {
+      "english" : "English",
+      "french" : "Français",
+      "spanish" : "Español"
+    }
+  },
   "FirmwareUpdateCheckId" : {
     "title" : "标识符（identifier）",
     "description" : "如果您的 {{fullDeviceName}} 上显示了同样的标识符，请同时按下两个按钮："
@@ -3537,6 +3579,31 @@
       "available" : {
         "title" : "CELO 可用",
         "description" : "该数额可自由支配。"
+      }
+    }
+  },
+  "osmosis" : {
+    "info" : {
+      "available" : {
+        "title" : "OSMO 现已推出"
+      },
+      "delegated" : {
+        "description" : "委托资产用于 Osmosis 投票。这是您的总得票数。"
+      },
+      "undelegating" : {
+        "description" : "取消委托的资产在 14 天锁定期才能使用。"
+      }
+    },
+    "delegation" : {
+      "flow" : {
+        "steps" : {
+          "starter" : {
+            "description" : "委托 OSMO 可安全赚取奖励，时刻掌控您的资产。",
+            "steps" : {
+              "1" : "取消委托过程必须等待 14 天才能完成。"
+            }
+          }
+        }
       }
     }
   },
@@ -3740,33 +3807,6 @@
             "broadcastError" : "您的交易可能已失败。请稍候片刻并在重试之前查看交易记录。"
           }
         }
-      }
-    }
-  },
-  "cryptoOrg" : {
-    "account" : {
-      "subHeader" : {
-        "cardTitle" : "由 Crypto.org 提供支持",
-        "moreInfo" : "更多信息",
-        "drawerTitle" : "Crypto.org 集成",
-        "title" : "Crypto.org (CRO) 代币现在可以在 Ledger Live 上使用",
-        "description" : "您现在可以开始管理您的 Crypto.org (CRO) 代币，并通过 Ledger Live 保护它们。",
-        "description2" : "Crypto.org (CRO) 代币是 Crypto.org 链的原生币种，用于所有交易、质押和许多即将到来的功能。",
-        "website" : "每个钱包里的加密货币"
-      }
-    }
-  },
-  "elrond" : {
-    "account" : {
-      "subHeader" : {
-        "cardTitle" : "由 Elrond 提供支持",
-        "drawerTitle" : "Elrond 集成",
-        "moreInfo" : "更多信息",
-        "title" : "Elrond eGold (EGLD) 代币现已在 Ledger Live 上可用",
-        "description" : "您现在可以安全地保护您的 eGold (EGLD) 代币，并通过 Ledger Live 管理它们。",
-        "description2" : "Elrond eGold (EGLD) 代币是 Elrond 网络的原生代币，将被用于交易、权益质押、智能合约、治理和验证者奖励等各个方面。",
-        "description3" : "我们正在积极与 Elrond 团队合作，以增加更多的功能，如权益质押、原生 ESDT（Elrond 标准数字代币）支持等。",
-        "website" : "互联网规模的区块链"
       }
     }
   },
@@ -4303,6 +4343,11 @@
         "redelegate" : "资产解除委托后，需要等待 21 天才能返还到可用余额。",
         "undelegate" : "资产解除委托后，需要等待 21 天才能返还到可用余额。"
       },
+      "osmosis" : {
+        "claimReward" : "如果已选的验证者有待领取的奖励，它们将被自动申领。",
+        "redelegate" : "取消委托的资产必须等待 14 天才能返还至可用余额。",
+        "undelegate" : "取消委托的资产必须等待 14 天才能返还至可用余额。"
+      },
       "lending" : "发送之前，请在您的设备上核对操作详情。"
     },
     "amount" : "数额",
@@ -4312,6 +4357,7 @@
     "redelegationAmount" : "已重新委托数额",
     "gas" : "Gas",
     "validatorAddress" : "验证者地址",
+    "validatorName" : "验证者名称",
     "rewardAmount" : "奖励金额",
     "undelegatedAmount" : "已解除委托的数额",
     "memo" : "Memo"

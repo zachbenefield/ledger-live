@@ -323,6 +323,14 @@
     "InvalidRecipient" : {
       "title" : "Bénéficiaire non valide"
     },
+    "LanguageInstallRefusedOnDevice" : {
+      "title" : "Installation de la langue refusée sur l’appareil",
+      "description" : "Veuillez réessayer. Si le problème persiste, enregistrez vos logs en utilisant le bouton ci-dessous et transmettez-les à l’Assistance Ledger."
+    },
+    "LanguageNotFound" : {
+      "title" : "Langue non trouvée",
+      "description" : "Impossible de trouver la langue que vous souhaitez installer. Veuillez essayer d’installer une autre langue."
+    },
     "LatestMCUInstalledError" : {
       "title" : "Pas de mise à jour disponible",
       "description" : "Si vous ne pouvez pas utiliser votre appareil, contactez l’Assistance Ledger."
@@ -832,7 +840,7 @@
       "lido" : {
         "title" : "Staking d’ETH avec Lido",
         "description" : "Gagnez des récompenses en mettant vos ETH en staking sur Lido.",
-        "cta" : "Staker dès aujourd’hui"
+        "cta" : "Staker maintenant"
       },
       "market" : {
         "title" : "Marché des cryptos",
@@ -862,7 +870,7 @@
       }
     },
     "enjoy" : {
-      "title" : "Notez l’app",
+      "title" : "On est ravis",
       "description" : "Nous vous invitons à partager votre avis. Votre soutien nous est précieux et nous encourage à développer de nouvelles fonctionnalités.",
       "cta" : {
         "rate" : "Noter 5 étoiles",
@@ -966,7 +974,7 @@
       },
       "mint" : {
         "title" : "Minter",
-        "desc" : "Mintez et acquérez les NFT de collaborations exclusives sur [ L ] Market"
+        "desc" : "Mintez et acquérez les NFT de collaborations exclusives sur le [ L ] Market."
       }
     },
     "comingSoon" : "Prochainement",
@@ -1084,7 +1092,7 @@
       "2" : {
         "label" : "Les bases",
         "title" : "Restez hors ligne",
-        "desc" : "Achetez, vendez, gérez, échangez et gagnez des cryptos en toute sécurité sur Ledger Live. Vous devez valider chaque transaction en cryptos avec votre Nano."
+        "desc" : "Achetez, vendez, gérez, échangez et gagnez des cryptos en toute sécurité sur Ledger Live. Vous devez valider chaque transaction de cryptos avec votre Nano."
       },
       "3" : {
         "label" : "Les bases",
@@ -1750,7 +1758,8 @@
       "validatorsCount" : "Validateurs ({{number}})",
       "storageLimit" : "Limite de stockage",
       "gasLimit" : "Limite de gaz",
-      "id" : "Identifiant (ID)"
+      "id" : "Identifiant (ID)",
+      "autoClaimedRewards" : "Récompenses automatiques"
     },
     "multipleAddresses" : "Pourquoi plusieurs adresses ?",
     "tokenName" : "Nom du token",
@@ -1771,6 +1780,17 @@
     "subaccountCount_plural" : "+{{count}} sous-comptes"
   },
   "account" : {
+    "subHeader" : {
+      "moreInfo" : "Plus d’informations",
+      "cardTitle" : "Propulsé par {{team}}",
+      "drawer" : {
+        "title" : "Intégration :{{family}}",
+        "subTitle" : "L’intégration {{family}} a été réalisée par l’équipe {{team}}.",
+        "description" : "Ledger Live est une plateforme open source.",
+        "description2" : "Les développeurs du monde entier peuvent intégrer et construire sur Ledger Live.",
+        "description3" : "Cette intégration a été réalisée par {{team}} en collaboration avec Ledger."
+      }
+    },
     "tokens" : {
       "contractAddress" : "Adresse du contrat",
       "viewInExplorer" : "Dans l’explorateur",
@@ -2094,7 +2114,7 @@
     },
     "about" : {
       "title" : "À propos",
-      "desc" : "Informations, Conditions d’utilisation et Politique de confidentialité de l’app",
+      "desc" : "Informations, Conditions d’utilisation et Politique de confidentialité de l’app.",
       "appDescription" : "Protégez, achetez, vendez, échangez, faites fructifier et gérez vos cryptos avec Ledger Live. La plateforme tout-en-un.",
       "appVersion" : "Version",
       "termsConditions" : "Conditions d’utilisation",
@@ -2169,6 +2189,15 @@
       "customManifest" : {
         "title" : "Charger un manifest personnalisé pour Platform"
       }
+    },
+    "debug" : {
+      "featureFlagsTitle" : "Indicateurs de fonctionnalités (feature flags) définis et utilisés dans Ledger Live",
+      "featureFlagsDesc" : "Les valeurs remplacées seront réinitialisées lorsque l’application sera relancée. Seules les chaînes JSON valides sont acceptées.",
+      "featureFlagsOverride" : "Remplacer",
+      "featureFlagsEdit" : "Modifier",
+      "featureFlagsRestore" : "Restaurer",
+      "featureFlagsDisplayValue" : "Afficher le code",
+      "featureFlagsHideValue" : "Masquer le code"
     }
   },
   "notifications" : {
@@ -3431,6 +3460,19 @@
       "de" : "Allemand"
     }
   },
+  "deviceLocalization" : {
+    "language" : "Langue",
+    "deviceLanguage" : "Langue de l’appareil",
+    "changeLanguage" : "Changer la langue",
+    "allowLanguageInstallation" : "Confirmez l’ajout de la langue",
+    "languageInstalled" : "Votre appareil est maintenant en {{language}}.",
+    "installingLanguage" : "Installation de la langue",
+    "languages" : {
+      "english" : "English",
+      "french" : "Français",
+      "spanish" : "Español"
+    }
+  },
   "FirmwareUpdateCheckId" : {
     "title" : "Identifiant",
     "description" : "Merci d’appuyer sur les deux boutons simultanément sur votre {{fullDeviceName}} si le même identifiant apparaît :"
@@ -3540,6 +3582,31 @@
       }
     }
   },
+  "osmosis" : {
+    "info" : {
+      "available" : {
+        "title" : "OSMO disponibles"
+      },
+      "delegated" : {
+        "description" : "Les actifs délégués sont utilisés pour voter sur Osmosis. Cela représente votre nombre total de votes."
+      },
+      "undelegating" : {
+        "description" : "Les actifs dont la délégation est interrompue sont disponibles après 14 jours."
+      }
+    },
+    "delegation" : {
+      "flow" : {
+        "steps" : {
+          "starter" : {
+            "description" : "Déléguez vos OSMO pour gagner des récompenses en toute sécurité en gardant le contrôle de vos actifs.",
+            "steps" : {
+              "1" : "Vous devrez attendre 14 jours pour que l’interruption de délégation soit terminée."
+            }
+          }
+        }
+      }
+    }
+  },
   "cosmos" : {
     "info" : {
       "available" : {
@@ -3552,7 +3619,7 @@
       },
       "undelegating" : {
         "title" : "Délégation interrompue",
-        "description" : "Les actifs dont la délégation est interrompue sont immobilisés pendant 21 jours avant d’être disponibles."
+        "description" : "Les actifs dont la délégation est interrompue sont disponibles après 21 jours."
       },
       "delegationUnavailable" : {
         "title" : "Délégation indisponible",
@@ -3595,7 +3662,7 @@
               "2" : "Déléguez en toute sécurité avec votre appareil Ledger."
             },
             "warning" : {
-              "description" : "Choisissez votre validateur judicieusement : une partie de vos actifs délégués peut être perdue si le validateur ne se comporte pas correctement."
+              "description" : "Choisissez votre validateur judicieusement : vous pouvez perdre une partie de vos actifs délégués si le validateur ne respecte pas les règles."
             },
             "cta" : "Continuer"
           },
@@ -3740,33 +3807,6 @@
             "broadcastError" : "Échec probable de votre transaction. Patientez un instant puis vérifiez l’historique des transactions avant de réessayer."
           }
         }
-      }
-    }
-  },
-  "cryptoOrg" : {
-    "account" : {
-      "subHeader" : {
-        "cardTitle" : "Propulsé par Crypto.org",
-        "moreInfo" : "Plus d’informations",
-        "drawerTitle" : "Intégration de Crypto.org",
-        "title" : "Le token Crypto.org (CRO) désormais disponible sur Ledger Live",
-        "description" : "Vous pouvez maintenant gérer et sécuriser vos tokens Crypto.org (CRO) via Ledger Live.",
-        "description2" : "Le token Crypto.org (CRO) est natif de la Crypto.org Chain. Vous pouvez l’utiliser pour réaliser des transactions, le staking et de nombreuses fonctionnalités à venir.",
-        "website" : "Cryptocurrency in Every Wallet"
-      }
-    }
-  },
-  "elrond" : {
-    "account" : {
-      "subHeader" : {
-        "cardTitle" : "Propulsé par Elrond",
-        "drawerTitle" : "Intégration d’Elrond",
-        "moreInfo" : "Plus d’informations",
-        "title" : "Le token Elrond eGold (EGLD) désormais disponible sur Ledger Live",
-        "description" : "Vous pouvez maintenant sécuriser et gérer vos tokens eGold (EGLD) via Ledger Live.",
-        "description2" : "Le token Elrond eGold (EGLD) est natif au réseau Elrond. Il est utilisé pour les transactions, le staking, les contrats intelligents, la gouvernance et les récompenses de validateur.",
-        "description3" : "Nous travaillons avec l’équipe d’Elrond pour ajouter plus de fonctionnalités, comme le staking, la prise en charge native d’ESDT (Elrond Standard Digital Token), et bien plus.",
-        "website" : "The Internet Scale Blockchain"
       }
     }
   },
@@ -4303,6 +4343,11 @@
         "redelegate" : "Vous devrez attendre 21 jours pour que les actifs non délégués soient versés sur votre solde disponible.",
         "undelegate" : "Vous devrez attendre 21 jours pour que les actifs non délégués soient versés sur votre solde disponible."
       },
+      "osmosis" : {
+        "claimReward" : "Si le validateur sélectionné a des récompenses en attente, elles seront automatiquement demandées.",
+        "redelegate" : "Vous devrez attendre 14 jours pour que les actifs non délégués soient versés sur votre solde disponible.",
+        "undelegate" : "Vous devrez attendre 14 jours pour que les actifs non délégués soient versés sur votre solde disponible."
+      },
       "lending" : "Vérifiez les détails de l’opération sur votre appareil avant de l’envoyer."
     },
     "amount" : "Montant",
@@ -4312,6 +4357,7 @@
     "redelegationAmount" : "Montant redélégué",
     "gas" : "Gaz",
     "validatorAddress" : "Adresse du validateur",
+    "validatorName" : "Nom du validateur",
     "rewardAmount" : "Montant de la récompense",
     "undelegatedAmount" : "Montant de la délégation interrompue",
     "memo" : "Mémo"
