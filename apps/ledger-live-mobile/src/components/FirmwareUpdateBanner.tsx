@@ -1,11 +1,10 @@
 import React, { useState, useCallback } from "react";
-import { Platform } from "react-native";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import { DeviceModelInfo } from "@ledgerhq/types-live";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import { Alert, BottomDrawer, Text } from "@ledgerhq/native-ui";
-import { DownloadMedium, UsbMedium } from "@ledgerhq/native-ui/assets/icons";
+import { UsbMedium, BluetoothMedium } from "@ledgerhq/native-ui/assets/icons";
 import { getDeviceModel } from "@ledgerhq/devices";
 import { useFeature } from "@ledgerhq/live-common/featureFlags/index";
 import { StackNavigationProp } from "@react-navigation/stack";
@@ -49,7 +48,7 @@ const FirmwareUpdateBanner = () => {
     }
 
     setShowDrawer(false);
-  }, [navigation]);
+  }, [navigation, route.name]);
 
   const latestFirmware = useLatestFirmware(lastSeenDevice?.deviceInfo);
   const showBanner = Boolean(latestFirmware);
@@ -63,6 +62,8 @@ const FirmwareUpdateBanner = () => {
   };
 
   const usbFwUpdateFeatureFlag = useFeature("llmUsbFirmwareUpdate");
+  // const bleFwUpdateFeatureFlag = useFeature("bleFwUpdateFeatureFlag"); // TODO
+
   const isUsbFwVersionUpdateSupported =
     lastSeenDevice &&
     isFirmwareUpdateVersionSupported(
@@ -71,9 +72,7 @@ const FirmwareUpdateBanner = () => {
     );
   const isDeviceConnectedViaUSB = lastConnectedDevice?.wired === true;
   const usbFwUpdateActivated =
-    usbFwUpdateFeatureFlag?.enabled &&
-    Platform.OS === "android" &&
-    isUsbFwVersionUpdateSupported;
+    usbFwUpdateFeatureFlag?.enabled && isUsbFwVersionUpdateSupported;
 
   const fwUpdateActivatedButNotWired =
     usbFwUpdateActivated && !isDeviceConnectedViaUSB;
@@ -97,9 +96,7 @@ const FirmwareUpdateBanner = () => {
           type="color"
           title={t("FirmwareUpdate.update")}
           onPress={
-            usbFwUpdateActivated && isDeviceConnectedViaUSB
-              ? onExperimentalFirmwareUpdate
-              : onPress
+            usbFwUpdateActivated ? onExperimentalFirmwareUpdate : onPress
           }
           outline={false}
         />
@@ -108,19 +105,14 @@ const FirmwareUpdateBanner = () => {
       <BottomDrawer
         isOpen={showDrawer}
         onClose={onCloseDrawer}
-        Icon={fwUpdateActivatedButNotWired ? UsbMedium : DownloadMedium}
-        title={
-          fwUpdateActivatedButNotWired
-            ? t("FirmwareUpdate.drawerUpdate.pleaseConnectUsbTitle")
-            : t("FirmwareUpdate.drawerUpdate.title")
-        }
-        description={
-          fwUpdateActivatedButNotWired
-            ? t("FirmwareUpdate.drawerUpdate.pleaseConnectUsbDescription", {
-                deviceName,
-              })
-            : t("FirmwareUpdate.drawerUpdate.description")
-        }
+        Icon={fwUpdateActivatedButNotWired ? UsbMedium : BluetoothMedium}
+        title={t("FirmwareUpdate.drawerUpdate.title")}
+        description={t(
+          "FirmwareUpdate.drawerUpdate.pleaseConnectUsbDescription",
+          {
+            deviceName,
+          },
+        )}
         noCloseButton
       >
         <Button

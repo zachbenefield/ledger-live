@@ -164,10 +164,7 @@ class ChooseDevice extends Component<
   }
 
   render() {
-    const {
-      isFocused,
-      route: { params = {} },
-    } = this.props;
+    const { isFocused } = this.props;
     const { showMenu, device } = this.state;
 
     if (!isFocused) return null;
@@ -182,7 +179,6 @@ class ChooseDevice extends Component<
           <Trans i18nKey="manager.connect" />
         </Text>
         <SelectDevice
-          usbOnly={params?.firmwareUpdate}
           autoSelectOnAdd
           onSelect={this.onSelectDevice}
           onStepEntered={this.onStepEntered}
