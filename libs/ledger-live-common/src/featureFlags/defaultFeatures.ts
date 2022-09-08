@@ -118,4 +118,7 @@ export const defaultFeatures: DefaultFeatures = {
   mockFeature: {
     enabled: false,
   },
+  llmBLEFirmwareUpdate: {
+    enabled: false,
+  },
 };

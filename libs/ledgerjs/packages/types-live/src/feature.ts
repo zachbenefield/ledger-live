@@ -4,6 +4,7 @@ export type FeatureId =
   | "bim"
   | "pushNotifications"
   | "llmUsbFirmwareUpdate"
+  | "llmBLEFirmwareUpdate"
   | "ratings"
   | "counterValue"
   | "deviceLocalization"
