@@ -1,10 +1,9 @@
+import { by, element } from "detox";
 import * as testHelpers from "../../helpers";
 
 export default class GeneralSettingsPage {
   static async togglePassword() {
-    await element(by.id("password-settings-switch"))
-      .atIndex(0)
-      .tap();
+    await element(by.id("password-settings-switch")).atIndex(0).tap();
   }
 
   static async enterNewPassword(passwordText) {

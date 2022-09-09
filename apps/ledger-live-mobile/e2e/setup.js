@@ -1,3 +1,4 @@
+import { device } from "detox";
 import { execSync } from "child_process";
 import * as bridge from "./bridge/server";
 

@@ -1,3 +1,4 @@
+import { device } from "detox";
 import PortfolioPage from "../models/portfolioPage";
 import SettingsPage from "../models/settings/settingsPage";
 import GeneralSettingsPage from "../models/settings/generalSettingsPage";

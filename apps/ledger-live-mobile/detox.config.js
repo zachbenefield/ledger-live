@@ -11,7 +11,7 @@ module.exports = {
     // NOTE: https://github.com/wix/Detox/blob/master/docs/APIRef.Configuration.md#behavior-configuration
     init: {
       reinstallApp: true,
-      exposeGlobals: true,
+      exposeGlobals: false,
     },
     launchApp: "auto",
     cleanup: {
