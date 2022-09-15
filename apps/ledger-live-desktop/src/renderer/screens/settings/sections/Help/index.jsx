@@ -43,12 +43,6 @@ const SectionHelp = () => {
           <ExportLogsBtn />
         </Row>
         <Row
-          title={t("settings.profile.launchOnboarding")}
-          desc={t("settings.profile.launchOnboardingDesc")}
-        >
-          <LaunchOnboardingBtn />
-        </Row>
-        <Row
           title={t("settings.openUserDataDirectory.title")}
           desc={t("settings.openUserDataDirectory.desc")}
         >
