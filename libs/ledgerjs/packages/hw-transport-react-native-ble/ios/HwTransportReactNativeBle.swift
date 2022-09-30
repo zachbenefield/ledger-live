@@ -92,6 +92,27 @@ class HwTransportReactNativeBle: RCTEventEmitter {
             }
         }
     }
+
+    @objc func getPendingQueue(
+        _ resolve: @escaping RCTPromiseResolveBlock,
+          reject: @escaping RCTPromiseRejectBlock
+    ) -> Void {
+        let defaults = UserDefaults.standard
+        let maybeRawQueue = defaults.object(forKey: "rawQueue")
+        let maybeIndex = defaults.object(forKey: "index")
+        print("wadus resolving getPendingQueue", maybeRawQueue, maybeIndex)
+        resolve([maybeRawQueue, maybeIndex])
+    }
+    
+    @objc func dismissPendingQueue(
+        _ resolve: @escaping RCTPromiseResolveBlock,
+          reject: @escaping RCTPromiseRejectBlock
+    ) -> Void {
+        let defaults = UserDefaults.standard
+        defaults.set(nil, forKey: "rawQueue")
+        defaults.set(nil, forKey: "index")
+        resolve(true)
+    }
     
     @objc func isConnected(
         _ resolve: @escaping RCTPromiseResolveBlock,
@@ -106,6 +127,9 @@ class HwTransportReactNativeBle: RCTEventEmitter {
         resolve: @escaping RCTPromiseResolveBlock,
         reject: @escaping RCTPromiseRejectBlock
     ) -> Void {
+        let defaults = UserDefaults.standard
+        print("wadus reading rawQueue and index", defaults.object(forKey: "rawQueue") ?? "no tasks", defaults.integer(forKey: "index") ?? "no index")
+        
         if !BleTransport.shared.isBluetoothAvailable {
             reject(TransportError.bluetoothRequired.rawValue, "", nil)
             return

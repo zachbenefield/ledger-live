@@ -38,6 +38,7 @@ type Props = {
       searchQuery?: string;
       firmwareUpdate?: boolean;
       appsToRestore?: string[];
+      appsToRemove?: string[];
       updateModalOpened?: boolean;
       tab: ManagerTab;
     };
@@ -52,12 +53,18 @@ const Manager = ({ navigation, route }: Props) => {
     searchQuery,
     firmwareUpdate,
     appsToRestore,
+    appsToRemove,
     updateModalOpened,
     tab = "CATALOG",
   } = route.params;
 
   const { deviceId, deviceName, modelId } = device;
-  const [state, dispatch] = useApps(result, deviceId, appsToRestore);
+  const [state, dispatch] = useApps(
+    result,
+    deviceId,
+    appsToRestore,
+    appsToRemove,
+  );
   const reduxDispatch = useDispatch();
 
   const refreshDeviceInfo = useCallback(() => {

@@ -28,6 +28,7 @@ import globalSyncRefreshControl from "../../components/globalSyncRefreshControl"
 
 import GraphCardContainer from "./GraphCardContainer";
 import Carousel from "../../components/Carousel";
+import MaybeBrokenBackgroundQueue from "../../components/MaybeBrokenBackgroundQueue";
 import Header from "./Header";
 import TrackScreen from "../../analytics/TrackScreen";
 import MigrateAccountsBanner from "../MigrateAccounts/Banner";
@@ -321,6 +322,7 @@ function PortfolioScreen({ navigation }: Props) {
           }
         />
         <MigrateAccountsBanner />
+        <MaybeBrokenBackgroundQueue />
       </TabBarSafeAreaView>
     </>
   );

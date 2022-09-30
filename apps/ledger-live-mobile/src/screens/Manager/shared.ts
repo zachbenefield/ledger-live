@@ -7,6 +7,7 @@ export function useApps(
   listAppsRes: ListAppsResult,
   deviceId: string,
   appsToRestore?: string[],
+  appsToRemove?: string[],
 ) {
   const exec: Exec = useCallback(
     (...args) =>
@@ -14,5 +15,11 @@ export function useApps(
     [deviceId],
   );
 
-  return useAppsRunner(listAppsRes, exec, appsToRestore, deviceId);
+  return useAppsRunner(
+    listAppsRes,
+    exec,
+    appsToRestore,
+    appsToRemove,
+    deviceId,
+  );
 }

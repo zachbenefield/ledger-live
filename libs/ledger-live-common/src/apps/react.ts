@@ -19,10 +19,11 @@ export const useAppsRunner = (
   listResult: ListAppsResult,
   exec: Exec,
   appsToRestore?: string[],
+  appsToRemove?: string[],
   deviceId?: string
 ): UseAppsRunnerResult => {
   const [state, dispatch] = useReducer(reducer, null, () =>
-    initState(listResult, appsToRestore)
+    initState(listResult, appsToRestore, appsToRemove)
   );
   const nextAppOp = useMemo(() => getNextAppOp(state), [state]);
   const appOp = state.currentAppOp || nextAppOp;

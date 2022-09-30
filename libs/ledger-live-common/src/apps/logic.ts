@@ -26,7 +26,8 @@ export const initState = (
     appByName,
     ...listAppsResult
   }: ListAppsResult,
-  appsToRestore?: string[]
+  appsToRestore?: string[],
+  appsToRemove?: string[]
 ): State => {
   let state: State = {
     ...listAppsResult,
@@ -42,6 +43,21 @@ export const initState = (
     currentError: null,
     currentAppOp: null,
   };
+
+  if (appsToRemove) {
+    state = appsToRemove
+      .filter(
+        (name) => appByName[name] && installed.some((a) => a.name === name)
+      )
+      .map(
+        (name) =>
+          <Action>{
+            type: "uninstall",
+            name,
+          }
+      )
+      .reduce(reducer, state);
+  }
 
   if (appsToRestore) {
     state = appsToRestore

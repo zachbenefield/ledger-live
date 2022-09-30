@@ -198,6 +198,28 @@ class Ble extends Transport {
     };
   };
 
+  static getPendingQueue = async (): Promise<string> => {
+    const [rawQueue, maybeIndex] = await NativeBle.getPendingQueue();
+    if (rawQueue) {
+      const tasksData = JSON.parse(rawQueue);
+
+      const readableQueue = tasksData?.tasks
+        .map(({ operation, appName }) => ({
+          operation,
+          appName,
+        }))
+        .slice(maybeIndex);
+      return readableQueue;
+    }
+
+    return [];
+  };
+
+  static dismissPendingQueue = async (): Promise<boolean> => {
+    await NativeBle.dismissPendingQueue();
+    return true;
+  };
+
   static listen = (
     observer: Observer<DescriptorEvent<unknown>>
   ): Subscription => {

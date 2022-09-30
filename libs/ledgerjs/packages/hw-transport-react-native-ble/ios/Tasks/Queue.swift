@@ -124,6 +124,11 @@ class Queue: NSObject  {
      */
     private func startNextRunner() -> Void {
         self.item = self.tasks.tasks[self.index]
+
+        let defaults = UserDefaults.standard
+        defaults.set(self.rawQueue, forKey: "rawQueue")
+        defaults.set(self.index, forKey: "index")
+        
         if let item = self.item {
             EventEmitter.sharedInstance.dispatch(
                 Payload(
@@ -200,6 +205,10 @@ class Queue: NSObject  {
                 self.startNextRunner()
                 print("Token modified, try to get next one ignoring the HSM message")
             } else {
+                let defaults = UserDefaults.standard
+                defaults.set(nil, forKey: "rawQueue")
+                defaults.set(nil, forKey: "index")
+
                 self.runner?.endBackgroundTask()
                 self.runner = nil
                 EventEmitter.sharedInstance.dispatch(
