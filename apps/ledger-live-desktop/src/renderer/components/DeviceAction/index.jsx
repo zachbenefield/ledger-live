@@ -17,6 +17,7 @@ import type { DeviceModelId } from "@ledgerhq/devices";
 import AutoRepair from "~/renderer/components/AutoRepair";
 import TransactionConfirm from "~/renderer/components/TransactionConfirm";
 import SignMessageConfirm from "~/renderer/components/SignMessageConfirm";
+import { PlaygroundControls } from "~/renderer/Playground";
 import useTheme from "~/renderer/hooks/useTheme";
 import { ManagerNotEnoughSpaceError, UpdateYourApp, TransportStatusError } from "@ledgerhq/errors";
 import {
@@ -125,6 +126,10 @@ const DeviceAction = <R, H, P>({
     initSellResult,
     initSellError,
     signMessageRequested,
+
+    lastRequest,
+    lastResponse,
+    subject,
   } = hookState;
 
   const type = useTheme("colors.palette.type");
@@ -148,6 +153,27 @@ const DeviceAction = <R, H, P>({
       dispatch(setLastSeenDeviceInfo({ lastSeenDevice, latestFirmware }));
     }
   }, [dispatch, device, deviceInfo, latestFirmware]);
+
+  useEffect(() => {
+    console.log("state updated", hookState);
+  }, [hookState]);
+
+  if (lastRequest || lastResponse) {
+    return (
+      <div>
+        <h1>{"Open bidirectional channel"}</h1>
+        <PlaygroundControls subject={subject} />
+        <p>
+          {"Last request:"}
+          {lastRequest}
+        </p>
+        <p>
+          {"Last response:"}
+          {lastResponse}
+        </p>
+      </div>
+    );
+  }
 
   if (displayUpgradeWarning && appAndVersion) {
     return renderWarningOutdated({ appName: appAndVersion.name, passWarning });

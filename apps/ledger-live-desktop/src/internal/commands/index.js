@@ -26,6 +26,7 @@ import getTransactionId from "./getTransactionId";
 import scanDescriptors from "./scanDescriptors";
 import installLanguage from "./installLanguage";
 import getAppAndVersion from "./getAppAndVersion";
+import bidirectionalTest from "./bidirectionalTest";
 import { commands as bridgeProxyCommands } from "~/renderer/bridge/proxy-commands";
 
 export const commandsById = {
@@ -57,6 +58,7 @@ export const commandsById = {
   installLanguage,
   signMessage,
   getAppAndVersion,
+  bidirectionalTest,
 };
 
 export type Commands = typeof commandsById;
