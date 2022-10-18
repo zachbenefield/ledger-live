@@ -5,8 +5,8 @@ export class AccountPage {
   readonly buttonsGroup: Locator;
   readonly settingsButton: Locator;
   readonly buttonSend: Locator;
-  readonly accountRow: Function;
   readonly nftRow: Function;
+  readonly accountRow: Function;
 
   constructor(page: Page) {
     this.page = page;
