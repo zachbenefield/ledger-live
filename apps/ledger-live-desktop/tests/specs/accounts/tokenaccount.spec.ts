@@ -20,7 +20,7 @@ test(`Open token account`, async ({ page }) => {
     await accountPage.goToTokenAccount("USD Coin");
   });
 
-  await test.step(`Verify token account is opened`, async () => {
+  await test.step(`Verify token account is displayed`, async () => {
     await expect.soft(page).toHaveScreenshot(`token-success.png`);
   });
 });
