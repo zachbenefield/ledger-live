@@ -69,11 +69,6 @@ async function init() {
 
     const envs = getLocalStorageEnvs();
     for (const k in envs) setEnvOnAllThreads(k, envs[k]);
-
-    const timemachine = require("timemachine");
-    timemachine.config({
-      dateString: require("../../tests/time").default,
-    });
   }
 
   if (window.localStorage.getItem("hard-reset")) {
