@@ -111,6 +111,7 @@ setSupportedCurrencies([
   "stacks",
   "telos_evm",
   "coreum",
+  "casper",
 ]);
 
 if (Config.VERBOSE) {
