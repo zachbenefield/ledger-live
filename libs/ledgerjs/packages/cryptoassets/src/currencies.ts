@@ -3650,7 +3650,7 @@ export const cryptocurrenciesById: Record<CryptoCurrencyId, CryptoCurrency> = {
       {
         name: "CSPR",
         code: "CSPR",
-        magnitude: 18,
+        magnitude: 9,
       },
     ],
   },
