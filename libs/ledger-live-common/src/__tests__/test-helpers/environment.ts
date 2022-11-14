@@ -90,6 +90,7 @@ setSupportedCurrencies([
   "stacks",
   "telos_evm",
   "coreum",
+  "casper",
 ]);
 
 for (const k in process.env) setEnvUnsafe(k as EnvName, process.env[k]);
