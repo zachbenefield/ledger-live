@@ -3632,7 +3632,7 @@ export const cryptocurrenciesById: Record<CryptoCurrencyId, CryptoCurrency> = {
   casper: {
     name: "Casper",
     ticker: "CSPR",
-    coinType: 506,
+    coinType: CoinType.CSPR,
     color: "#ff0011",
     family: "casper",
     id: "casper",
