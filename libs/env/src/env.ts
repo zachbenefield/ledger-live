@@ -1,5 +1,6 @@
 // TODO: this file will be moved to a @ledgerhq/env library
 import mapValues from "lodash/mapValues";
+import { FIVE_MINUTES_IN_MS } from "@ledgerhq/live-common/src/date-time/constants";
 // set and get environment & config variables
 import { Subject } from "rxjs";
 import { $ElementType } from "utility-types";
@@ -722,7 +723,7 @@ const envDefinitions: Record<string, EnvDef<boolean | string | number | string[]
     desc: "Show a performance overlay on the app UI",
   },
   ETHEREUM_STUCK_TRANSACTION_TIMEOUT: {
-    def: 5 * 60 * 1000,
+    def: FIVE_MINUTES_IN_MS,
     parser: intParser,
     desc: "Time after which an optimisc operation is considered stuck",
   },

@@ -54,6 +54,7 @@ import {
 } from "../types";
 import { TypeRegistry } from "@polkadot/types";
 import { Extrinsics } from "@polkadot/types/metadata/decorate/types";
+import { FIVE_MINUTES_IN_MS } from "@ledgerhq/live-common/src/date-time/constants";
 
 type PaymentInfoParams = {
   a: PolkadotAccount;
@@ -164,7 +165,7 @@ export class PolkadotAPI {
       async (): Promise<Record<string, any>> => sidecarGetTransactionParams(this.network)(),
       () => "polkadot",
       {
-        ttl: 5 * 60 * 1000, // 5 minutes
+        ttl: FIVE_MINUTES_IN_MS,
       },
     );
 
@@ -184,7 +185,7 @@ export class PolkadotAPI {
       },
       ({ a, t, signedTx }) => hashTransactionParams(a, t, signedTx),
       {
-        ttl: 5 * 60 * 1000, // 5 minutes
+        ttl: FIVE_MINUTES_IN_MS,
       },
     );
 
@@ -198,7 +199,7 @@ export class PolkadotAPI {
       async (address): Promise<boolean> => sidecarIsControllerAddress(this.network)(address),
       address => address,
       {
-        ttl: 5 * 60 * 1000, // 5 minutes
+        ttl: FIVE_MINUTES_IN_MS,
       },
     );
 
