@@ -105,6 +105,7 @@ export type Operation = {
   // Operations related to ERC721 | ERC1155 tokens
   nftOperations?: Operation[];
   transactionRaw?: TransactionCommonRaw;
+  consensusTimeStamp?: string;
 };
 
 /**
@@ -139,6 +140,7 @@ export type OperationRaw = {
   // Operations related to ERC721 | ERC1155 tokens
   nftOperations?: OperationRaw[];
   transactionRaw?: TransactionCommonRaw;
+  consensusTimeStamp?: string;
 };
 
 /**
