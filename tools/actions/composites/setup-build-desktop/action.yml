@@ -24,6 +24,11 @@ runs:
       with:
         server-token: "yolo"
         cleanup-cache-folder: "true"
+    - name: echo pnpm stuffs
+      run: |
+        which pnpm
+        pnpm store path
+      shell: bash
     - name: install dependencies
       if: ${{ inputs.os != 'mac' }}
       run: pnpm i --filter="ledger-live-desktop..." --filter="ledger-live" --unsafe-perm

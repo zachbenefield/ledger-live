@@ -43,6 +43,11 @@ runs:
       run: |
         npm i -g npm
       shell: bash
+    - name: echo some stuffs
+      run: |
+        which pnpm
+        pnpm store path
+      shell: bash
 
     # Using the proto toolchain manager:
     # - name: Setup proto
