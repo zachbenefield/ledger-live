@@ -5127,6 +5127,9 @@
       "title" : "{{currencyName}} não é compatível",
       "description" : "Este criptoativo ainda não é compatível. Entre em contato com o Suporte Ledger."
     },
+    "DeviceAlreadySetup" : {
+      "title" : "Seu dispositivo já está configurado com uma Frase de Recuperação Secreta"
+    },
     "DeviceNotGenuine" : {
       "title" : "Possivelmente não autêntico",
       "description" : "Solicitar assistência do Suporte Ledger"
