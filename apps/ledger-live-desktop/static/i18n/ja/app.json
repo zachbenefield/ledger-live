@@ -4348,7 +4348,7 @@
           },
           "4" : {
             "title" : "Ledger Recoverを使用して復元",
-            "description" : "You need to have a Ledger Recover subscription."
+            "description" : "Ledger Recoverの登録が必要です。"
           }
         }
       },
@@ -5126,6 +5126,9 @@
     "CurrencyNotSupported" : {
       "title" : "{{currencyName}} には対応していません。",
       "description" : "この暗号資産には、未対応です。Ledgerサポートにお問合せください。"
+    },
+    "DeviceAlreadySetup" : {
+      "title" : "お客様のデバイスはすでに、シークレットリカバリーフレーズを使用して設定されています"
     },
     "DeviceNotGenuine" : {
       "title" : "正規品でない可能性があります",
