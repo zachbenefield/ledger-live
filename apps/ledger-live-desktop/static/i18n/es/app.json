@@ -276,7 +276,7 @@
     "stars" : "Cuentas destacadas",
     "accounts" : "Cuentas",
     "manager" : "Mi Ledger",
-    "earn" : "Gana",
+    "earn" : "Earn",
     "exchange" : "Comprar / Vender",
     "swap" : "Permutar",
     "refer" : "Refer a friend",
@@ -4298,7 +4298,7 @@
         "nextButton" : "Comenzar",
         "noDevice" : "¿No tienes un dispositivo?",
         "buyLink" : "¿No tienes un dispositivo? Compra un Ledger Nano X",
-        "recoverSignIn" : "Iniciar sesión para acceder a Ledger Recover",
+        "recoverSignIn" : "Iniciar sesión en Ledger Recover",
         "byTapping" : "Al tocar “Comenzar” otorgas tu consentimiento y aceptas nuestros",
         "termsAndConditions" : "Términos y condiciones",
         "and" : "y",
@@ -5126,6 +5126,9 @@
     "CurrencyNotSupported" : {
       "title" : "{{currencyName}} no es compatible",
       "description" : "Todavía no se admite este activo cripto. contacta al Soporte de Ledger."
+    },
+    "DeviceAlreadySetup" : {
+      "title" : "Tu dispositivo ya está configurado con una Frase de Recuperación Secreta"
     },
     "DeviceNotGenuine" : {
       "title" : "Posiblemente no auténtico",
