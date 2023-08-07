@@ -142,7 +142,8 @@
     "connectDevice" : "내 장치 연결하기",
     "add" : "추가",
     "or" : "또는",
-    "clearAll" : "모두 지우기"
+    "clearAll" : "모두 지우기",
+    "buyLedger" : "Ledger 구매"
   },
   "devices" : {
     "nanoS" : "Nano S",
@@ -3902,8 +3903,6 @@
       "experimentalAppsDesc" : "실험적이라 태그 된 플랫폼 앱을 표시하고 허용하세요.",
       "catalogUrl" : "카탈로그 앱 공급자 설정",
       "catalogUrlDesc" : "사용자 지정 카탈로그 제공자 URL를 입력하세요",
-      "catalogRampServer" : "구매 / 판매 공급자 설정",
-      "catalogRampServerDesc" : "다중 거래 공급자 간 전환",
       "enablePlatformDevTools" : "플랫폼 개발자 도구 사용",
       "enablePlatformDevToolsDesc" : "개방형 플랫폼 앱 개발자 도구 창 사용",
       "customLockScreen" : "맞춤식 잠금 화면 자산",
@@ -5126,6 +5125,10 @@
     "CurrencyNotSupported" : {
       "title" : "{{currencyName}}(은)는 지원되지 않습니다",
       "description" : "아직 지원되지 않는 암호화 자산입니다. Ledger 지원 부서로 문의하세요"
+    },
+    "DeviceAlreadySetup" : {
+      "title" : "사용 중인 {{device}}에 이미 비밀 복구 문구 설정이 되어 있습니다",
+      "description" : "아직 설정하지 않은 Ledger 장치를 연결하세요."
     },
     "DeviceNotGenuine" : {
       "title" : "정품이 아닐 수 있습니다.",
