@@ -142,7 +142,8 @@
     "connectDevice" : "Cihazınızı bağlayın",
     "add" : "Ekle",
     "or" : "VEYA",
-    "clearAll" : "Tümünü temizle"
+    "clearAll" : "Tümünü temizle",
+    "buyLedger" : "Ledger satın alın"
   },
   "devices" : {
     "nanoS" : "Nano S",
@@ -3902,8 +3903,6 @@
       "experimentalAppsDesc" : "Deneysel etiketli platform uygulamalarını görüntüleme ve açmaya izin verin.",
       "catalogUrl" : "Katalog uygulama sağlayıcısını belirle",
       "catalogUrlDesc" : "Özel katalog sağlayıcınızın URL'sini girin",
-      "catalogRampServer" : "Al / sat sağlayıcılarını belirle",
-      "catalogRampServerDesc" : "Farklı alım satım sağlayıcıları arasında geçiş yapın",
       "enablePlatformDevTools" : "Platform geliştirme araçlarını etkinleştirin",
       "enablePlatformDevToolsDesc" : "Platform uygulama geliştirme araçları penceresini açmayı etkinleştirin",
       "customLockScreen" : "Özel kilitli ekran varlıkları",
@@ -4298,7 +4297,7 @@
         "nextButton" : "Devam",
         "noDevice" : "Cihazınız yok mu?",
         "buyLink" : "Cihazınız yok mu? Ledger Nano X satın alın",
-        "recoverSignIn" : "Ledger Recover için giriş yapın",
+        "recoverSignIn" : "Ledger Recover'a giriş yapın",
         "byTapping" : "“Hemen Başla” butonuna dokunduğunuzda bunlara izin vermiş ve rıza göstermiş olursunuz:",
         "termsAndConditions" : "Hüküm ve Koşullar",
         "and" : "ve",
@@ -5126,6 +5125,10 @@
     "CurrencyNotSupported" : {
       "title" : "{{currencyName}} desteklenmiyor",
       "description" : "Bu kripto varlık henüz desteklenmiyor. Lütfen Ledger Destek ile iletişime geçin."
+    },
+    "DeviceAlreadySetup" : {
+      "title" : "{{device}} cihazınız zaten bir Gizli Kurtarma İfadesi ile kurulmuş",
+      "description" : "Kurulumu yapılmamış bir Ledger bağlayın."
     },
     "DeviceNotGenuine" : {
       "title" : "Muhtemelen orijinal değil",
