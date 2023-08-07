@@ -142,7 +142,8 @@
     "connectDevice" : "Conecte seu dispositivo",
     "add" : "Adicionar",
     "or" : "OU",
-    "clearAll" : "Limpar tudo"
+    "clearAll" : "Limpar tudo",
+    "buyLedger" : "Comprar uma Ledger"
   },
   "devices" : {
     "nanoS" : "Nano S",
@@ -3902,8 +3903,6 @@
       "experimentalAppsDesc" : "Exibe e permite abrir aplicativos da plataforma marcados como 'experimentais'.",
       "catalogUrl" : "Definir o provedor do catálogo de aplicativos",
       "catalogUrlDesc" : "Insira a URL do provedor de aplicativos da sua escolha",
-      "catalogRampServer" : "Definir os provedores de compra e venda",
-      "catalogRampServerDesc" : "Alterne entre vários provedores de compra, venda e troca",
       "enablePlatformDevTools" : "Habilitar ferramentas de desenvolvedor da plataforma",
       "enablePlatformDevToolsDesc" : "Habilite a janela de ferramentas para desenvolvedores de aplicativos da plataforma",
       "customLockScreen" : "Ativos personalizados da tela de bloqueio",
@@ -5126,6 +5125,10 @@
     "CurrencyNotSupported" : {
       "title" : "{{currencyName}} não é compatível",
       "description" : "Este criptoativo ainda não é compatível. Entre em contato com o Suporte Ledger."
+    },
+    "DeviceAlreadySetup" : {
+      "title" : "Sua {{device}} já está configurada com a Frase Secreta de Recuperação",
+      "description" : "Conecte uma Ledger que não esteja configurada."
     },
     "DeviceNotGenuine" : {
       "title" : "Possivelmente não autêntico",
