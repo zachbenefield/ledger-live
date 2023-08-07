@@ -142,7 +142,8 @@
     "connectDevice" : "توصيل جهازك",
     "add" : "إضافة",
     "or" : "أو",
-    "clearAll" : "إزالة الكل"
+    "clearAll" : "إزالة الكل",
+    "buyLedger" : "شراء Ledger"
   },
   "devices" : {
     "nanoS" : "Nano S",
@@ -3902,8 +3903,6 @@
       "experimentalAppsDesc" : "عرض تطبيقات المنصة التجريبية والسماح بفتحها.",
       "catalogUrl" : "تعيين مزود تطبيقات الكتالوج",
       "catalogUrlDesc" : "أدخِل رابط URL لمزود الكتالوج المخصص لديك",
-      "catalogRampServer" : "تعيين مزودي الشراء / البيع",
-      "catalogRampServerDesc" : "التبديل بين مزودي تداول متعددين",
       "enablePlatformDevTools" : "تمكين أدوات تطوير المنصة",
       "enablePlatformDevToolsDesc" : "تمكين فتح نافذة أدوات تطوير تطبيقات المنصة",
       "customLockScreen" : "أصول شاشة القَفل المُخصّصة",
@@ -5126,6 +5125,10 @@
     "CurrencyNotSupported" : {
       "title" : "{{currencyName}} غير مدعومة",
       "description" : "هذا الأصل المشفر غير مدعوم بعد. يرجى التواصل مع دعم Ledger."
+    },
+    "DeviceAlreadySetup" : {
+      "title" : "جهازك {{device}} تم إعداده بالفعل بعبارة استرداد سرية",
+      "description" : "توصيل جهاز Ledger لم يتم إعداده."
     },
     "DeviceNotGenuine" : {
       "title" : "من الممكن ألا يكون أصلياً",
