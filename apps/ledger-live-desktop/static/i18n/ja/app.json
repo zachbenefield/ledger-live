@@ -142,7 +142,8 @@
     "connectDevice" : "デバイスを接続",
     "add" : "追加",
     "or" : "または",
-    "clearAll" : "全消去"
+    "clearAll" : "全消去",
+    "buyLedger" : "Ledgerを購入する"
   },
   "devices" : {
     "nanoS" : "Nano S",
@@ -3902,8 +3903,6 @@
       "experimentalAppsDesc" : "試験的とタグ付けされたプラットフォームアプリの表示と実行を許可する",
       "catalogUrl" : "カタログアプリプロバイダーを設定",
       "catalogUrlDesc" : "カスタムカタログプロバイダーのURLを入力",
-      "catalogRampServer" : "購入/売却プロバイダーを設定",
-      "catalogRampServerDesc" : "複数のトレードプロバイダーを切り替える",
       "enablePlatformDevTools" : "プラットフォーム開発ツールの有効化",
       "enablePlatformDevToolsDesc" : "プラットフォームアプリの開発ツールウィンドウ表示を有効化",
       "customLockScreen" : "カスタムロック画面アセット",
@@ -4348,7 +4347,7 @@
           },
           "4" : {
             "title" : "Ledger Recoverを使用して復元",
-            "description" : "You need to have a Ledger Recover subscription."
+            "description" : "Ledger Recoverの登録が必要です。"
           }
         }
       },
@@ -5126,6 +5125,10 @@
     "CurrencyNotSupported" : {
       "title" : "{{currencyName}} には対応していません。",
       "description" : "この暗号資産には、未対応です。Ledgerサポートにお問合せください。"
+    },
+    "DeviceAlreadySetup" : {
+      "title" : "お客様の{{device}}はすでに、シークレットリカバリーフレーズを使用して設定されています",
+      "description" : "設定されていないLedgerを接続してください。"
     },
     "DeviceNotGenuine" : {
       "title" : "正規品でない可能性があります",
