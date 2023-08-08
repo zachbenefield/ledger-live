@@ -3902,8 +3902,6 @@
       "experimentalAppsDesc" : "显示并允许打开实验性标记的平台应用程序。",
       "catalogUrl" : "设置目录应用程序提供商",
       "catalogUrlDesc" : "输入您的自定义目录提供方网址",
-      "catalogRampServer" : "设置买入/卖出服务提供商",
-      "catalogRampServerDesc" : "在多个交易提供商之间切换",
       "enablePlatformDevTools" : "启用平台开发工具",
       "enablePlatformDevToolsDesc" : "启用打开平台应用程序开发工具的窗口",
       "customLockScreen" : "自定义锁屏素材资源",
@@ -4298,7 +4296,7 @@
         "nextButton" : "开始",
         "noDevice" : "没有设备？",
         "buyLink" : "没有设备？购买 Ledger Nano X",
-        "recoverSignIn" : "登录使用 Ledger Recover",
+        "recoverSignIn" : "登录 Ledger Recover",
         "byTapping" : "点按“开始”即表示您应允并同意我们的",
         "termsAndConditions" : "条款与条件",
         "and" : "和",
@@ -5127,6 +5125,9 @@
       "title" : "不支持 {{currencyName}}",
       "description" : "尚不支持该加密资产。请联系 Ledger 客服。"
     },
+    "DeviceAlreadySetup" : {
+      "title" : "您的设备已用秘密恢复短语设置"
+    },
     "DeviceNotGenuine" : {
       "title" : "可能不是正版",
       "description" : "向 Ledger 客服寻求帮助"
@@ -5299,6 +5300,9 @@
     },
     "NotEnoughGas" : {
       "title" : "父账户余额不足以支付网络费用"
+    },
+    "NotEnoughGasSwap" : {
+      "title" : "您需要 {{fees}} {{ticker}} 的网络费用才能在 {{cryptoName}} 网络上进行互换。<link0>买入 {{ticker}}</link0>"
     },
     "OperatingSystemOutdated" : {
       "title" : "您的操作系统版本已过时",
