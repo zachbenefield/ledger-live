@@ -142,7 +142,8 @@
     "connectDevice" : "Conecta tu dispositivo",
     "add" : "Agregar",
     "or" : "O",
-    "clearAll" : "Borrar todo"
+    "clearAll" : "Borrar todo",
+    "buyLedger" : "Compra un Ledger"
   },
   "devices" : {
     "nanoS" : "Nano S",
@@ -276,7 +277,7 @@
     "stars" : "Cuentas destacadas",
     "accounts" : "Cuentas",
     "manager" : "Mi Ledger",
-    "earn" : "Gana",
+    "earn" : "Earn",
     "exchange" : "Comprar / Vender",
     "swap" : "Permutar",
     "refer" : "Refer a friend",
@@ -3902,8 +3903,6 @@
       "experimentalAppsDesc" : "Mostrar y permitir la utilización de aplicaciones de plataforma etiquetadas como experimentales.",
       "catalogUrl" : "Definir el proveedor del catálogo de aplicaciones",
       "catalogUrlDesc" : "Introduce la URL del proveedor del catálogo personalizado",
-      "catalogRampServer" : "Definir los proveedores de compra y venta",
-      "catalogRampServerDesc" : "Cambiar entre varios proveedores de operaciones",
       "enablePlatformDevTools" : "Habilitar herramientas de desarrollador de plataforma",
       "enablePlatformDevToolsDesc" : "Habilitar ventana de herramientas de desarrollador de aplicaciones de plataforma",
       "customLockScreen" : "Activos de la pantalla de bloqueo personalizada",
@@ -4298,7 +4297,7 @@
         "nextButton" : "Comenzar",
         "noDevice" : "¿No tienes un dispositivo?",
         "buyLink" : "¿No tienes un dispositivo? Compra un Ledger Nano X",
-        "recoverSignIn" : "Iniciar sesión para acceder a Ledger Recover",
+        "recoverSignIn" : "Iniciar sesión en Ledger Recover",
         "byTapping" : "Al tocar “Comenzar” otorgas tu consentimiento y aceptas nuestros",
         "termsAndConditions" : "Términos y condiciones",
         "and" : "y",
@@ -5127,6 +5126,10 @@
       "title" : "{{currencyName}} no es compatible",
       "description" : "Todavía no se admite este activo cripto. contacta al Soporte de Ledger."
     },
+    "DeviceAlreadySetup" : {
+      "title" : "Tu {{device}} ya está configurado con una Frase de recuperación secreta.",
+      "description" : "Conecta un Ledger que aún no esté configurado."
+    },
     "DeviceNotGenuine" : {
       "title" : "Posiblemente no auténtico",
       "description" : "Solicita asistencia del Soporte de Ledger"
@@ -5299,6 +5302,9 @@
     },
     "NotEnoughGas" : {
       "title" : "El saldo de la cuenta principal es insuficiente para las comisiones de red"
+    },
+    "NotEnoughGasSwap" : {
+      "title" : "En la red {{cryptoName}} es necesaria una tarifa de red de {{fees}} {{ticker}} para realizar permutas. <link0>Comprar {{ticker}}</link0>"
     },
     "OperatingSystemOutdated" : {
       "title" : "La versión de tu sistema operativo está obsoleta.",
