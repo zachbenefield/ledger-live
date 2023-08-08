@@ -3902,8 +3902,6 @@
       "experimentalAppsDesc" : "عرض تطبيقات المنصة التجريبية والسماح بفتحها.",
       "catalogUrl" : "تعيين مزود تطبيقات الكتالوج",
       "catalogUrlDesc" : "أدخِل رابط URL لمزود الكتالوج المخصص لديك",
-      "catalogRampServer" : "تعيين مزودي الشراء / البيع",
-      "catalogRampServerDesc" : "التبديل بين مزودي تداول متعددين",
       "enablePlatformDevTools" : "تمكين أدوات تطوير المنصة",
       "enablePlatformDevToolsDesc" : "تمكين فتح نافذة أدوات تطوير تطبيقات المنصة",
       "customLockScreen" : "أصول شاشة القَفل المُخصّصة",
@@ -5127,6 +5125,9 @@
       "title" : "{{currencyName}} غير مدعومة",
       "description" : "هذا الأصل المشفر غير مدعوم بعد. يرجى التواصل مع دعم Ledger."
     },
+    "DeviceAlreadySetup" : {
+      "title" : "جهازك تم إعداده بالفعل بعبارة استرداد سرية"
+    },
     "DeviceNotGenuine" : {
       "title" : "من الممكن ألا يكون أصلياً",
       "description" : "اطلب المساعدة من دعم Ledger"
@@ -5299,6 +5300,9 @@
     },
     "NotEnoughGas" : {
       "title" : "رصيد الحساب الأصلي غير كاف لرسوم الشبكة"
+    },
+    "NotEnoughGasSwap" : {
+      "title" : "أنت بحاجة إلى {{ticker}} {{fees}} لرسوم الشبكة من أجل المبادلة حيث أنك على شبكة {{cryptoName}}. <link0>شراء {{ticker}}</link0>"
     },
     "OperatingSystemOutdated" : {
       "title" : "إصدار نظام التشغيل لديك قديم",
