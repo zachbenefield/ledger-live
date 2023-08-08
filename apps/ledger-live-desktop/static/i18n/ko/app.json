@@ -3902,8 +3902,6 @@
       "experimentalAppsDesc" : "실험적이라 태그 된 플랫폼 앱을 표시하고 허용하세요.",
       "catalogUrl" : "카탈로그 앱 공급자 설정",
       "catalogUrlDesc" : "사용자 지정 카탈로그 제공자 URL를 입력하세요",
-      "catalogRampServer" : "구매 / 판매 공급자 설정",
-      "catalogRampServerDesc" : "다중 거래 공급자 간 전환",
       "enablePlatformDevTools" : "플랫폼 개발자 도구 사용",
       "enablePlatformDevToolsDesc" : "개방형 플랫폼 앱 개발자 도구 창 사용",
       "customLockScreen" : "맞춤식 잠금 화면 자산",
@@ -5127,6 +5125,9 @@
       "title" : "{{currencyName}}(은)는 지원되지 않습니다",
       "description" : "아직 지원되지 않는 암호화 자산입니다. Ledger 지원 부서로 문의하세요"
     },
+    "DeviceAlreadySetup" : {
+      "title" : "장치에 이미 비밀 복구 문구 설정이 되어 있습니다."
+    },
     "DeviceNotGenuine" : {
       "title" : "정품이 아닐 수 있습니다.",
       "description" : "Ledger 지원 부서로 도움을 요청하세요"
@@ -5299,6 +5300,9 @@
     },
     "NotEnoughGas" : {
       "title" : "상위 계정 잔액이 네트워크 수수료에 충분하지 않습니다"
+    },
+    "NotEnoughGasSwap" : {
+      "title" : "{{cryptoName}} 네트워크에서 스왑하려면 네트워크 수수료 명목으로 {{fees}} {{ticker}}가 필요합니다. <link0>{{ticker}} 구매</link0>"
     },
     "OperatingSystemOutdated" : {
       "title" : "사용 중이신 운영 시스템이 최신 버전이 아닙니다",
