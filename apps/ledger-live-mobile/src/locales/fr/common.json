@@ -3509,7 +3509,6 @@
       "validateFees" : "Valider les frais",
       "customizeFees" : "Modifier les frais",
       "transferId": "ID de transfert",
-      "validateTransferId": "Valider l'identifiant",
       "memo" : {
         "title" : "Mémo",
         "type" : "Type de mémo",

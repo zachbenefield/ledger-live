@@ -3509,7 +3509,6 @@
       "validateFees" : "手数料の確認",
       "customizeFees" : "手数料のカスタマイズ",
       "transferId": "引き継ぎID",
-      "validateTransferId": "ID の検証",
       "memo" : {
         "title" : "メモ",
         "type" : "メモの種類",

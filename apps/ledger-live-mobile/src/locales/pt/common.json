@@ -3409,7 +3409,6 @@
       "validateFees" : "Validar Taxas",
       "customizeFees" : "Personalizar Taxas",
       "transferId": "ID de transferência",
-      "validateTransferId": "Validar ID",
       "memo" : {
         "title" : "Memo",
         "type" : "Tipo de memo",

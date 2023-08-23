@@ -3509,7 +3509,6 @@
       "validateFees" : "验证费用",
       "customizeFees" : "自定义费用",
       "transferId": "转移ID",
-      "validateTransferId": "验证身份",
       "memo" : {
         "title" : "Memo",
         "type" : "Memo 类型",
