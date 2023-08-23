@@ -191,8 +191,7 @@ export type LedgerExplorerId =
   | "eth_goerli"
   | "etc"
   | "matic"
-  | "bnb"
-  | "casper";
+  | "bnb";
 
 /**
  *

@@ -17,7 +17,6 @@ export enum ScreenName {
   BitcoinEditCustomFees = "BitcoinEditCustomFees",
   ClaimNftWelcome = "ClaimNftWelcome",
   ClaimNftQrScan = "ClaimNftQrScan",
-  CasperEditTransferId = "CasperEditTransferId",
   ClaimRewardsConnectDevice = "ClaimRewardsConnectDevice",
   ClaimRewardsSelectDevice = "ClaimRewardsSelectDevice",
   ClaimRewardsValidationError = "ClaimRewardsValidationError",
@@ -467,6 +466,8 @@ export enum ScreenName {
 
   // stacks
   StacksEditMemo = "StacksEditMemo",
+  // casper
+  CasperEditTransferId = "CasperEditTransferId",
   // hedera
   HederaEditMemo = "HederaEditMemo",
   // near
