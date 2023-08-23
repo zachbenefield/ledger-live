@@ -5,7 +5,6 @@ import {
 } from "@ledgerhq/live-common/exchange/swap/types";
 import { CryptoCurrency, Currency, TokenCurrency } from "@ledgerhq/types-cryptoassets";
 import { Transaction } from "@ledgerhq/live-common/generated/types";
-import type { Transaction as CasperTransaction } from "@ledgerhq/live-common/families/casper/types";
 import type { Transaction as EthereumTransaction } from "@ledgerhq/live-common/families/ethereum/types";
 import type { Transaction as EvmTransaction } from "@ledgerhq/coin-evm/types/index";
 
@@ -39,6 +38,7 @@ import type { Transaction as RippleTransaction } from "@ledgerhq/live-common/fam
 import type { Transaction as ICPTransaction } from "@ledgerhq/live-common/families/internet_computer/types";
 import type { Transaction as StellarTransaction } from "@ledgerhq/live-common/families/stellar/types";
 import type { Transaction as StacksTransaction } from "@ledgerhq/live-common/families/stacks/types";
+import type { Transaction as CasperTransaction } from "@ledgerhq/live-common/families/casper/types";
 import BigNumber from "bignumber.js";
 import { Account, Operation } from "@ledgerhq/types-live";
 import { ScreenName } from "../../../const";
@@ -182,21 +182,7 @@ export type SwapNavigatorParamList = {
       | ScreenName.SendSelectDevice
       | ScreenName.SwapForm;
   };
-  [ScreenName.CasperEditTransferId]: {
-    accountId: string;
-    account: Account;
-    parentId?: string;
-    transaction: CasperTransaction;
-    currentNavigation:
-      | ScreenName.SignTransactionSummary
-      | ScreenName.SendSummary
-      | ScreenName.SwapForm;
-    nextNavigation:
-      | ScreenName.SignTransactionSelectDevice
-      | ScreenName.SendSelectDevice
-      | ScreenName.SwapForm;
-  };
-  [ScreenName.EthereumEditGasLimit]: {
+  [ScreenName.EvmEditGasLimit]: {
     accountId: string;
     setGasLimit: (_: BigNumber) => void;
     gasLimit?: BigNumber | null;
@@ -336,6 +322,20 @@ export type SwapNavigatorParamList = {
     account: Account;
     transaction: StacksTransaction;
     memoType?: string;
+    currentNavigation:
+      | ScreenName.SignTransactionSummary
+      | ScreenName.SendSummary
+      | ScreenName.SwapForm;
+    nextNavigation:
+      | ScreenName.SignTransactionSelectDevice
+      | ScreenName.SendSelectDevice
+      | ScreenName.SwapForm;
+  };
+  [ScreenName.CasperEditTransferId]: {
+    accountId: string;
+    account: Account;
+    parentId?: string;
+    transaction: CasperTransaction;
     currentNavigation:
       | ScreenName.SignTransactionSummary
       | ScreenName.SendSummary
