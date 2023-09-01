@@ -682,7 +682,7 @@
         "swap" : {
           "title" : "مبادلة",
           "label" : "شائع",
-          "body" : "تحويل أصول مشفرة إلى أصول مشفرة بشكل آمن"
+          "body" : "قم بالتحويل بين الأصول المشفرة بأمان"
         },
         "receive" : {
           "title" : "تلقي",
@@ -1280,6 +1280,7 @@
     "hideCTA" : "إخفاء رمز التوكن"
   },
   "syncOnboarding" : {
+    "exitCTA" : "الخروج من الإعداد",
     "connection" : {
       "searching" : {
         "title" : "قم بتوصيل {{deviceModelName}} بالكمبيوتر الخاص بك",
@@ -1293,7 +1294,7 @@
       "title" : "إعداد {{deviceName}}",
       "continueOnDevice" : "قم بهذا الإجراء على جهازك {{productName}}",
       "pairedContent" : {
-        "title" : "{{deviceName}} متصلة",
+        "title" : "{{deviceName}} آمن",
         "description" : "متابعة الإعداد على {{deviceName}}",
         "text" : "هذه الشاشة ستتغير ديناميكيا لتزويدك بالمعلومات ذات الصلة ينما تقوم بإعداد {{deviceName}} خاصتك",
         "continueOnDevice" : "انقر على {{productName}} لرؤية الشاشة التالية."
@@ -1320,19 +1321,61 @@
         "restoreChoiceRecoverDescription" : "استعد النسخة الاحتياطية لعبارة الاسترداد الخاصة بك عن طريق تسجيل الدخول إلى حساب Ledger الخاص بك وتأكيد هويتك."
       },
       "softwareCheckContent" : {
-        "title" : "التحقق من البرامج",
+        "title" : {
+          "active" : "اختبار الأصالة\nوالتحقق من تحديث نظام التشغيل",
+          "completed" : "جهازك {{modelName}} أصلي ومُحدَّث إلى آخر إصدار"
+        },
+        "exitWarningDrawer" : {
+          "title" : "هل أنت متأكد أنك تريد الخروج من الإعداد؟",
+          "description" : "لا يمكنك إعداد جهازك Ledger Stax بدون السماح بهذا الفحص.",
+          "cancelCheckCTA" : "إلغاء الفحص",
+          "resumeCheckCTA" : "استئناف الفحص"
+        },
+        "genuineCheckErrorDrawer" : {
+          "quitSetupCTA" : "إنهاء الإعداد",
+          "goToSettingsCTA" : "انتقل إلى الإعدادات",
+          "retryCTA" : "إعادة المحاولة",
+          "contactSupportCTA" : "تواصل مع دعم Ledger",
+          "notFoundEntityError" : {
+            "title" : "لم نتمكن من التحقق مما إذا كان هذا الجهاز أصلياً.",
+            "description" : "الإعداد التجريبي \"My Ledger provider ({{providerNumber}})\" ربما يكون يتعارض مع اختبار الأصالة. يمكنك تعطيله في الإعدادات."
+          },
+          "deviceNotGenuineError" : {
+            "title" : "{{productName}} هذا غير أصلي",
+            "description" : "{{productName}} هذا غير آمن للاستخدام.\nيُرجى التواصل مع دعم Ledger."
+          }
+        },
+        "whyPerformChecksLink" : "لماذا إجراء فحوصات الأمان هذه؟",
+        "startChecksCTA" : "بدء عمليات الفحص",
+        "continueCTA" : "المتابعة إلى الإعداد",
         "genuineCheck" : {
-          "active" : "يتم التحقق من {{deviceName}}",
-          "completed" : "{{deviceName}} أصلية"
+          "title" : {
+            "active" : "اختبار الأصالة",
+            "completed" : "جهازك {{modelName}} أصلي",
+            "cancelled" : "اختبار الأصالة تم رفضه"
+          },
+          "subtitle" : {
+            "active" : "هذا الفحص يضمن أن جهازك {{modelName}} هو جهاز Ledger أصلي",
+            "cancelled" : "لا يمكنك إعداد جهازك {{modelName}} بدون السماح بهذا الفحص"
+          },
+          "resumeCTA" : "استئناف اختبار الأصالة"
         },
         "firmwareUpdate" : {
-          "inactive" : "التحقق من البرامج",
-          "active" : "يتم التحقق من وجود تحديثات للبرامج",
-          "updateAvailable" : "متوفر تحديث البرامج {{firmwareVersion}}",
-          "recommendation" : "نوصي بتنزيل التحديث الآن",
-          "downloadUpdate" : "تنزيل التحديث",
-          "skipUpdate" : "التخطي في الوقت الحالي",
-          "completed" : "البرامج مُحدثة"
+          "title" : {
+            "active" : "التحقق من تحديث نظام التشغيل",
+            "completed" : "نظام تشغيل {{modelName}} مُحدَّث إلى آخر إصدار",
+            "updateAvailable" : "تحديث نظام التشغيل {{firmwareVersion}} متاح"
+          },
+          "subtitle" : {
+            "active" : "هذا الفحص يضمن أن نظام تشغيل جهازك {{modelName}} مُحدَّث إلى آخر إصدار",
+            "updateAvailable" : "نوصي بإجراء هذا التحديث ليكون لديك إمكانية الوصول إلى أحدث ميزات الأمان"
+          },
+          "viewUpdateCTA" : "عرض التحديث",
+          "resumeUpdateCTA" : "استئناف التحديث",
+          "skipUpdateCTA" : "تخطي التحديث",
+          "retryUpdateCTA" : "إعادة المحاولة",
+          "finalStepSuccessDescription" : "الرجوع إلى التحقق من نظام التشغيل",
+          "finalStepSuccessButtonLabel" : "متابعة"
         }
       },
       "installApplications" : {
@@ -1344,30 +1387,10 @@
       "endOfSetup" : {
         "title" : "نهاية الإعداد"
       },
-      "genuineCheckModal" : {
-        "title" : "اختبار الأصالة",
-        "paragraph1" : "دعنا نتأكد من أن {{deviceName}} الخاصة بك أصلية وآمنة للاستخدام",
-        "paragraph2" : "سنُجري فحص للتأكد من أن جهازك لم يتم العبث به. سيجب عليك أن تقبل هذا على {{deviceName}} الخاصة بك.",
-        "checkDeviceButton" : "تحقق من الجهاز"
+      "softwareCheckAllowSecureChannelDrawer" : {
+        "title" : "السماح بالاتصال الآمن مع Ledger"
       },
-      "genuineCheckCancelModal" : {
-        "title" : "اختبار الأصالة",
-        "paragraph1" : "تم إلغاء اختبار الأصالة",
-        "paragraph2" : "هذا الفحص ضروري للغاية للتأكد أن {{deviceName}} خاصتك آمنة للاستخدام.",
-        "checkDeviceButton" : "إجراء الاختبار مرةً اخرى",
-        "cancelButton" : "ربّما في وقت لاحق"
-      },
-      "genuineCheckNotGenuineModal" : {
-        "title" : "اختبار الأصالة",
-        "paragraph1" : "جهازك غير أصلي",
-        "paragraph2" : "فشل اختبار الأصالة",
-        "checkDeviceButton" : "إجراء الاختبار مرةً أخرى",
-        "cancelButton" : "ربّما في وقت لاحق"
-      },
-      "softwareCheckAllowSecureChannelModal" : {
-        "title" : "قم بتمكين المدير على {{deviceName}}"
-      },
-      "softwareCheckLockedDeviceModal" : {
+      "softwareCheckLockedDeviceDrawer" : {
         "title" : "قم بإلغاء قفل جهازك"
       },
       "helpDrawer" : {
@@ -1432,7 +1455,7 @@
     },
     "buyCrypto" : {
       "title" : "شراء الأصول المشفرة",
-      "description" : "قم بشراء الأصول المشفرة من خلال شريكنا واستلمهم مباشرةً في حسابك Ledger",
+      "description" : "قم بشراء الأصول المشفرة من خلال مزودينا واستلمهم مباشرةً في حساب Ledger الخاص بك",
       "cta" : "اشتر الان"
     },
     "familyPack" : {
@@ -1454,7 +1477,7 @@
     },
     "swap" : {
       "title" : "مبادلة الأصول المشفرة",
-      "description" : "استبدل أصل مشفر بآخر من Ledger Live مع شريكنا."
+      "description" : "استبدل أصل مشفر بآخر من Ledger Live عن طريق مزودينا."
     },
     "lending" : {
       "title" : "إقراض الأصول المشفرة",
@@ -1466,7 +1489,7 @@
     },
     "referralProgram" : {
       "title" : "رشّح واكسب 10$",
-      "description" : "قم بترشيح صديق بنجاح وكلاكما سيكسب ما قيمته 10$ من بيتكوين."
+      "description" : "قم بترشيح صديق بنجاح ليكسب كلاكما ما قيمته 10$ من بيتكوين."
     },
     "vaultSigner" : {
       "title" : "وضع مُوقِّع Vault",
@@ -1531,7 +1554,7 @@
       },
       "swap" : {
         "title" : "مبادلة",
-        "description" : "تحويل أصول مشفرة إلى أصول مشفرة بشكل آمن",
+        "description" : "قم بالتحويل بين الأصول المشفرة بأمان",
         "label" : "شائع"
       },
       "earn" : {
@@ -4293,7 +4316,7 @@
     },
     "screens" : {
       "welcome" : {
-        "title" : "محفظة الرموز غير القابلة للاستبدال والعملات المشفرة الأكثر أماناً",
+        "title" : "محفظة العملات المشفرة والرموز غير القابلة للاستبدال الأكثر أماناً",
         "description" : "إدارة وشراء وتنمية أصولك المشفرة رموزك غير القابلة للاستبدال بأمان على Ledger Live.",
         "nextButton" : "بدء الاستخدام",
         "noDevice" : "ليس لديك جهاز؟",
@@ -4310,15 +4333,15 @@
           },
           "1" : {
             "title" : "امتلك مفتاحك الخاص",
-            "desc" : "يتم حفظ مفتاحك الخاص داخل Nano الخاصة بك.\nيجب أن تكون أنت الشخص الوحيد الذي يمتلكه لتكون مُسيطراً على أموالك"
+            "desc" : "يتم حفظ مفتاحك الخاص داخل Nano الخاصة بك.\nيجب أن تكون أنت الشخص الوحيد الذي يمتلكها لتكون مُسيطر على أموالك."
           },
           "2" : {
             "title" : "ابق غير متصل بالإنترنت",
             "desc" : "Nano الخاصة بك تعمل كمحفظة \"تخزين بارد\".\nهذا يعني أنها لا تُعرض مفتاحك الخاص إلى الإنترنت أبداً، حتى عند استخدام التطبيق"
           },
           "3" : {
-            "title" : "التحقق من صحة المعاملات",
-            "desc" : "Ledger Live يتيح لك شراء وبيع وإدارة ومبادلة وكسب الأصول المشفرة بينما تظل محمية.\nستتحقق من صحة كل معاملة أصول مشفرة باستخدام Nano الخاصة بك"
+            "title" : "تحقق من صحة المعاملات",
+            "desc" : "Ledger Live يتيح لك إمكانية شراء وبيع وإدارة وتبادل وكسب الأصول المشفرة بينما تظل محمياً.\nباستخدام Nano الخاصة بك ستتحقق من صحة كل معاملة من معاملات الأصول المشفرة ."
           },
           "4" : {
             "title" : "لنقوم بإعداد Nano الخاصة بك",
@@ -4467,7 +4490,7 @@
           },
           "quizFailure" : {
             "title" : "ستصبح محترفاً قريباً...",
-            "paragraph" : "لا تقلق، Ledger هنا لإرشادك خلال رحلتك. ستشعر قريباً براحة إضافية بشأن أمان أصولك المشفرة.\n\nلم يتبقى سوى خطوة واحدة سريعة!",
+            "paragraph" : "لا تقلق، Ledger هنا لإرشادك خلال رحلتك. ستشعر قريباً بمزيد من الاطمئنان تجاه أمان أصولك المشفرة.\n\nلم يتبقى سوى خطوة واحدة سريعة!",
             "buttons" : {
               "next" : "الخطوة التالية",
               "prev" : "الخطوة السابقة"
@@ -4615,7 +4638,7 @@
           "genuineCheck" : {
             "success" : {
               "title" : "الأمور جيدة!",
-              "desc" : "Ledger {{deviceName}} الخاصة بك أصلية وجاهزة للاستخدام مع Ledger Live"
+              "desc" : "Ledger {{deviceName}} الخاص بك أصلي وجاهز للاستخدام مع Ledger Live"
             },
             "buttons" : {
               "next" : "متابعة",
@@ -4641,7 +4664,7 @@
           },
           "pairMyNano" : {
             "title" : "اختبار الأصالة",
-            "paragraph" : "سنتحقق مما إذا كانت Nano الخاصة بك أصلية. يجب ان يكون ذلك سريعاً وسهلاً!",
+            "paragraph" : "سنتحقق مما إذا كانت Nano الخاصة بك أصلية. سيكون ذلك سريعاً وسهلاً!",
             "buttons" : {
               "next" : "التحقق من Nano الخاصة بي",
               "prev" : "الخطوة السابقة",
@@ -4660,22 +4683,22 @@
       "screens" : {
         "accessYourCoins" : {
           "title" : "الوصول إلى أصولك المشفرة",
-          "description" : "يتم حفظ أصولك المشفرة على سلسلة الكتل (blockchain). أنت بحاجة إلى مفتاح خاص للوصول إليها وإدارتها."
+          "description" : "يتم حفظ أصولك المشفرة على سلسلة الكتل (blockchain). تحتاج إلى مفتاح خاص للوصول لهم وإدارتهم."
         },
         "ownYourPrivateKey" : {
           "title" : "امتلك مفتاحك الخاص",
-          "description" : "يتم حفظ مفتاحك الخاص في Nano الخاصة بك. يجب أن تكون أنت الشخص الوحيد الذي يمتلكه لتكون مُسيطر على أموالك."
+          "description" : "يتم حفظ مفتاحك الخاص داخل Nano الخاصة بك. يجب أن تكون أنت الشخص الوحيد الذي يمتلكها لتكون مُسيطر على أموالك."
         },
         "stayOffline" : {
           "title" : "ابق غير متصل بالإنترنت",
           "description" : "Nano الخاصة بك تعمل كمحفظة \"تخزين بارد\". هذا يعني أنها لا تكشف مفتاحك الخاص على الإنترنت أبداً، حتى عند استخدام التطبيق."
         },
         "validateTransactions" : {
-          "title" : "التحقق من صحة المعاملات",
-          "description" : "Ledger Live يتيح لك شراء وبيع وإدارة وتبادل وكسب الأصول المشفرة بينما تظل محمياً. ستتحقق من صحة كل معاملة أصول مشفرة باستخدام Nano الخاصة بك."
+          "title" : "تحقق من صحة المعاملات",
+          "description" : "Ledger Live يتيح لك إمكانية شراء وبيع وإدارة وتبادل وكسب الأصول المشفرة بينما تظل محمياً. باستخدام Nano الخاصة بك ستتحقق من صحة كل معاملة من معاملات الأصول المشفرة ."
         },
         "setUpNanoWallet" : {
-          "title" : "لنقوم بإعداد Nano الخاصة بك!",
+          "title" : "لنقم بإعداد Nano الخاصة بك!",
           "description" : "سنبدأ بإعداد أمان Nano الخاصة بك.",
           "CTA" : "هيا بنا!"
         }
@@ -5127,6 +5150,9 @@
       "title" : "{{currencyName}} غير مدعومة",
       "description" : "هذا الأصل المشفر غير مدعوم بعد. يرجى التواصل مع دعم Ledger."
     },
+    "DeviceAlreadySetup" : {
+      "title" : "جهازك تم إعداده بالفعل بعبارة استرداد سرية"
+    },
     "DeviceNotGenuine" : {
       "title" : "من الممكن ألا يكون أصلياً",
       "description" : "اطلب المساعدة من دعم Ledger"
@@ -5403,12 +5429,12 @@
       "description" : "يرجى الإنتقال إلى اللوحة الرئيسية على جهازك"
     },
     "WebsocketConnectionError" : {
-      "title" : "عذراً، حاول مرة أخرى (خطأ في الاتصال)",
-      "description" : null
+      "title" : "خطأ في الشبكة",
+      "description" : "تأكد من أنك متصل بالإنترنت وأعد المحاولة."
     },
     "WebsocketConnectionFailed" : {
-      "title" : "عذراً، حاول مرة أخرى (الاتصال مغلق)",
-      "description" : null
+      "title" : "خطأ في الشبكة",
+      "description" : "تأكد من أنك متصل بالإنترنت وأعد المحاولة."
     },
     "WrongDeviceForAccount" : {
       "title" : "حدث خطأ ما",
@@ -5833,6 +5859,10 @@
     },
     "GasEstimationError" : {
       "title" : "فشل تقدير الغاز"
+    },
+    "FailedToRetrieveFirmwareUpdateInfo" : {
+      "title" : "فشل التحقق من تحديث نظام التشغيل",
+      "description" : "حدث خطأ ما. يرجى المحاولة مرة أخرى أو التواصل مع دعم Ledger إذا كان لديك شك."
     }
   },
   "cryptoOrg" : {
