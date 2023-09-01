@@ -276,7 +276,7 @@
     "stars" : "Cuentas destacadas",
     "accounts" : "Cuentas",
     "manager" : "Mi Ledger",
-    "earn" : "Gana",
+    "earn" : "Earn",
     "exchange" : "Comprar / Vender",
     "swap" : "Permutar",
     "refer" : "Refer a friend",
@@ -1280,6 +1280,7 @@
     "hideCTA" : "Ocultar token"
   },
   "syncOnboarding" : {
+    "exitCTA" : "Salir de la configuración",
     "connection" : {
       "searching" : {
         "title" : "Conectar {{deviceModelName}} a tu PC",
@@ -1293,7 +1294,7 @@
       "title" : "Configurar {{deviceName}}",
       "continueOnDevice" : "Realiza esta acción en tu {{productName}}",
       "pairedContent" : {
-        "title" : "Tu {{deviceName}} está conectado",
+        "title" : "{{deviceName}} es seguro",
         "description" : "Continúa con la configuración en tu {{deviceName}}",
         "text" : "Esta pantalla cambiará de forma dinámica para proporcionarte información pertinente mientras configuras tu {{deviceName}}.",
         "continueOnDevice" : "Toca {{productName}} para visualizar la siguiente pantalla."
@@ -1320,19 +1321,61 @@
         "restoreChoiceRecoverDescription" : "Para restaurar la copia de respaldo de tu Frase de recuperación, inicia sesión en tu sucripción y confirma tu identidad."
       },
       "softwareCheckContent" : {
-        "title" : "Comprobación de software",
+        "title" : {
+          "active" : "Verificación de \tAutenticidad y\n de actualización del SO",
+          "completed" : "Tu {{modelName}} es auténtico y está actualizado"
+        },
+        "exitWarningDrawer" : {
+          "title" : "¿Seguro que quieres salir de la configuración?",
+          "description" : "No puedes configurar tu Ledger Stax sin permitir esta verificación.",
+          "cancelCheckCTA" : "Cancelar verificación",
+          "resumeCheckCTA" : "Reanudar verificación"
+        },
+        "genuineCheckErrorDrawer" : {
+          "quitSetupCTA" : "Salir de la configuración",
+          "goToSettingsCTA" : "Ir a Ajustes",
+          "retryCTA" : "Reintentar",
+          "contactSupportCTA" : "Ponte en contacto con el Soporte de Ledger",
+          "notFoundEntityError" : {
+            "title" : "No hemos podido verificar si este dispositivo es auténtico.",
+            "description" : "El ajuste experimental “Proveedor de Mi Ledger ({{providerNumber}})” puede generar conflictos con la verificación de autenticidad. Puedes desactivarlo en los ajustes."
+          },
+          "deviceNotGenuineError" : {
+            "title" : "Este {{productName}} no es auténtico",
+            "description" : "No es seguro usar este {{productName}}.\nPonte en contacto con el Soporte de Ledger"
+          }
+        },
+        "whyPerformChecksLink" : "¿Por qué se deben realizar estas verificaciones de seguridad?",
+        "startChecksCTA" : "Iniciar verificaciones",
+        "continueCTA" : "Continuar a la configuración",
         "genuineCheck" : {
-          "active" : "Comprobando {{deviceName}}",
-          "completed" : "Tu {{deviceName}} es auténtico"
+          "title" : {
+            "active" : "Verificación de autenticidad",
+            "completed" : "Tu {{modelName}} es auténtico",
+            "cancelled" : "Verificación de Autenticidad rechazada"
+          },
+          "subtitle" : {
+            "active" : "Esta verificación garantiza que tu {{modelName}} es hardware Ledger oficial.",
+            "cancelled" : "No puedes configurar tu {{modelName}} sin permitir antes esta verificación."
+          },
+          "resumeCTA" : "Reanudar verificación de autenticidad"
         },
         "firmwareUpdate" : {
-          "inactive" : "Comprobación de software",
-          "active" : "Buscando actualizaciones de software",
-          "updateAvailable" : "Actualización de software disponible {{firmwareVersion}}",
-          "recommendation" : "Te recomendamos descargar ahora la actualización",
-          "downloadUpdate" : "Descargar actualización",
-          "skipUpdate" : "Omitir por el momento",
-          "completed" : "El software está actualizado"
+          "title" : {
+            "active" : "Verificación de actualización del SO",
+            "completed" : "El SO del {{modelName}} está actualizado",
+            "updateAvailable" : "Hay una actualización del SO {{firmwareVersion}} disponible"
+          },
+          "subtitle" : {
+            "active" : "Esta verificación garantiza que el SO de tu {{modelName}} está actualizado",
+            "updateAvailable" : "Se recomienda realizar esta actualización para tener acceso a las funciones de seguridad más recientes"
+          },
+          "viewUpdateCTA" : "Ver actualización",
+          "resumeUpdateCTA" : "Reanudar actualización",
+          "skipUpdateCTA" : "Omitir actualización",
+          "retryUpdateCTA" : "Reintentar",
+          "finalStepSuccessDescription" : "Volver a verificación del SO",
+          "finalStepSuccessButtonLabel" : "Continuar"
         }
       },
       "installApplications" : {
@@ -1344,30 +1387,10 @@
       "endOfSetup" : {
         "title" : "Fin de la configuración"
       },
-      "genuineCheckModal" : {
-        "title" : "Verificación de autenticidad",
-        "paragraph1" : "Vamos a asegurarnos de que tu {{deviceName}} sea auténtico y seguro de usar",
-        "paragraph2" : "Realizaremos una comprobación para asegurarnos de que el dispositivo no ha sido manipulado. Tendrás que aceptar la operación en tu {{deviceName}}.",
-        "checkDeviceButton" : "Comprobar dispositivo"
+      "softwareCheckAllowSecureChannelDrawer" : {
+        "title" : "Permitir una conexión segura con Ledger"
       },
-      "genuineCheckCancelModal" : {
-        "title" : "Verificación de autenticidad",
-        "paragraph1" : "La verificación de autenticidad se ha cancelado",
-        "paragraph2" : "Es importante que hagas esta comprobación para asegurarte de que es seguro usar tu {{deviceName}}.",
-        "checkDeviceButton" : "Volver a ejecutar la verificación de autenticidad",
-        "cancelButton" : "Quizás más tarde"
-      },
-      "genuineCheckNotGenuineModal" : {
-        "title" : "Verificación de autenticidad",
-        "paragraph1" : "Tu dispositivo no es original",
-        "paragraph2" : "La verificación de autenticidad ha fallado",
-        "checkDeviceButton" : "Volver a ejecutar la verificación de autenticidad",
-        "cancelButton" : "Quizás más tarde"
-      },
-      "softwareCheckAllowSecureChannelModal" : {
-        "title" : "Permitir manager en {{deviceName}}"
-      },
-      "softwareCheckLockedDeviceModal" : {
+      "softwareCheckLockedDeviceDrawer" : {
         "title" : "Desbloquea tu dispositivo"
       },
       "helpDrawer" : {
@@ -4298,7 +4321,7 @@
         "nextButton" : "Comenzar",
         "noDevice" : "¿No tienes un dispositivo?",
         "buyLink" : "¿No tienes un dispositivo? Compra un Ledger Nano X",
-        "recoverSignIn" : "Iniciar sesión para acceder a Ledger Recover",
+        "recoverSignIn" : "Iniciar sesión en Ledger Recover",
         "byTapping" : "Al tocar “Comenzar” otorgas tu consentimiento y aceptas nuestros",
         "termsAndConditions" : "Términos y condiciones",
         "and" : "y",
@@ -4458,7 +4481,7 @@
           },
           "quizSuccess" : {
             "title" : "¡Ya tienes nivel de profesional!",
-            "paragraph" : "Está todo listo para que administres de forma segura tus cripto. ¡Solo te queda un breve paso!",
+            "paragraph" : "Está todo listo para que administres de forma segura tus cripto. ¡Sólo te queda un breve paso!",
             "buttons" : {
               "next" : "Siguiente paso",
               "prev" : "Paso anterior",
@@ -4692,10 +4715,10 @@
       },
       "questions" : {
         "1" : {
-          "text" : "Como usuario de Ledger, mis criptomonedas se almacenan:",
+          "text" : "Como usuario de Ledger, mis criptomonedas se almacenan…",
           "answers" : {
-            "1" : "En mi Ledger Nano",
-            "2" : "En la cadena de bloques"
+            "1" : "…en mi Ledger Nano",
+            "2" : "…en la cadena de bloques"
           },
           "results" : {
             "success" : {
@@ -4711,8 +4734,8 @@
         "2" : {
           "text" : "Si otra persona accede a mi Frase de Recuperación Secreta...",
           "answers" : {
-            "1" : "No pasa nada, siempre que yo sepa cuál es",
-            "2" : "Mis activos serán vulnerables y dicha persona podría acceder a ellos"
+            "1" : "…no pasa nada, siempre que yo siga teniendo la Frase correcta.",
+            "2" : "…mis activos serán vulnerables y dicha persona podría acceder a ellos"
           },
           "results" : {
             "success" : {
@@ -4726,10 +4749,10 @@
           }
         },
         "3" : {
-          "text" : "Cuando conecto mi Ledger Nano a la aplicación Ledger Live, mi clave privada es...",
+          "text" : "Cuando conecto mi Ledger Nano a la aplicación Ledger Live, mi clave privada...",
           "answers" : {
             "1" : "Sigue sin conectarse a Internet",
-            "2" : "Se conecta brevemente a Internet"
+            "2" : "…se conecta brevemente a Internet"
           },
           "results" : {
             "success" : {
@@ -5127,6 +5150,9 @@
       "title" : "{{currencyName}} no es compatible",
       "description" : "Todavía no se admite este activo cripto. contacta al Soporte de Ledger."
     },
+    "DeviceAlreadySetup" : {
+      "title" : "Tu dispositivo ya está configurado con una Frase de Recuperación Secreta"
+    },
     "DeviceNotGenuine" : {
       "title" : "Posiblemente no auténtico",
       "description" : "Solicita asistencia del Soporte de Ledger"
@@ -5403,12 +5429,12 @@
       "description" : "Ingresa de nuevo al Dashboard de tu dispositivo"
     },
     "WebsocketConnectionError" : {
-      "title" : "Inténtalo de nuevo (error de conexión)",
-      "description" : null
+      "title" : "Error de red",
+      "description" : "Asegúrate de que tienes conexión a Internet e inténtalo de nuevo."
     },
     "WebsocketConnectionFailed" : {
-      "title" : "Inténtalo de nuevo (se interrumpió la conexión)",
-      "description" : null
+      "title" : "Error de red",
+      "description" : "Asegúrate de que tienes conexión a Internet e inténtalo de nuevo."
     },
     "WrongDeviceForAccount" : {
       "title" : "Algo ha salido mal",
@@ -5833,6 +5859,10 @@
     },
     "GasEstimationError" : {
       "title" : "Se produjo un fallo en la estimación del gas"
+    },
+    "FailedToRetrieveFirmwareUpdateInfo" : {
+      "title" : "Error al verificar la actualización del SO",
+      "description" : "Algo ha salido mal. Inténtalo de nuevo o contacta al Soporte de Ledger en caso de duda."
     }
   },
   "cryptoOrg" : {
