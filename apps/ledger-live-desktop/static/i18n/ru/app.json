@@ -528,7 +528,7 @@
   },
   "stake" : {
     "noFundsModal" : {
-      "title" : "Покупайте, обменивайте или получайте",
+      "title" : "{{actions, list(type: disjunction)}}",
       "text" : "У вас не хватает {{coin}} для стейкинга",
       "description" : "Не хватает монет? Ничего страшного. Купить, обменять или получить криптоактивы можно полностью безопасно прямо в Ledger Live.",
       "options" : {
@@ -2292,6 +2292,7 @@
     "header" : "Распределение счёта ({{count}})"
   },
   "elrond" : {
+    "guardedAccountWarning" : "Если для вашего счёта уже выбран «страж» (guardian), провести транзакцию с помощью Ledger Live не получится.",
     "summary" : {
       "availableBalanceTooltip" : "Эту сумму можно отправить.",
       "availableBalance" : "Доступно",
@@ -3336,7 +3337,7 @@
       "steps" : {
         "amount" : {
           "title" : "Сумма",
-          "amountLabel" : "Сумма для разблокировки",
+          "amountLabel" : "Сумма разблокировки",
           "availableLabel" : "Заблокировано",
           "maxLabel" : "Макс.",
           "info" : "Разблокированные активы можно вывести спустя 28 дней после разблокировки.",
@@ -5691,10 +5692,6 @@
     },
     "ImageDownloadError" : {
       "title" : "Не удалось загрузить изображение",
-      "description" : "Попробуйте другое изображение"
-    },
-    "ImageMetadataLoadingError" : {
-      "title" : "Не удалось загрузить метаданные изображения",
       "description" : "Попробуйте другое изображение"
     },
     "ImageTooLargeError" : {
