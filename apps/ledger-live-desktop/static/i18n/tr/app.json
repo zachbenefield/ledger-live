@@ -528,7 +528,7 @@
   },
   "stake" : {
     "noFundsModal" : {
-      "title" : "Satın alın, takas edin veya transfer alın",
+      "title" : "{{actions, list(type: disjunction)}}",
       "text" : "Stake etmek için hesabınızda yeterince {{coin}} bulunmuyor",
       "description" : "Fonlarınız yetersiz mi? Merak etmeyin! Doğrudan Ledger Live üzerinden güvenli bir şekilde kripto satın alabilir, takas edebilir veya transfer alabilirsiniz.",
       "options" : {
@@ -1938,7 +1938,7 @@
       "successTitle" : "İşletim sistemi başarıyla güncellendi.",
       "successTextApps" : "Lütfen uygulamaları cihazınıza tekrar yükleyin",
       "successTextNoApps" : "Artık cihazınıza uygulama yükleyebilirsiniz",
-      "sucessCTAApps" : "Uygulamaları yeniden yükleyin",
+      "sucessCTAApps" : "Uygulamaları yeniden yükle",
       "SuccessCTANoApps" : "Uygulama yükleyin",
       "cancelReinstallCTA" : "Güncellemeyi yükle",
       "resetSteps" : {
@@ -2292,6 +2292,7 @@
     "header" : "Hesap dağılımı ({{count}})"
   },
   "elrond" : {
+    "guardedAccountWarning" : "If you have a guardian set on your account, you won't be able to successfully send transactions via Ledger Live.",
     "summary" : {
       "availableBalanceTooltip" : "Bu miktar aktarılabilir.",
       "availableBalance" : "Mevcut bakiye",
@@ -5520,7 +5521,7 @@
       "title" : "Enerji yetersiz. Ağ ücreti 50 TRX tutarına ulaşabilir."
     },
     "PairingFailed" : {
-      "title" : "Eşleştirme başarısız",
+      "title" : "Eşleme başarısız",
       "description" : "Lütfen tekrar deneyin veya şüpheniz varsa Ledger Destek ile iletişime geçin."
     },
     "GenuineCheckFailed" : {
@@ -5693,10 +5694,6 @@
       "title" : "Görüntü indirilemedi",
       "description" : "Lütfen başka bir görüntüyle tekrar deneyin"
     },
-    "ImageMetadataLoadingError" : {
-      "title" : "Görüntü meta verileri yüklenemedi",
-      "description" : "Lütfen başka bir görüntüyle tekrar deneyin"
-    },
     "ImageTooLargeError" : {
       "title" : "Görüntü çok büyük",
       "description" : "Lütfen daha küçük bir görüntü seçmeyi deneyin"
@@ -5809,10 +5806,10 @@
   },
   "drawers" : {
     "selectCurrency" : {
-      "title" : "varlık seç"
+      "title" : "varlık seçin"
     },
     "selectAccount" : {
-      "title" : "hesap seç"
+      "title" : "hesap seçin"
     }
   },
   "customImage" : {
