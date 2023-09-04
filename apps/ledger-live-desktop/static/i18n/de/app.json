@@ -528,7 +528,7 @@
   },
   "stake" : {
     "noFundsModal" : {
-      "title" : "Kaufen, umtauschen oder empfangen",
+      "title" : "{{actions, list(type: disjunction)}}",
       "text" : "Sie haben nicht genug {{coin}} verfügbar um am Staking teilzunehmen",
       "description" : "Zu niedriges Guthaben? Keine Sorge, Sie können direkt in Ledger Live sicher Kryptowährungen kaufen, umtauschen oder empfangen.",
       "options" : {
@@ -2292,6 +2292,7 @@
     "header" : "Kontozuteilung ({{count}})"
   },
   "elrond" : {
+    "guardedAccountWarning" : "Wenn Sie für Ihr Konto einen „Guardian“ (zusätzlicher Sicherheitsmechanismus für Transaktionsfreigaben) aktiviert haben, können Sie keine Transaktionen über Ledger Live senden.",
     "summary" : {
       "availableBalanceTooltip" : "Dieser Betrag kann überwiesen werden.",
       "availableBalance" : "Verfügbares Guthaben",
@@ -5691,10 +5692,6 @@
     },
     "ImageDownloadError" : {
       "title" : "Bilddownload fehlgeschlagen",
-      "description" : "Bitte versuchen Sie es noch einmal mit einem anderen Bild"
-    },
-    "ImageMetadataLoadingError" : {
-      "title" : "Laden der Bild-Metadaten fehlgeschlagen",
       "description" : "Bitte versuchen Sie es noch einmal mit einem anderen Bild"
     },
     "ImageTooLargeError" : {
