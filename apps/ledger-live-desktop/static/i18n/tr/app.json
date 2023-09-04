@@ -528,7 +528,7 @@
   },
   "stake" : {
     "noFundsModal" : {
-      "title" : "Satın alın, takas edin veya transfer alın",
+      "title" : "{{actions, list(type: disjunction)}}",
       "text" : "Stake etmek için hesabınızda yeterince {{coin}} bulunmuyor",
       "description" : "Fonlarınız yetersiz mi? Merak etmeyin! Doğrudan Ledger Live üzerinden güvenli bir şekilde kripto satın alabilir, takas edebilir veya transfer alabilirsiniz.",
       "options" : {
@@ -1369,31 +1369,7 @@
     }
   },
   "walletconnect" : {
-    "titleAccount" : "Cüzdan Bağlantısı",
-    "disconnect" : "Bağlantıyı Kes",
-    "disconnected" : "Bağlantı Kesildi",
-    "connected" : "Bağlandı",
-    "connecting" : "Bağlanıyor...",
-    "invalidAccount" : "Geçersiz hesap kimliği",
-    "steps" : {
-      "paste" : {
-        "title" : "Bağlantıyı yapıştır",
-        "label" : "WalletConnect adresi",
-        "placeholder" : "WalletConnect Bağlantısını Yapıştır"
-      },
-      "confirm" : {
-        "title" : "Bağlan",
-        "details" : "Cüzdanınız üzerinden bağlanmak istenen hesap:",
-        "deeplinkDetails" : "Ledger Live'a bağlanmak istiyor. Hesabınızı seçini:",
-        "noAccount" : "Uyumlu bir hesabınız bulunmuyor. Lütfen WalletConnect'i kullanmak için uyumlu bir hesap ekleyin.",
-        "alreadyConnected" : "Halihazırda bir dApp bağlıyken başka bir dApp'e bağlanmaya çalışıyorsunuz. Live'ı yeni bir dApp'e bağlamadan önce lütfen mevcut dApp bağlantısını kesin."
-      }
-    },
-    "connectedscreen" : {
-      "info" : "Artık web tarayıcınızdan {{name}} dApp'e erişebilirsiniz.",
-      "warning" : "Alım adreslerini dApps üzerinden paylaşmak güvenli değildir. Tarafınıza gönderilen fonları almak için adresinizi paylaşırken her zaman Ledger Live kullanın.",
-      "disconnected" : "dApp, WalletConnect ve Ledger Live arasında bir bağlantı sorunu var. Birkaç dakika bekleyin veya bağlantıyı yeniden başlatın"
-    }
+    "titleAccount" : "WalletConnect"
   },
   "dashboard" : {
     "title" : "Portföy",
@@ -1938,7 +1914,7 @@
       "successTitle" : "İşletim sistemi başarıyla güncellendi.",
       "successTextApps" : "Lütfen uygulamaları cihazınıza tekrar yükleyin",
       "successTextNoApps" : "Artık cihazınıza uygulama yükleyebilirsiniz",
-      "sucessCTAApps" : "Uygulamaları yeniden yükleyin",
+      "sucessCTAApps" : "Uygulamaları yeniden yükle",
       "SuccessCTANoApps" : "Uygulama yükleyin",
       "cancelReinstallCTA" : "Güncellemeyi yükle",
       "resetSteps" : {
@@ -2292,6 +2268,7 @@
     "header" : "Hesap dağılımı ({{count}})"
   },
   "elrond" : {
+    "guardedAccountWarning" : "Hesabınız için bir Guardian belirlediyseniz Ledger Live üzerinden gönderme işlemlerini başarıyla yapamayacaksınız.",
     "summary" : {
       "availableBalanceTooltip" : "Bu miktar aktarılabilir.",
       "availableBalance" : "Mevcut bakiye",
@@ -5520,7 +5497,7 @@
       "title" : "Enerji yetersiz. Ağ ücreti 50 TRX tutarına ulaşabilir."
     },
     "PairingFailed" : {
-      "title" : "Eşleştirme başarısız",
+      "title" : "Eşleme başarısız",
       "description" : "Lütfen tekrar deneyin veya şüpheniz varsa Ledger Destek ile iletişime geçin."
     },
     "GenuineCheckFailed" : {
@@ -5809,10 +5786,10 @@
   },
   "drawers" : {
     "selectCurrency" : {
-      "title" : "varlık seç"
+      "title" : "varlık seçin"
     },
     "selectAccount" : {
-      "title" : "hesap seç"
+      "title" : "hesap seçin"
     }
   },
   "customImage" : {
