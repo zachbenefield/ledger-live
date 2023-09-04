@@ -528,7 +528,7 @@
   },
   "stake" : {
     "noFundsModal" : {
-      "title" : "买入、互换或接收",
+      "title" : "{{actions, list(type: disjunction)}}",
       "text" : "您没有足够的 {{coin}} 可供权益质押",
       "description" : "资金不足？别担心，您可以直接在 Ledger Live 中买入、互换或接收加密货币。",
       "options" : {
@@ -2292,6 +2292,7 @@
     "header" : "账户配置 ({{count}})"
   },
   "elrond" : {
+    "guardedAccountWarning" : "如果您的账户设置了保管人，您将无法通过 Ledger Live 成功发送交易。",
     "summary" : {
       "availableBalanceTooltip" : "此数额可以转移。",
       "availableBalance" : "可用余额",
@@ -5691,10 +5692,6 @@
     },
     "ImageDownloadError" : {
       "title" : "图片下载失败",
-      "description" : "请使用另一张图片重试"
-    },
-    "ImageMetadataLoadingError" : {
-      "title" : "图片元数据加载失败",
       "description" : "请使用另一张图片重试"
     },
     "ImageTooLargeError" : {
