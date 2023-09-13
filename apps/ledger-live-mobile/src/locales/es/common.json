@@ -1156,7 +1156,7 @@
         "desc" : "Explora la Web3 totalmente integrada con Ledger"
       },
       "earn" : {
-        "title" : "Gana",
+        "title" : "Earn",
         "desc" : "Rentabiliza tus cripto a través de la puesta en participación y los préstamos."
       },
       "mint" : {
@@ -1199,8 +1199,8 @@
       "start" : "Comenzar",
       "noDevice" : "¿No tienes un dispositivo?",
       "buy" : "Compra un {{fullDeviceName}}",
-      "terms" : "By continuing, you agree to Ledger's",
-      "termsLink" : "Terms & Conditions",
+      "terms" : "Al continuar, aceptas el siguiente documento de Ledger:",
+      "termsLink" : "Términos y Condiciones",
       "privacyLink" : "Política de Privacidad",
       "and" : "Y",
       "recoverLogIn" : "Iniciar sesión para acceder a Ledger Recover"
@@ -1785,9 +1785,9 @@
         "fail" : "¡Incorrecto!"
       },
       "coins" : {
-        "title" : "Como usuario de Ledger, mis criptomonedas se almacenan:",
+        "title" : "Como usuario de Ledger, mis criptomonedas se almacenan…",
         "answers" : {
-          "correct" : "En la cadena de bloques",
+          "correct" : "…en la cadena de bloques",
           "wrong" : "En mi Nano"
         },
         "modal" : {
@@ -1810,7 +1810,7 @@
         "title" : "Cuando conecto mi Nano a la aplicación Ledger, mi clave privada...",
         "answers" : {
           "correct" : "Sigue sin conectarse a Internet",
-          "wrong" : "Se conecta brevemente a Internet"
+          "wrong" : "…se conecta brevemente a Internet"
         },
         "modal" : {
           "text" : "Tus claves privadas siempre permanecen sin conexión en tu billetera de hardware. Incluso al conectarse a tu Nano, la aplicación de Ledger no puede acceder a tus claves privadas. Siempre tendrás que autorizar físicamente cada transacción desde tu dispositivo.",
@@ -1819,7 +1819,7 @@
       },
       "final" : {
         "successTitle" : "¡Ya tienes nivel de profesional!",
-        "successText" : "Está todo listo para que administres de forma segura tus cripto. ¡Solo te queda un breve paso!",
+        "successText" : "Está todo listo para que administres de forma segura tus cripto. ¡Sólo te queda un breve paso!",
         "failTitle" : "Pronto tendrás nivel profesional...",
         "failText" : "No te preocupes, Ledger está aquí para guiarte en este proceso. En breve protegerás tus cripto con total seguridad. ¡Solo te queda un paso!",
         "cta" : "Siguiente paso"
@@ -2425,7 +2425,7 @@
         "description" : "Necesitas {{currencyTicker}} para {{actionName}} con esta cuenta."
       }
     },
-    "earn" : "Gana",
+    "earn" : "Earn",
     "quickActions" : "Acciones rápidas",
     "referralProgram" : "Recomiéndanos a un amigo y recibe $10 USD en Bitcoin",
     "banner" : {
@@ -3188,7 +3188,7 @@
     },
     "lending" : {
       "title" : "Prestar cripto",
-      "titleTransferTab" : "Gana",
+      "titleTransferTab" : "Earn",
       "descriptionTransferTab" : "Obtén ingresos pasivos.",
       "actionTitle" : "Prestar",
       "accountActions" : {
