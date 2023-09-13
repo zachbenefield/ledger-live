@@ -590,7 +590,7 @@
     },
     "WrongDeviceForAccount" : {
       "title" : "Une erreur est survenue.",
-      "description" : "Vérifiez que votre wallet physique est bien configuré avec la phrase de récupération associée au compte sélectionné."
+      "description" : "Vérifiez que votre wallet physique est bien configuré avec la phrase de récupération ou la passphrase associée au compte sélectionné."
     },
     "WebPTXPlayerNetworkFail" : {
       "title" : "Erreur réseau",
@@ -1092,14 +1092,14 @@
     },
     "title" : "Vous avez besoin d’un Ledger",
     "desc" : "Pour votre sécurité, Ledger Live ne fonctionne qu’avec un appareil. Vous avez besoin d’un Ledger pour continuer. ",
-    "cta" : "Acheter votre Ledger maintenant",
-    "footer" : "J’ai déjà un Ledger, je veux le configurer",
+    "cta" : "Acheter votre appareil Ledger",
+    "footer" : "J’ai déjà un appareil, je veux le configurer",
     "bannerTitle" : "Protégez vos cryptos et vos NFT",
     "bannerTitle2" : "Accédez au trading avec un Nano",
     "bannerSubtitle" : "avec un appareil Ledger",
     "bannerButtonTitle" : "Découvrez le Nano",
     "bannerButtonTitle2" : "Achetez un appareil",
-    "setupCta" : "J’ai déjà un Ledger, je veux le configurer"
+    "setupCta" : "J’ai déjà un appareil, je veux le configurer"
   },
   "postBuyDeviceSetupNanoWall" : {
     "title" : "Avez-vous reçu votre appareil ?",
@@ -1173,7 +1173,7 @@
   },
   "installSetOfApps" : {
     "restore" : {
-      "title" : "Installer les mêmes apps que sur {{deviceName}} ?",
+      "title" : "Installer les mêmes apps que sur votre {{deviceName}} ?",
       "titleNoDeviceName" : "Installer les mêmes apps que sur votre autre Ledger ?",
       "installCTA" : "Restaurer",
       "skipCTA" : "Plus tard"
@@ -1195,12 +1195,12 @@
   "onboarding" : {
     "stepWelcome" : {
       "title" : "Bienvenue sur Ledger",
-      "subtitle" : "Gérez vos cryptos et NFT en toute sécurité.",
+      "subtitle" : "Gérez vos cryptos et NFT en toute sécurité",
       "start" : "Commencer",
       "noDevice" : "Pas encore d’appareil ?",
       "buy" : "Achetez un {{fullDeviceName}}.",
-      "terms" : "By continuing, you agree to Ledger's",
-      "termsLink" : "Terms & Conditions",
+      "terms" : "En continuant, vous acceptez nos",
+      "termsLink" : "Conditions d’utilisation",
       "privacyLink" : "Politique de confidentialité",
       "and" : "et",
       "recoverLogIn" : "Se connecter à Ledger Recover"
@@ -1209,13 +1209,13 @@
       "title" : "Commencez",
       "noLedgerYet" : "Je n’ai pas encore d’appareil Ledger",
       "noLedgerYetModal" : {
-        "title" : "Des millions d’utilisateurs. Jamais piratés.",
+        "title" : "Des millions d’utilisateurs. Aucun piratage.",
         "desc" : "Sécurisez vos actifs numériques avec un appareil Ledger, pour une tranquillité d’esprit absolue.",
-        "buy" : "Acheter un Ledger",
+        "buy" : "Acheter un appareil Ledger",
         "explore" : "Explorer l’application"
       },
       "setupLedger" : {
-        "title" : "Configurer votre Ledger",
+        "title" : "Configurer votre wallet",
         "subtitle" : "Si votre Ledger est nouveau ou a été réinitialisé."
       },
       "accessWallet" : {
@@ -1312,7 +1312,7 @@
         "label" : "Restauration d’un appareil",
         "title" : "Restaurer avec une phrase de récupération secrète",
         "subTitle" : "Vous devrez avoir votre phrase de récupération secrète.",
-        "desc" : "Utilisez une phrase de récupération existante pour restaurer vos clés privées sur votre nouveau Nano."
+        "desc" : "Utilisez une phrase de récupération existante pour restaurer vos clés privées sur votre nouveau Ledger Nano."
       },
       "recovery" : "Vous avez déjà une phrase de récupération ?",
       "protect" : {
@@ -1711,7 +1711,7 @@
       },
       "protectConnectionInformationModal" : {
         "title" : "Connecter votre Ledger Nano X",
-        "description" : "Assurez-vous que votre Ledger est à proximité de votre téléphone et réessayez. <LinkBluethooth>En savoir plus sur les problèmes de connexion Bluetooth®. \n</LinkBluethooth>\nSi le Bluetooth® fonctionne, vous devez peut-être mettre à jour le système d’exploitation de votre Ledger. Essayez de mettre à jour le système d’exploitation ou contactez l’Assistance Ledger pour obtenir de l’aide. ",
+        "description" : "Assurez-vous que votre appareil Ledger est à proximité de votre téléphone et réessayez. <LinkBluethooth>En savoir plus sur les problèmes de connexion Bluetooth®. \n</LinkBluethooth>\nSi le Bluetooth® fonctionne, vous devez peut-être mettre à jour le système d’exploitation de votre Ledger. Essayez de mettre à jour le système d’exploitation ou contactez l’Assistance Ledger pour obtenir de l’aide. ",
         "learnHowToUpdate" : "Comment mettre à jour"
       }
     },
@@ -1807,7 +1807,7 @@
         }
       },
       "privateKey" : {
-        "title" : "Lorsque je connecte mon Nano à l’app Ledger Live, ma clé privée est :",
+        "title" : "Lorsque je connecte mon Ledger Nano à l’app Ledger Live, ma clé privée est :",
         "answers" : {
           "correct" : "Toujours hors ligne",
           "wrong" : "Brièvement connectée à Internet"
@@ -1851,7 +1851,7 @@
       "withoutProductName" : {
         "title" : "Recherche d’appareils"
       },
-      "description" : "Assurez-vous que votre Ledger est déverrouillé et à proximité de votre téléphone.",
+      "description" : "Assurez-vous que votre appareil Ledger est déverrouillé et à proximité de votre téléphone.",
       "alreadyPaired" : "Déjà appairé"
     },
     "pairing" : {
@@ -1880,7 +1880,7 @@
     "title" : "Configurez votre {{deviceName}}",
     "estimatedTimeFormat" : "{{estimatedTime}} min",
     "deviceSelection" : {
-      "title" : "Choisissez le Ledger que vous souhaitez configurer :",
+      "title" : "Choisissez l’appareil que vous souhaitez configurer :",
       "brand" : "Ledger",
       "setupTime" : "{{time}} min",
       "notCompatible" : "Incompatible avec l’iPhone",
@@ -1925,10 +1925,10 @@
       "content" : "Connexion à votre {{productName}} perdue. Reconnexion en cours..."
     },
     "helpDrawer" : {
-      "title" : "Besoin d’aide pour configurer votre Ledger ?",
+      "title" : "Besoin d’aide ?",
       "description" : "Lorem Elsass ipsum aliquam bissame Ober schae ffolsheim gehts messti de Bischheim tellus blottkopf, dui sed libero. hopla libero, placerat leo eget Gal",
       "docCta" : "Consulter notre FAQ",
-      "supportCta" : "S’adresser à un agent"
+      "supportCta" : "Accéder à un expert"
     },
     "pairingStep" : {
       "title" : "Votre {{productName}} est appairé",
@@ -1948,7 +1948,7 @@
       "choiceRestoreDirectOrRecover" : "Placeholder : Choisissez de restaurer directement ou d’utiliser Ledger Recover",
       "recoverSeed" : "Placeholder : Ledger Recover",
       "restoreSeed" : "Pour la récupération et pour plus de sécurité, utilisez une phrase de récupération secrète générée par un appareil Ledger.\n\nVous n’en avez pas déjà une ? Générez une nouvelle phrase avec votre {{productName}}.",
-      "selection" : "Sur votre {{productName}}, choisissez l’option de configuration qui vous convient.",
+      "selection" : "Sur votre {{productName}}, choisissez votre option de configuration préférée.",
       "selectionContinueOnDevice" : "Choisissez une option sur votre {{productName}}",
       "newSeedDescription" : "Regardez les vidéos ci-dessous pour en savoir plus sur vos mots secrets.",
       "newSeedContinueOnDevice" : "Faites-le sur votre {{productName}}",
@@ -2014,7 +2014,7 @@
       }
     },
     "appsStep" : {
-      "title" : "Installez des apps blockchain"
+      "title" : "Apps blockchain"
     },
     "readyStep" : {
       "title" : "Configuration terminée",
@@ -2098,7 +2098,7 @@
     "title" : "Ajouter un compte",
     "ctaAdd" : "Ajouter des comptes",
     "ctaImport" : "Importer les comptes de l’ordinateur",
-    "description" : "Vous pouvez choisir d’ajouter des cryptos directement avec votre Ledger, ou les importer depuis Ledger Live pour l’ordinateur.",
+    "description" : "Vous pouvez choisir d’ajouter des cryptos directement avec votre appareil Ledger, ou les importer depuis Ledger Live pour l’ordinateur.",
     "add" : {
       "title" : "Avec votre Ledger",
       "description" : "Ajoutez ou importez des actifs avec votre Ledger."
@@ -2472,7 +2472,7 @@
       }
     },
     "noResultsFound" : "Aucun actif trouvé",
-    "noResultsDesc" : "Merci de vérifier l’orthographe et réessayer",
+    "noResultsDesc" : "Veuillez vérifier l’orthographe et réessayer.",
     "readOnly" : {
       "moreCrypto" : {
         "title" : "et plus 6 000 autres",
@@ -2892,7 +2892,7 @@
         "verify" : "Vous n’avez pas vérifié votre adresse {{accountType}}. Vérifiez vos adresses sur votre appareil pour une sécurité optimale."
       },
       "noResultsFound" : "Aucun crypto-actif trouvé",
-      "noResultsDesc" : "Merci de vérifier l’orthographe et réessayer"
+      "noResultsDesc" : "Veuillez vérifier l’orthographe et réessayer."
     },
     "buy" : {
       "title" : "Acheter",
@@ -2907,7 +2907,7 @@
     },
     "stake" : {
       "title" : "Staker",
-      "description" : "Faites fructifier vos cryptos."
+      "description" : "Faites fructifier vos cryptos"
     },
     "swap" : {
       "title" : "Swap",
@@ -2994,7 +2994,7 @@
         "description" : "Votre échange a été envoyé au réseau pour confirmation. Cela peut prendre jusqu’à une heure avant que vous ne receviez vos {{targetCurrency}}.",
         "label" : "Identifiant de votre swap :",
         "title" : "Échange bien diffusé ",
-        "disclaimer" : "Notez bien l’identifiant de votre échange au cas où vous auriez besoin de contacter l’assistance de {{provider}}.",
+        "disclaimer" : "Notez bien l’identifiant de votre swap au cas où vous auriez besoin de contacter l’assistance de {{provider}}.",
         "cta" : "Voir les détails"
       },
       "tradeMethod" : {
@@ -3077,10 +3077,10 @@
         "to" : "À",
         "toAmount" : "Montant à recevoir",
         "statusTooltips" : {
-          "expired" : "Pour plus d’informations, contactez le prestataire du service Swap avec l’identifiant de votre échange.",
-          "refunded" : "Pour plus d’informations, contactez le prestataire du service Swap avec l’identifiant de votre échange.",
+          "expired" : "Pour plus d’informations, contactez le prestataire du service Swap avec l’identifiant de votre swap.",
+          "refunded" : "Pour plus d’informations, contactez le prestataire du service Swap avec l’identifiant de votre swap.",
           "pending" : "Merci de patienter pendant que le prestataire du service Swap traite votre transaction.",
-          "onhold" : "Pour résoudre votre problème, contactez le prestataire du service Swap avec l’identifiant de votre échange.",
+          "onhold" : "Pour résoudre votre problème, contactez le prestataire du service Swap avec l’identifiant de votre swap.",
           "finished" : "Votre échange a bien été réalisé."
         }
       },
@@ -3205,8 +3205,8 @@
         "amountSuppliedTooltip" : "Montant prêté sur le réseau",
         "currencyAPY" : "APY",
         "currencyAPYTooltip" : "Rendement annuel d’un dépôt sans cesse capitalisé",
-        "accruedInterests" : "Solde des intérêts",
-        "accruedInterestsTooltip" : "Intérêts produits par vos actifs prêtés",
+        "accruedInterests" : "Solde des récompenses",
+        "accruedInterestsTooltip" : "Récompenses gagnées avec vos actifs prêtés",
         "interestEarned" : "Intérêts gagnés",
         "interestEarnedTooltip" : "Intérêts gagnés suite au retrait",
         "openLoans" : "Prêts en cours",
@@ -3225,7 +3225,7 @@
         "tabTitle" : "Tableau de bord",
         "assetsTitle" : "Actifs à prêter",
         "accountsTitle" : "Comptes approuvés",
-        "emptySateDescription" : "Vous pouvez prêter des actifs directement depuis vos comptes Ethereum et gagner des intérêts.",
+        "emptySateDescription" : "Vous pouvez prêter des actifs directement depuis vos comptes Ethereum et gagner des récompenses.",
         "apy" : "APY {{value}}",
         "activeAccount" : {
           "account" : "Compte",
@@ -3267,13 +3267,13 @@
         },
         "2" : {
           "label" : "Étape 2/3",
-          "title" : "Déposer des actifs pour gagner des intérêts",
-          "description" : "Une fois qu’un compte est approuvé, vous pouvez sélectionner un montant d’actifs à prêter, puis émettre une transaction vers le protocole. Les intérêts courent dès la confirmation de la transaction."
+          "title" : "Déposer des actifs pour gagner des récompenses",
+          "description" : "Une fois qu’un compte est approuvé, vous pouvez sélectionner un montant d’actifs à prêter, puis émettre une transaction vers le protocole. Les récompenses courent dès la confirmation de la transaction."
         },
         "3" : {
           "label" : "Étape 3/3",
           "title" : "Retirer des actifs à tout moment",
-          "description" : "Vous pouvez retirer vos actifs et les intérêts perçus en partie ou totalité à tout moment depuis votre compte Ledger.",
+          "description" : "Vous pouvez retirer vos actifs et les récompenses perçues en partie ou totalité à tout moment depuis votre compte Ledger.",
           "cta" : "Prêter maintenant"
         },
         "title" : "Prêter des cryptos"
@@ -3351,7 +3351,7 @@
         },
         "validation" : {
           "success" : "Dépôt bien versé",
-          "info" : "Vous commencerez à percevoir des intérêts une fois que le réseau aura confirmé le dépôt.",
+          "info" : "Vous commencerez à percevoir des récompenses une fois que le réseau aura confirmé le dépôt.",
           "extraInfo" : "Il peut y avoir un délai avant que les transactions apparaissent dans un explorateur et soient confirmées.",
           "button" : {
             "done" : "Terminé",
@@ -3784,12 +3784,12 @@
   "SelectDevice" : {
     "title" : "Appairer un nouvel appareil",
     "bluetooth" : {
-      "title" : "Se connecter en Bluetooth",
+      "title" : "Se connecter via Bluetooth",
       "label" : "Détectez automatiquement votre Nano"
     },
     "deviceNotFoundPairNewDevice" : "Appairer via Bluetooth",
     "headerDescription" : "Assurez-vous que votre {{productName}} est déverrouillé et que le Bluetooth est activé.",
-    "usb" : "...ou connecter avec un câble USB",
+    "usb" : "Se connecter avec un câble USB",
     "usbLabel" : "Connectez votre câble USB et entrez votre code PIN sur votre appareil.",
     "withoutDeviceHeader" : "Je n’ai pas mon appareil.",
     "withoutDevice" : "Continuer sans mon appareil",
@@ -3875,7 +3875,7 @@
     "alreadyPaired" : "Déjà appairé"
   },
   "DeviceItemSummary" : {
-    "genuine" : "Votre Ledger est authentique.",
+    "genuine" : "Votre appareil est authentique.",
     "genuineFailed" : "<1><0>Échec</0></1> de l’authentification de l’appareil"
   },
   "DeviceNameRow" : {
@@ -3933,7 +3933,7 @@
       "noAppsInstalled" : "Aucune app installée sur votre appareil",
       "noAppsDescription" : "Allez dans le Catalogue pour installer des apps.",
       "noResultsFound" : "Aucun résultat",
-      "noResultsDesc" : "Merci de vérifier l’orthographe et réessayer",
+      "noResultsDesc" : "Veuillez vérifier l’orthographe et réessayer.",
       "versionNew" : "(NOUV. {{newVersion}})",
       "searchApps" : "Rechercher"
     },
@@ -3951,7 +3951,7 @@
     "storage" : {
       "title" : "Stockage",
       "used" : "Utilisés",
-      "genuine" : "Votre Ledger est authentique.",
+      "genuine" : "Votre appareil est authentique.",
       "appsInstalled" : "<0>{{number}}</0> app",
       "appsInstalled_plural" : "<0>{{number}}</0> apps",
       "storageAvailable" : "disponibles",
@@ -6145,9 +6145,9 @@
         "tagLabel" : "Cadeau"
       },
       "assetsTransfer" : {
-        "title" : "Transférer vos actifs vers votre Ledger",
+        "title" : "Transférez vos actifs vers votre wallet Ledger",
         "titleCompleted" : "Actifs transférés sur votre Ledger",
-        "description" : "Transférez vos actifs à partir de n’importe quelle autre plateforme d’échange ou wallet.",
+        "description" : "Envoyez-les depuis la plateforme d’échange ou le wallet de votre choix.",
         "popupLabel" : "Actifs transférés"
       }
     }
