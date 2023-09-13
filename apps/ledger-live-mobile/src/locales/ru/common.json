@@ -1199,8 +1199,8 @@
       "start" : "Приступить",
       "noDevice" : "Нет устройства Ledger?",
       "buy" : "Приобретайте {{fullDeviceName}}",
-      "terms" : "By continuing, you agree to Ledger's",
-      "termsLink" : "Terms & Conditions",
+      "terms" : "Продолжение означает ваше согласие с",
+      "termsLink" : "Условия и положения",
       "privacyLink" : "Политика конфиденциальности",
       "and" : "и",
       "recoverLogIn" : "Войти в Ledger Recover"
@@ -3379,7 +3379,7 @@
     },
     "walletConnect" : {
       "title" : "WalletConnect",
-      "description" : "Подключить кошелёк к децентрализованным приложениям."
+      "description" : "Подключите кошелёк к децентрализованным приложениям."
     }
   },
   "signMessage" : {
@@ -5292,7 +5292,7 @@
           "waitingValidators" : "Невыбранные валидаторы",
           "noResultsFound" : "Валидаторы по запросу «<0>{{search}}</0>» не найдены",
           "selected" : "Выбрано {{selected}} из {{total}}",
-          "notValidatorsRemoved" : "Вы указали {{count}} адресов, которые больше не являются валидаторами. Они будут автоматически удалены из назначающей транзакции.",
+          "notValidatorsRemoved" : "Вы отметили которые адреса, которые больше не являются валидаторами. Они будут автоматически удалены из назначающей транзакции.",
           "maybeChill" : "Также можно отозвать назначения"
         },
         "validation" : {
