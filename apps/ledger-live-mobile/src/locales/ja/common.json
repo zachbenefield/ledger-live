@@ -1032,9 +1032,9 @@
         "cta" : "詳細はこちら"
       },
       "discoverWeb3" : {
-        "title" : "Web 3をチェック",
+        "title" : "Web3をチェック",
         "description" : "デバイスが届くまでの間に、Web 3の世界を覗いてみましょう！",
-        "cta" : "チェック"
+        "cta" : "アプリ一覧"
       }
     }
   },
@@ -1135,7 +1135,7 @@
     "desc" : "注文を処理しています。\nLedgerの受取までもうすぐです。ご注文確認のメールをご確認ください。"
   },
   "discover" : {
-    "title" : "Discover",
+    "title" : "アプリ一覧",
     "desc" : "Web3の世界を安全に楽しむ",
     "link" : "さらに詳しく",
     "sections" : {
@@ -1199,8 +1199,8 @@
       "start" : "はじめに",
       "noDevice" : "デバイスをお持ちでない場合",
       "buy" : "{{fullDeviceName}}を購入",
-      "terms" : "By continuing, you agree to Ledger's",
-      "termsLink" : "Terms & Conditions",
+      "terms" : "続行した場合、Ledgerの",
+      "termsLink" : "利用規約に同意したものとみなされます",
       "privacyLink" : "プライバシーポリシー",
       "and" : "そして",
       "recoverLogIn" : "Ledger Recoverにログイン"
@@ -2031,7 +2031,7 @@
     "manager" : "My Ledger",
     "settings" : "設定",
     "platform" : "Live Apps",
-    "discover" : "Discover",
+    "discover" : "アプリ一覧",
     "nanoX" : "Nano X",
     "market" : "Market",
     "learn" : "ラーニング"
@@ -2100,7 +2100,7 @@
     "ctaImport" : "デスクトップアカウントのインポート",
     "description" : "Ledgerに暗号資産を直接追加、またはLedger Live Desktopからインポートする方法を選択できます。",
     "add" : {
-      "title" : "Ledgerと共に",
+      "title" : "Ledgerデバイスを使用",
       "description" : "Ledgerで資産を作成またはインポートする"
     },
     "import" : {
@@ -3019,7 +3019,7 @@
         "balance" : "残高<0>123</0>",
         "fromAccount" : "アカウントを選択",
         "toAccount" : "アカウントを選択",
-        "paraswapCTA" : "Paraswapをお探しですか？この項目は「Discover」タブに移動されました！",
+        "paraswapCTA" : "Paraswapをお探しですか？この項目は「アプリ一覧r」タブに移動されました！",
         "quote" : "見積もり",
         "receive" : "受け取る",
         "amount" : {
@@ -5832,7 +5832,7 @@
   },
   "browseWeb3" : {
     "catalog" : {
-      "title" : "チェック",
+      "title" : "アプリ一覧",
       "subtitle" : "Ledgerと完全に統合されたWeb3を探索する",
       "section" : {
         "recentlyUsed" : "最近使用されたもの",
