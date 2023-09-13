@@ -702,7 +702,7 @@
       "title" : "معاملتك السابقة لم تتم معالجتها بعد. يُرجى الانتظار لحظة ثم التحقق من سجل المعاملات قبل المحاولة مرة أخرى."
     },
     "SolanaTxConfirmationTimeout" : {
-      "title" : "Your transaction may have failed. Please wait a moment then check the transaction history before trying again."
+      "title" : "ربما تكون معاملتك قد فشلت. يُرجى الانتظار لحظة ثم تحقق من سجل المعاملات قبل المحاولة مرة أخرى."
     },
     "CardanoMinAmountError" : {
       "title" : "الحد الأدنى للمبلغ القابل للإرسال هو {{amount}} ADA"
@@ -1069,7 +1069,7 @@
       "title" : "شكراً على رأيك",
       "description" : "إذا كنت ترغب في إعطائنا المزيد من الملاحظات أو طلب المساعدة يرجى إرسال بريد إلكتروني لنا على ",
       "cta" : {
-        "done" : "Done"
+        "done" : "تم"
       }
     }
   },
@@ -1084,11 +1084,11 @@
     },
     "2" : {
       "title" : "مفتاحك الى ويب 3.0",
-      "desc" : "يمكنك شراء وبيع ومبادلة العملات المشفرة الأساسية من خلال شركائنا بأمان عن طريق Ledger الخاصة بك."
+      "desc" : "يمكنك شراء وبيع ومبادلة العملات المشفرة الأساسية بأمان من خلال مزودينا عن طريق جهازك Ledger."
     },
     "3" : {
       "title" : "أمان مُعتمد",
-      "desc" : "منتجاتنا هي محافظ الأجهزة الوحيدة المعتمدة لأمانها في السوق من قِبل الهيئات الوطنية لأمن نظم المعلومات."
+      "desc" : "منتجاتنا هي محافظ الأجهزة الوحيدة المعتمدة في السوق لأمانها من قِبل الهيئات الوطنية لأمن نظم المعلومات."
     },
     "title" : "أنت بحاجة إلى جهاز Ledger",
     "desc" : "من أجل أمانك، Ledger Live يعمل فقط مع جهاز. أنت بحاجة إلى جهاز لتتمكن من المتابعة.",
@@ -1115,7 +1115,7 @@
       "url" : {
         "title" : "تحديث عنوان iframe",
         "subtitle" : "إعدادات تصحيح الأخطاء",
-        "cta" : "Save"
+        "cta" : "حفظ"
       },
       "message" : {
         "successTitle" : "اكتملت المعاملة",
@@ -1136,7 +1136,7 @@
   },
   "discover" : {
     "title" : "اكتشف",
-    "desc" : "اكتشف عالم ويب 3.0 بأمان",
+    "desc" : "استكشف عالم ويب 3.0 بأمان",
     "link" : "أخبرني بالمزيد",
     "sections" : {
       "learn" : {
@@ -1199,8 +1199,8 @@
       "start" : "بدء الاستخدام",
       "noDevice" : "ليس لديك جهاز؟",
       "buy" : "اشتري {{fullDeviceName}}",
-      "terms" : "By continuing, you agree to Ledger's",
-      "termsLink" : "Terms & Conditions",
+      "terms" : "بالمتابعة أنت توافق على ما يخص Ledger من",
+      "termsLink" : "الشروط والأحكام",
       "privacyLink" : "سياسة الخصوصية",
       "and" : "و",
       "recoverLogIn" : "تسجيل الدخول إلى Ledger Recover"
@@ -1224,7 +1224,7 @@
       },
       "buyNano" : {
         "title" : "قم بشراء Ledger Nano X",
-        "subtitle" : "محفظة الجهاز هي الطريقة الوحيدة للتأكد من أن أصولك بأمان "
+        "subtitle" : "محفظة الأجهزة هي الطريقة الوحيدة للتأكد من أن أصولك بأمان "
       },
       "discoverLedger" : {
         "title" : "استكشف Ledger Live",
@@ -1248,10 +1248,10 @@
         "title" : "تأمين جميع أصولك المشفرة."
       },
       "1" : {
-        "title" : "راقب الأسواق."
+        "title" : "تابع الأسواق."
       },
       "2" : {
-        "title" : "اكتشف التطبيقات وتعرّف على ويب 3.0."
+        "title" : "اكتشف التطبيقات وتعرَّف على ويب 3.0."
       },
       "3" : {
         "title" : "حافظ على أصولك المشفرة وNFTs آمنة."
@@ -1330,7 +1330,7 @@
       "0" : {
         "label" : "الأساسيات",
         "title" : "الوصول إلى أصولك المشفرة",
-        "desc" : "يتم حفظ أصولك المشفرة على سلسلة الكتل (blockchain). أنت بحاجة إلى مفتاح خاص للوصول إليها وإدارتها.",
+        "desc" : "يتم حفظ أصولك المشفرة على سلسلة الكتل (blockchain). تحتاج إلى مفتاح خاص للوصول لهم وإدارتهم.",
         "action" : "ليس لديك Nano؟ اكتشف التطبيق"
       },
       "1" : {
@@ -1341,11 +1341,11 @@
       "2" : {
         "label" : "الأساسيات",
         "title" : "ابق غير متصل بالإنترنت",
-        "desc" : "Ledger Live يتيح لك شراء وبيع وإدارة وتبادل وكسب الأصول المشفرة بينما تظل محمياً. ستتحقق من صحة كل معاملة أصول مشفرة باستخدام Nano الخاصة بك."
+        "desc" : "Ledger Live يتيح لك إمكانية شراء وبيع وإدارة وتبادل وكسب الأصول المشفرة بينما تظل محمياً. باستخدام Nano الخاصة بك ستتحقق من صحة كل معاملة من معاملات الأصول المشفرة ."
       },
       "3" : {
         "label" : "الأساسيات",
-        "title" : "التحقق من صحة المعاملات",
+        "title" : "تحقق من صحة المعاملات",
         "desc" : "Nano الخاصة بك تعمل كمحفظة \"تخزين بارد\". ويعني ذلك أنها لا تكشف مفتاحك الخاص على الإنترنت أبدًا، حتى عند استخدام التطبيق."
       },
       "4" : {
@@ -1819,9 +1819,9 @@
       },
       "final" : {
         "successTitle" : "أصبحت محترفًا بالفعل!",
-        "successText" : "أنت مُستعد لإدارة أصولك المشفرة بأمان. لم يتبقى أمامك سوى خطوة واحدة سريعة!",
+        "successText" : "أنت مُستعد لإدارة أصولك المشفرة بأمان. لم يتبقى سوى خطوة واحدة سريعة!",
         "failTitle" : "ستصبح محترفاً قريباً...",
-        "failText" : "لا تقلق، Ledger هنا لإرشادك خلال رحلتك. ستشعر قريباً براحة إضافية بشأن أمان أصولك المشفرة. لم يتبقى سوى خطوة واحدة سريعة!",
+        "failText" : "لا تقلق، Ledger هنا لإرشادك خلال رحلتك. ستشعر قريباً بمزيد من الاطمئنان تجاه أمان أصولك المشفرة. لم يتبقى سوى خطوة واحدة سريعة!",
         "cta" : "الخطوة التالية"
       },
       "nextQuestion" : "السؤال التالي",
@@ -2068,8 +2068,8 @@
         "title" : "بدء الاستخدام",
         "description" : "يمكنك إما شراء الأصول المشفرة من شركائنا أو إعداد محفظتك"
       },
-      "title" : "ابدأ من خلال إضافة أصولك المفضلة إلى المحفظة",
-      "subtitle" : "Ledger تدعم ما يزيد عن 6,000 عملة ورمز توكن",
+      "title" : "ابدأ بإضافة أصولك المفضلة إلى المحفظة",
+      "subtitle" : "Ledger تدعم أكثر من 6,000 عملة ورمز توكن",
       "addAccount" : "أو قم باضافة حساب"
     },
     "noOpState" : {
@@ -2434,7 +2434,7 @@
         "cta" : "إعادة التفويض"
       },
       "delegation" : {
-        "description" : "في حالة أنك لم تكن تعلم، مدقق Ledger يقوم بتكديس {{asset}} خاصتك بعمولة منخفضة.",
+        "description" : "في حالة أنك لم تكن تعلم، يقوم مدقق Ledger بتكديس {{asset}} خاصتك بعمولة منخفضة.",
         "cta" : "قم بالتكديس الآن"
       }
     }
@@ -2895,11 +2895,11 @@
       "noResultsDesc" : "من فضلك تأكد من التهجئة وحاول مرة أخرى"
     },
     "buy" : {
-      "title" : "Buy",
+      "title" : "شراء",
       "description" : "شراء الأصول المشفرة بأمان مقابل العملات النقدية."
     },
     "sell" : {
-      "title" : "Sell",
+      "title" : "بيع",
       "description" : "بيع الأصول المشفرة بأمان مقابل العملات النقدية."
     },
     "exchange" : {
@@ -3188,7 +3188,7 @@
     },
     "lending" : {
       "title" : "إقراض الأصول المشفرة",
-      "titleTransferTab" : "Earn",
+      "titleTransferTab" : "اكسب",
       "descriptionTransferTab" : "اكسب دخل سلبي.",
       "actionTitle" : "إقراض",
       "accountActions" : {
@@ -4034,7 +4034,7 @@
         "showAll" : "عرض التطبيقات المراد إلغاء تثبيتها",
         "description" : "التطبيقات على جهازك التي تحتاج إلى تطبيق {{app}} سيتم إلغاء تثبيتها أيضاً.",
         "description_one" : "بعض التطبيقات تعتمد على تطبيق {{app}}.",
-        "description_two" : "Some apps are dependent of the {{app}} app.\nApps on your device that are dependent on the {{app}} app will be uninstalled too."
+        "description_two" : "بعض التطبيقات تعتمد على تطبيق {{app}}.\nالتطبيقات على جهازك التي تعتمد على تطبيق {{app}} سيتم إلغاء تثبيتها أيضاً."
       },
       "continueUninstall" : "إلغاء تثبيت {{app}} والتطبيقات الأخرى"
     },
@@ -4079,7 +4079,7 @@
     "updateDone" : "تمت! {{deviceName}} الخاص بك مُحدَّث إلى آخر إصدار",
     "updateDoneDescription" : "الإصدار الجديد لنظام التشغيل: {{firmwareVersion}}",
     "preparing" : "جاري إعداد تحديث البرنامج الثابت، رجاءً ابقِ جهازك يقظاً ومتصلاً. سنقوم بإخطارك بالتقدم",
-    "confirmIdentifierText" : "Verify that the identifier on your device is the same as the identifier below. Confirm and enter your PIN code if requested.",
+    "confirmIdentifierText" : "تحقق من أن المُعرّف على جهازك هو المُعرّف ذاته أدناه. قم بتأكيد وإدخال كود PIN الخاص بك إذا طُلب.",
     "pleaseReinstallApps" : "رجاءً أعد تثبيت التطبيقات على جهازك.",
     "pleaseConfirmUpdate" : "أكّد التحديث على جهازك",
     "pleaseConfirmUpdateOnYourDevice" : "تأكيد التثبيت على {{deviceName}}",
@@ -4089,7 +4089,7 @@
     "pleaseWaitDownload" : "يُرجى الانتظار حتى يتم تنزيل المُثبت",
     "doNotLeaveLedgerLive" : "لا تغادر تطبيق Ledger Live حتى اكتمال التحديث.",
     "preparingDevice" : "جاري إعداد جهازك",
-    "pleaseWaitUpdate" : "Please wait for the update to finish",
+    "pleaseWaitUpdate" : "يرجى الانتظار حتى ينتهي التحديث",
     "viewUpdateChangelog" : "عرض سِجل تغييرات التحديث",
     "waitForFirmwareUpdate" : "انتظر حتى انتهاء تحديث البرنامج الثابت على جهازك",
     "waitForInstallationToFinish" : "انتظر حتى انتهاء التثبيت على جهازك {{deviceName}}",
@@ -4107,8 +4107,8 @@
     "reinstallApps" : "أعد تثبيت التطبيقات.",
     "currentVersionNumber" : "الإصدار الحالي",
     "newVersionNumber" : "الإصدار الجديد",
-    "success" : "Firmware updated",
-    "update" : "Update",
+    "success" : "تم تحديث البرنامج الثابت",
+    "update" : "تحديث",
     "Notifications" : {
       "confirmOnDevice" : "نتطلب تأكيدك على الجهاز",
       "preparingUpdate" : "جاري نقل التحديث، سنقوم بإعلامك عند الانتهاء من ذلك",
@@ -4124,7 +4124,7 @@
       "flash-bootloader" : "جاري تحديث Bootloader",
       "flash" : "إعادة ضبط نسخة نظام التشغيل على جهازك",
       "preparing" : "جاري إعداد التحديث",
-      "firmware" : "Downloading update",
+      "firmware" : "جاري تنزيل التحديث",
       "prepareUpdate" : {
         "titleActive" : "جارٍ إعداد التحديث للتثبيت",
         "description" : "نسخ التكوين لديك احتياطياً ونقل التحديث إلى {{deviceName}}."
@@ -4176,8 +4176,8 @@
   },
   "FirmwareUpdateReleaseNotes" : {
     "introTitle" : "قم بتحديث {{deviceName}} إلى الإصدار {{version}}",
-    "recoveryPhraseBackupInstructions" : "Ensure your 24-word recovery phrase is written down on the Recovery sheet and it is available, as a precaution.",
-    "confirmRecoveryPhrase" : "I have my recovery phrase",
+    "recoveryPhraseBackupInstructions" : "تأكد من كتابة عبارة الاسترداد الخاصة بك المكونة من 24 كلمة على ورقة الاسترداد وأنها متوفرة، على سبيل الاحتياط.",
+    "confirmRecoveryPhrase" : "لدي عبارة الاسترداد الخاصة بي",
     "introDescription1" : "يرجى ملاحظة أنه سيتم حذف جميع التطبيقات الموجودة على جهازك. يمكنك إعادة تثبيت تطبيقاتك بعد تحديث البرنامج الثابت.",
     "introDescription2" : "ليس لذلك أي تأثير على أصولك المشفرة.",
     "action" : "متابعة التحديث"
@@ -5438,10 +5438,10 @@
       "iWithdraw" : "أنا أسحب",
       "totalStake" : "إجمالي التكديس",
       "commission" : "العمولة",
-      "stakeActivationState" : "State",
+      "stakeActivationState" : "الولاية",
       "delegationEarn" : "يمكنك كسب مكافآت SOL عن طريق تفويض أصولك.",
-      "info" : "How Delegation works",
-      "broadcastSuccessTitle" : "Operation sent",
+      "info" : "كيف يعمل التفويض",
+      "broadcastSuccessTitle" : "تم إرسال العملية",
       "broadcastSuccessDescription" : "ستُحدّث حالة التفويض عندما يتم تأكيد المعاملة.",
       "delegatedTo" : "تم التفويض إلى",
       "started" : {
@@ -5701,7 +5701,7 @@
   "exchange" : {
     "count" : "+ {{count}} أكثر",
     "buy" : {
-      "screenTitle" : "BUY CRYPTO",
+      "screenTitle" : "شراء أصول مشفرة",
       "tabTitle" : "شراء",
       "selectCurrency" : "اختر عملة",
       "selectAccount" : "اختر حساب",
@@ -6252,7 +6252,7 @@
         "swap" : {
           "title" : "مبادلة",
           "label" : "شائع",
-          "body" : "تحويل أصول مشفرة إلى أصول مشفرة بشكل آمن"
+          "body" : "قم بالتحويل بين الأصول المشفرة بأمان"
         },
         "receive" : {
           "title" : "تلقي",
