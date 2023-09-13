@@ -1199,8 +1199,8 @@
       "start" : "시작하기",
       "noDevice" : "장치가 없나요?",
       "buy" : "{{fullDeviceName}} 구매",
-      "terms" : "By continuing, you agree to Ledger's",
-      "termsLink" : "Terms & Conditions",
+      "terms" : "계속 진행하면 Ledger의 다음 약관에 동의하는 것입니다",
+      "termsLink" : "이용약관",
       "privacyLink" : "개인 정보 보호 정책",
       "and" : "및",
       "recoverLogIn" : "Ledger Recover 로그인"
