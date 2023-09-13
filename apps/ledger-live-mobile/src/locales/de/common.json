@@ -88,7 +88,7 @@
     "buyEth" : "Ethereum kaufen",
     "popular" : "beliebt",
     "getSupport" : "Hilfe",
-    "comingSoon" : "In Kürze verfügbar",
+    "comingSoon" : "Bald verfügbar",
     "restart" : "Neustarten",
     "loadMore" : "Mehr laden",
     "patterns" : {
@@ -1168,7 +1168,7 @@
         "desc" : "Kaufen Ihre Freunde einen Ledger, bekommen Sie alle Bitcoin im Wert von 10 $ geschenkt."
       }
     },
-    "comingSoon" : "In Kürze verfügbar",
+    "comingSoon" : "Bald verfügbar",
     "mostPopular" : "Am beliebtesten"
   },
   "installSetOfApps" : {
@@ -1199,8 +1199,8 @@
       "start" : "Erste Schritte",
       "noDevice" : "Kein Gerät?",
       "buy" : "Kaufen Sie ein {{fullDeviceName}}",
-      "terms" : "By continuing, you agree to Ledger's",
-      "termsLink" : "Terms & Conditions",
+      "terms" : "Indem Sie fortfahren, stimmen Sie den folgenden Ledger-Bedingungen zu:",
+      "termsLink" : "Allgemeine Geschäftsbedingungen",
       "privacyLink" : "Datenschutzrichtlinie",
       "and" : "Hinzu kommt:",
       "recoverLogIn" : "Für Ledger Recover anmelden"
@@ -5840,7 +5840,7 @@
         "clearAll" : "Alle löschen"
       },
       "branch" : {
-        "soon" : "In Kürze verfügbar",
+        "soon" : "Bald verfügbar",
         "experimental" : "Experimentell",
         "debug" : "debuggen"
       },
