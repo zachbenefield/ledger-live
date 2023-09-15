@@ -18,7 +18,7 @@ export const signOperation: SignOperationFnSignature<Transaction> = ({
   withDevice(deviceId)(
     transport =>
       new Observable(o => {
-        let cancelled;
+        let cancelled = false;
 
         async function main() {
           const { fees } = transaction;
