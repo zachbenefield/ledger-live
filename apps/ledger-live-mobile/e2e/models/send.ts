@@ -3,6 +3,7 @@ import { getElementById, tapById, waitForElementById } from "../helpers";
 export default class ReceivePage {
   async selectAccount(accountId: string) {
     const id = "account-card-" + accountId;
+    console.warn("valeur de lid: " + id);
     await waitForElementById(id);
     await tapById(id);
   }

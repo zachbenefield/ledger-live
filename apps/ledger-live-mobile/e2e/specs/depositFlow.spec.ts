@@ -1,5 +1,6 @@
-import { expect, device } from "detox";
+import { device } from "detox";
 import PortfolioPage from "../models/wallet/portfolioPage";
+import ReceivePage from "../models/receive";
 import Deposit from "../models/deposit";
 import { loadBleState, loadConfig } from "../bridge/server";
 import DeviceAction from "../models/DeviceAction";
@@ -8,6 +9,7 @@ import { DeviceModelId } from "@ledgerhq/devices";
 let portfolioPage: PortfolioPage;
 let depositPage: Deposit;
 let deviceAction: DeviceAction;
+let receivePage: ReceivePage;
 const btcDepositAddress = "173ej2furpaB8mTtN5m9829MPGMD7kCgSPx";
 
 const knownDevice = {
@@ -16,23 +18,69 @@ const knownDevice = {
   modelId: DeviceModelId.nanoX,
 };
 
-describe("Deposit", () => {
+const deviceActionSteps = async () => {
+  await device.disableSynchronization();
+  await deviceAction.selectMockDevice();
+  await deviceAction.openApp();
+};
+
+describe("Deposit Flow", () => {
   beforeAll(async () => {
     loadConfig("EthAccountXrpAccountReadOnlyFalse", true);
     loadBleState({ knownDevices: [knownDevice] });
     portfolioPage = new PortfolioPage();
     depositPage = new Deposit();
     deviceAction = new DeviceAction(knownDevice);
+    receivePage = new ReceivePage();
   });
 
-  it("Should verify the deposit adress after importing an account", async () => {
+  it("Should verify the address after importing an account working on a single network", async () => {
     await portfolioPage.waitForPortfolioPageToLoad();
     await portfolioPage.openTransferMenu();
     await portfolioPage.navigateToDepositFromTransferMenu();
     await depositPage.searchAsset("bitcoin");
     await depositPage.selectAsset("BTC");
-    await device.disableSynchronization();
-    await deviceAction.selectMockDevice();
-    await deviceAction.openApp();
+    await deviceActionSteps();
+    await depositPage.selectAccount("Bitcoin 1");
+    await depositPage.selectVerifyAddress();
+    await deviceActionSteps();
+    await depositPage.expectAddressIsVerified(btcDepositAddress);
+  });
+
+  it("Should display the number of account existing per networks", async () => {
+    await portfolioPage.openViaDeeplink();
+    await receivePage.openViaDeeplink();
+    await depositPage.searchAsset("");
+    await depositPage.selectAsset("ETH");
+    depositPage.expectNumberOfAccountInListIsDisplayed("ethereum", 3);
+    depositPage.expectNumberOfAccountInListIsDisplayed("optimism", 1);
+  });
+
+  it("Should create an account on a network", async () => {
+    await portfolioPage.openViaDeeplink();
+    await receivePage.openViaDeeplink();
+    await depositPage.searchAsset("ether");
+    await depositPage.selectAsset("ETH");
+    await receivePage.selectCurrency("optimism");
+    await depositPage.createAccount();
+    await deviceActionSteps();
+    await depositPage.selectAsset("OP Mainnet 1");
+    await depositPage.selectAsset("OP Mainnet 2");
+    await depositPage.selectAsset("OP Mainnet 3");
+    await depositPage.continueCreateAccount();
+    await depositPage.expectAccountIsCreated("OP Mainnet 3");
+  });
+
+  it("Should access to deposit after importing a cryptocurrency on a selected network", async () => {
+    await portfolioPage.openViaDeeplink();
+    await receivePage.openViaDeeplink();
+    await depositPage.searchAsset("pol");
+    await depositPage.selectAsset("MATIC");
+    await receivePage.selectCurrency("bsc");
+    await deviceActionSteps();
+    await depositPage.selectAsset("Binance Smart Chain 1");
+    await depositPage.selectDontVerifyAddress();
+    await depositPage.selectReconfirmDontVerify();
+    await depositPage.expectDepositPageIsDisplayed("BNB", "Binance Smart Chain 1");
   });
 });
