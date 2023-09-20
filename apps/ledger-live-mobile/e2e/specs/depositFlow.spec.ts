@@ -49,17 +49,17 @@ describe("Deposit Flow", () => {
 
   it("Should display the number of account existing per networks", async () => {
     await portfolioPage.openViaDeeplink();
+    await portfolioPage.waitForPortfolioPageToLoad();
     await receivePage.openViaDeeplink();
-    await depositPage.searchAsset("");
     await depositPage.selectAsset("ETH");
-    depositPage.expectNumberOfAccountInListIsDisplayed("ethereum", 3);
-    depositPage.expectNumberOfAccountInListIsDisplayed("optimism", 1);
+    await depositPage.expectNumberOfAccountInListIsDisplayed("ethereum", 3);
+    await depositPage.expectNumberOfAccountInListIsDisplayed("optimism", 1);
   });
 
   it("Should create an account on a network", async () => {
     await portfolioPage.openViaDeeplink();
+    await portfolioPage.waitForPortfolioPageToLoad();
     await receivePage.openViaDeeplink();
-    await depositPage.searchAsset("ether");
     await depositPage.selectAsset("ETH");
     await receivePage.selectCurrency("optimism");
     await depositPage.createAccount();
@@ -73,6 +73,7 @@ describe("Deposit Flow", () => {
 
   it("Should access to deposit after importing a cryptocurrency on a selected network", async () => {
     await portfolioPage.openViaDeeplink();
+    await portfolioPage.waitForPortfolioPageToLoad();
     await receivePage.openViaDeeplink();
     await depositPage.searchAsset("pol");
     await depositPage.selectAsset("MATIC");
@@ -82,5 +83,16 @@ describe("Deposit Flow", () => {
     await depositPage.selectDontVerifyAddress();
     await depositPage.selectReconfirmDontVerify();
     await depositPage.expectDepositPageIsDisplayed("BNB", "Binance Smart Chain 1");
+  });
+
+  it("Should access to deposit after selecting an existing account", async () => {
+    await portfolioPage.openViaDeeplink();
+    await portfolioPage.waitForPortfolioPageToLoad();
+    await receivePage.openViaDeeplink();
+    await depositPage.selectAsset("XRP");
+    await depositPage.selectAsset("XRP 2");
+    await depositPage.selectDontVerifyAddress();
+    await depositPage.selectReconfirmDontVerify();
+    await depositPage.expectDepositPageIsDisplayed("XRP", "XRP 2");
   });
 });

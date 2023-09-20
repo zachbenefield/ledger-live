@@ -12,27 +12,28 @@ import {
 
 export default class depositPage {
   searchBar = () => getElementById("common-search-field");
-  //account = (item: string) => getElementById(`test-id-account-${item}`);
   buttonVerifyAddressId = "button-verify-my-address";
   buttonVerifyAddress = () => getElementById(this.buttonVerifyAddressId);
   buttonDontVerifyAddressId = "button-DontVerify-my-address";
   buttonDontVerifyAddress = () => getElementById(this.buttonDontVerifyAddressId);
-  currencyRowInNetworkListId = getElementById("big-currency-row-");
-  numberOfAccountInNetworkListId = getElementById("subtitle-row-");
+  currencyRowSearchPageId = "test-id-account-";
+  currencyRowInNetworkListId = "big-currency-row-";
+  subtitleRowInNetworkListId = "subtitle-row-";
   buttonCloseQrDepositPage = () => getElementById("NavigationHeaderCloseButton");
-  buttonCreateAccount = () => getElementById("button-create-account");
-  buttonContinueID = "add-accounts-continue-button";
-  buttonContinue = () => getElementById(this.buttonContinueID);
+  buttonCreateAccountId = "button-create-account";
+  buttonCreateAccount = () => getElementById(this.buttonCreateAccountId);
+  buttonContinueId = "add-accounts-continue-button";
+  buttonContinue = () => getElementById(this.buttonContinueId);
   depositStep2TitleId = "receive-header-step2-title";
   depositStep2Title = () => getElementById(this.depositStep2TitleId);
   buttonConfirmDontVerifyAddressId = "button-confirm-dont-verify";
   buttonConfirmDontVerifyAddress = () => getElementById(this.buttonConfirmDontVerifyAddressId);
   titleDepositConfirmationPageId = "deposit-confirmation-title-";
   accountNameDepositId = "deposit-account-name-";
-  //button-confirm-dont-verify
+  searchFieldId = "common-search-field";
 
   async searchAsset(asset: string) {
-    await waitForElementById("common-search-field");
+    await waitForElementById(this.searchFieldId);
     return typeTextByElement(this.searchBar(), asset);
   }
 
@@ -42,9 +43,9 @@ export default class depositPage {
   }
 
   async selectAccount(account: string) {
-    const id = "test-id-account-" + account;
-    await waitForElementById(id);
-    return tapById(id);
+    const CurrencyRowId = this.currencyRowSearchPageId + account;
+    await waitForElementById(CurrencyRowId);
+    return tapById(CurrencyRowId);
   }
 
   async selectVerifyAddress() {
@@ -58,29 +59,34 @@ export default class depositPage {
     await expect(getElementByText("Verify address")).toBeVisible();
   }
 
-  expectNumberOfAccountInListIsDisplayed(currencyName: string, accountNumber: number) {
+  async expectNumberOfAccountInListIsDisplayed(currencyName: string, accountNumber: number) {
+    //set "account" in plural or not in fonction of number account
     const pluralization: string = accountNumber > 1 ? "accounts" : "account";
     const currencyRowNameID = this.currencyRowInNetworkListId + currencyName;
-    const accountCountRowID =
-      this.numberOfAccountInNetworkListId + pluralization + " " + accountNumber;
-    expect(element(by.id(currencyRowNameID).withDescendant(by.id(accountCountRowID))));
+    const accountCountRowID = this.subtitleRowInNetworkListId + accountNumber + " " + pluralization;
+    await waitForElementById(currencyRowNameID);
+    await waitForElementById(accountCountRowID);
+    // expect accountCountRowId is visible and is child of currencyRowNameID
+    await expect(
+      element(by.id(currencyRowNameID).withDescendant(by.id(accountCountRowID))),
+    ).toBeVisible();
   }
 
   closeQrCodeDepositPage() {
     return tapByElement(this.buttonCloseQrDepositPage());
   }
 
-  createAccount() {
+  async createAccount() {
+    await waitForElementById(this.buttonCreateAccountId);
     return tapByElement(this.buttonCreateAccount());
   }
 
   async continueCreateAccount() {
-    await waitForElementById(this.buttonContinueID);
+    await waitForElementById(this.buttonContinueId);
     return tapByElement(this.buttonContinue());
   }
 
   async expectAccountIsCreated(accountName: string) {
-    //check the right page is displayed
     await waitForElementById(this.depositStep2TitleId);
     await expect(this.depositStep2Title()).toBeVisible();
     await expect(getElementByText(accountName)).toBeVisible();
@@ -103,8 +109,4 @@ export default class depositPage {
     await expect(getElementById(depositTitleTickerId)).toBeVisible();
     await expect(getElementById(accountNameId)).toBeVisible();
   }
-  /*
-  clearSearchField() {
-    return tapByElement();
-  }*/
 }
