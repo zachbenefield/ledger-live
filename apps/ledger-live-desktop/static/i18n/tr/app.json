@@ -546,6 +546,10 @@
           "body" : "Cüzdanınıza kripto transferi alın"
         }
       }
+    },
+    "getFundsModal" : {
+      "text" : "Stake etmek için {{coin}} edinin",
+      "description" : "Ledger Live'ı kullanarak doğrudan Ledger'ınızda kripto satın alın, takas edin veya alın."
     }
   },
   "lottieDebugger" : {
@@ -4061,7 +4065,7 @@
     "downloadProgress" : "%{{progress}} tamamlandı",
     "checking" : "Güncelleme kontrol ediliyor...",
     "checkSuccess" : "Yeni Ledger Live güncellemesi mevcut. Güncelleme, uygulamayı kapattığınızda otomatik olarak yüklenecek.",
-    "quitAndInstall" : "Şimdi yükle",
+    "quitAndInstall" : "Hemen yükle ve yeniden başlat",
     "updateAvailable" : "Ledger Live {{version}} sürüm güncellemesi mevcut",
     "error" : "Güncelleme sırasında bir hata oluştu. Lütfen tekrar indirin",
     "reDownload" : "Tekrar indir",
