@@ -546,6 +546,10 @@
           "body" : "Recibe cripto en tu billetera"
         }
       }
+    },
+    "getFundsModal" : {
+      "text" : "Consigue {{coin}} para poner en participación",
+      "description" : "Compra, permuta o recibe cripto directamente en tu Ledger mediante Ledger Live."
     }
   },
   "lottieDebugger" : {
@@ -4061,7 +4065,7 @@
     "downloadProgress" : "{{progress}}% completado",
     "checking" : "Comprobando actualización...",
     "checkSuccess" : "Nueva actualización de Ledger Live disponible, se instalará automáticamente cuando cierres la aplicación.",
-    "quitAndInstall" : "Instalar ahora",
+    "quitAndInstall" : "Instalar ahora y reiniciar",
     "updateAvailable" : "Se encuentra disponible la actualización a la versión {{version}} de Ledger Live",
     "error" : "Error durante la actualización. Descárgala de nuevo",
     "reDownload" : "Descargar de nuevo",
