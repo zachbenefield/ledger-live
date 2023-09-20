@@ -64,7 +64,7 @@ const SeedStep = ({ seedPathStatus, deviceModelId }: Props) => {
         </Flex>
       ) : seedPathStatus === "restore_seed" ? (
         <>
-          <StepText>{t("syncOnboarding.manual.seedContent.restoreSeed", { productName })}</StepText>
+          <StepText>{t("syncOnboarding.manual.seedContent.restoreSeed")}</StepText>
           <ContinueOnDeviceWithAnim
             deviceModelId={deviceModelId}
             text={t("syncOnboarding.manual.seedContent.followInstructions", { productName })}
