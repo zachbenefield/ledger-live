@@ -539,13 +539,17 @@
         "swap" : {
           "title" : "Trocar",
           "label" : "Populares",
-          "body" : "Converta cripto para cripto em segurança"
+          "body" : "Troque cripto por cripto em segurança"
         },
         "receive" : {
           "title" : "Receber",
           "body" : "Receba cripto na sua carteira"
         }
       }
+    },
+    "getFundsModal" : {
+      "text" : "Obter {{coin}} para fazer staking",
+      "description" : "Compre, troque ou receba criptomoedas diretamente em sua Ledger pelo Ledger Live."
     }
   },
   "lottieDebugger" : {
@@ -1387,7 +1391,7 @@
       },
       "swap" : {
         "title" : "Trocar",
-        "description" : "Converta cripto para cripto em segurança",
+        "description" : "Troque cripto por cripto em segurança",
         "label" : "Populares"
       },
       "earn" : {
@@ -4061,7 +4065,7 @@
     "downloadProgress" : "{{progress}}% concluído",
     "checking" : "Verificando Atualização...",
     "checkSuccess" : "Nova atualização do Ledger Live disponível, ela será instalada automaticamente quando você fechar o aplicativo",
-    "quitAndInstall" : "Instalar agora",
+    "quitAndInstall" : "Instalar e reiniciar agora",
     "updateAvailable" : "Atualização para a versão {{version}} do Ledger Live disponível",
     "error" : "Erro durante a atualização. Baixe Novamente",
     "reDownload" : "Baixar Novamente",
