@@ -4061,7 +4061,7 @@
     "downloadProgress" : "{{progress}}%完了",
     "checking" : "アップデートの確認中...",
     "checkSuccess" : "新しいLedger Liveアップデートをご利用いただけます。アプリを終了すると自動的にインストールされます。",
-    "quitAndInstall" : "今すぐインストールする",
+    "quitAndInstall" : "今すぐインストールして再起動する",
     "updateAvailable" : "Ledger Liveバージョン {{version}} へのアップデートが利用可能です。",
     "error" : "更新中にエラーが発生再度ダウンロードしてください",
     "reDownload" : "再度ダウンロード",
