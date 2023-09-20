@@ -4061,7 +4061,7 @@
     "downloadProgress" : "{{progress}}% abgeschlossen",
     "checking" : "Prüfen des Updates ...",
     "checkSuccess" : "Ein neues Update für Ledger Live ist verfügbar. Es wird automatisch installiert, wenn Sie die App schließen",
-    "quitAndInstall" : "Jetzt installieren",
+    "quitAndInstall" : "Jetzt installieren und neu starten",
     "updateAvailable" : "Update auf Ledger Live Version {{version}} ist verfügbar",
     "error" : "Fehler beim Update. Bitte erneut herunterladen",
     "reDownload" : "Erneut herunterladen",
