@@ -546,6 +546,10 @@
           "body" : "在您的钱包中接收加密货币"
         }
       }
+    },
+    "getFundsModal" : {
+      "text" : "获取 {{coin}} 进行权益质押",
+      "description" : "使用 Ledger Live 直接在您的 Ledger 设备上买入、互换或接收加密货币。"
     }
   },
   "lottieDebugger" : {
@@ -4061,7 +4065,7 @@
     "downloadProgress" : "已完成 {{progress}}%",
     "checking" : "正在检查更新...",
     "checkSuccess" : "Ledger Live 有新的更新，当您关闭应用程序时会自动安装更新。",
-    "quitAndInstall" : "立即安装",
+    "quitAndInstall" : "立即安装并重新启动",
     "updateAvailable" : "Ledger Live 有新版本 {{version}} 可更新",
     "error" : "更新时出错。请重新下载",
     "reDownload" : "重新下载",
