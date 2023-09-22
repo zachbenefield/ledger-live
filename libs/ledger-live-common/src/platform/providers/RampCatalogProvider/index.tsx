@@ -26,7 +26,6 @@ export const rampCatalogContext = createContext<RampCatalogContextType>({
 
 type RampCatalogProviderProps = {
   children: React.ReactNode;
-  provider: string; // e.g. "production"
   updateFrequency: number;
 };
 

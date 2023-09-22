@@ -80,8 +80,6 @@ export default function MarketCoinScreen() {
     supportedCounterCurrencies,
   } = useSingleCoinMarketData();
 
-  const rampCatalog = useRampCatalog();
-
   const {
     id,
     ticker,
