@@ -95,11 +95,14 @@ export default class TransportNodeHidNoEvents extends Transport {
   }
 
   setDisconnected = () => {
+    this.tracer.trace("Setting to disconnected", { alreadyDisconnected: this.disconnected });
+
     if (!this.disconnected) {
       this.emit("disconnect");
       this.disconnected = true;
     }
   };
+
   writeHID = (content: Buffer): Promise<void> => {
     const data = [0x00];
 
@@ -111,15 +114,22 @@ export default class TransportNodeHidNoEvents extends Transport {
       this.device.write(data);
       return Promise.resolve();
     } catch (e: any) {
+      // TODO: here: should we retry ? in exchange catch this error and retry ?
+      // Error: TypeError: Cannot write to hid device
+      this.tracer.trace(`Received an error during HID write: ${e}`, { e });
+
       const maybeMappedError =
         e && e.message ? new DisconnectedDeviceDuringOperation(e.message) : e;
+
       if (maybeMappedError instanceof DisconnectedDeviceDuringOperation) {
+        this.tracer.trace("Disconnected during HID write");
         this.setDisconnected();
       }
 
       return Promise.reject(maybeMappedError);
     }
   };
+
   readHID = (): Promise<Buffer> =>
     new Promise((resolve, reject) =>
       this.device.read((e, res) => {
@@ -128,9 +138,13 @@ export default class TransportNodeHidNoEvents extends Transport {
         }
 
         if (e) {
+          this.tracer.trace(`Received an error during HID read: ${e}`, { e });
+
           const maybeMappedError =
             e && e.message ? new DisconnectedDeviceDuringOperation(e.message) : e;
+
           if (maybeMappedError instanceof DisconnectedDeviceDuringOperation) {
+            this.tracer.trace("Disconnected during HID read");
             this.setDisconnected();
           }
 
@@ -148,37 +162,43 @@ export default class TransportNodeHidNoEvents extends Transport {
    * @param apdu
    * @returns a promise of apdu response
    */
-  async exchange(apdu: Buffer): Promise<Buffer> {
+  async exchange(
+    apdu: Buffer,
+    { abortTimeoutMs }: { abortTimeoutMs?: number } = {},
+  ): Promise<Buffer> {
     const tracer = this.tracer.withUpdatedContext({
       function: "exchange",
     });
-    tracer.trace("Exchanging APDU ...");
+    tracer.trace("Exchanging APDU ...", { abortTimeoutMs });
 
-    const b = await this.exchangeAtomicImpl(async () => {
-      const { channel, packetSize } = this;
-      tracer.withType("apdu").trace(`=> ${apdu.toString("hex")}`);
+    const b = await this.abortableExchangeAtomicImpl(
+      async () => {
+        const { channel, packetSize } = this;
+        tracer.withType("apdu").trace(`=> ${apdu.toString("hex")}`);
 
-      const framing = hidFraming(channel, packetSize);
+        const framing = hidFraming(channel, packetSize);
 
-      // Write...
-      const blocks = framing.makeBlocks(apdu);
+        // Write...
+        const blocks = framing.makeBlocks(apdu);
 
-      for (let i = 0; i < blocks.length; i++) {
-        await this.writeHID(blocks[i]);
-      }
+        for (let i = 0; i < blocks.length; i++) {
+          await this.writeHID(blocks[i]);
+        }
 
-      // Read...
-      let result;
-      let acc;
+        // Read...
+        let result;
+        let acc;
 
-      while (!(result = framing.getReducedResult(acc))) {
-        const buffer = await this.readHID();
-        acc = framing.reduceResponse(acc, buffer);
-      }
+        while (!(result = framing.getReducedResult(acc))) {
+          const buffer = await this.readHID();
+          acc = framing.reduceResponse(acc, buffer);
+        }
 
-      tracer.withType("apdu").trace(`<= ${result.toString("hex")}`);
-      return result;
-    });
+        tracer.withType("apdu").trace(`<= ${result.toString("hex")}`);
+        return result;
+      },
+      { abortTimeoutMs },
+    );
 
     return b as Buffer;
   }

@@ -5,7 +5,7 @@ import "./families"; // families may set up their own things
 import VaultTransport from "@ledgerhq/hw-transport-vault";
 import { registerTransportModule } from "@ledgerhq/live-common/hw/index";
 import { retry } from "@ledgerhq/live-common/promise";
-import { listen as listenLogs } from "@ledgerhq/logs";
+import { TraceContext, listen as listenLogs } from "@ledgerhq/logs";
 import { getUserId } from "~/helpers/user";
 import { setEnvOnAllThreads } from "./../helpers/env";
 import { IPCTransport } from "./IPCTransport";
@@ -27,14 +27,14 @@ listenLogs(({ id, date, ...log }) => {
 // This defines our IPC Transport that will proxy to an internal process (we shouldn't use node-hid on renderer)
 registerTransportModule({
   id: "ipc",
-  open: (id: string) => {
+  open: (id: string, timeoutMs?: number, context?: TraceContext) => {
     // id could be another type of transport such as vault-transport
     if (id.startsWith(vaultTransportPrefixID)) return;
 
     if (originalDeviceMode !== currentMode) {
       setDeviceMode(originalDeviceMode);
     }
-    return retry(() => IPCTransport.open(id));
+    return retry(() => IPCTransport.open(id, timeoutMs, context));
   },
   disconnect: () => Promise.resolve(),
 });

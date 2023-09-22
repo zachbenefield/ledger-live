@@ -1,7 +1,7 @@
 import HID from "node-hid";
 import TransportNodeHidNoEvents, { getDevices } from "@ledgerhq/hw-transport-node-hid-noevents";
 import type { Observer, DescriptorEvent, Subscription } from "@ledgerhq/hw-transport";
-import { LocalTracer, TraceContext, log } from "@ledgerhq/logs";
+import { LocalTracer, TraceContext, log, trace } from "@ledgerhq/logs";
 import { identifyUSBProductId } from "@ledgerhq/devices";
 import { CantOpenDevice } from "@ledgerhq/errors";
 import { listenDevices } from "./listenDevices";
@@ -127,6 +127,11 @@ export default class TransportNodeHidSingleton extends TransportNodeHidNoEvents 
    * globally disconnect the transport singleton
    */
   static async disconnect() {
+    trace({
+      type: LOG_TYPE,
+      message: `Disconnecting from static disconnect function call: current transport instance ? ${!!transportInstance}`,
+    });
+
     if (transportInstance) {
       transportInstance.device.close();
       transportInstance.emit("disconnect");
@@ -170,6 +175,7 @@ export default class TransportNodeHidSingleton extends TransportNodeHidNoEvents 
         () => {
           // Assumes any ledger disconnection concerns current transport
           if (transportInstance) {
+            tracer.trace("Listened to on remove device event. Emitting a disconnect");
             transportInstance.emit("disconnect");
           }
         },
@@ -198,9 +204,12 @@ export default class TransportNodeHidSingleton extends TransportNodeHidNoEvents 
    * @param apdu
    * @returns a promise of apdu response
    */
-  async exchange(apdu: Buffer): Promise<Buffer> {
+  async exchange(
+    apdu: Buffer,
+    { abortTimeoutMs }: { abortTimeoutMs?: number } = {},
+  ): Promise<Buffer> {
     clearDisconnectTimeout();
-    const result = await super.exchange(apdu);
+    const result = await super.exchange(apdu, { abortTimeoutMs });
     setDisconnectTimeout();
     return result;
   }

@@ -11,9 +11,12 @@ import {
   transportListenChannel,
 } from "~/config/transportChannels";
 import { MessagesMap } from "./types";
+import { LocalTracer, trace } from "@ledgerhq/logs";
+
+const LOG_TYPE = "internal-transport-handler";
 
 type APDUMessage =
-  | { type: "exchange"; apduHex: string; requestId: string }
+  | { type: "exchange"; apduHex: string; requestId: string; abortTimeoutMs?: number }
   | { type: "exchangeBulk"; apdusHex: string[]; requestId: string }
   | { type: "exchangeBulkUnsubscribe"; requestId: string };
 
@@ -21,7 +24,11 @@ const transports = new Map<string, Subject<APDUMessage>>();
 const transportsBulkSubscriptions = new Map<string, { unsubscribe: () => void }>();
 
 export const transportOpen = ({ data, requestId }: MessagesMap["transport:open"]) => {
-  const subjectExist = transports.get(data.descriptor);
+  const { descriptor, timeoutMs, context } = data;
+  const tracer = new LocalTracer(LOG_TYPE, { ...context, function: "transportOpen" });
+  tracer.trace("Received open transport request", { descriptor, timeoutMs });
+
+  const subjectExist = transports.get(descriptor);
 
   const onEnd = () => {
     process.send?.({
@@ -33,30 +40,43 @@ export const transportOpen = ({ data, requestId }: MessagesMap["transport:open"]
 
   // If already exists simply return success
   if (subjectExist) {
+    tracer.trace("Transport subject instance already exists");
     return onEnd();
   }
 
-  withDevice(data.descriptor)(transport => {
+  // TODO: HERE
+  // Note: this is forcing the usage of `withDevice`, and `withTransport`
+  // from `libs/ledger-live-common/src/deviceSDK/transports/core.ts` is not handled and will be "mapped" to this `withDevice`
+  // WAIT: from a transport from `withTransport`, `refreshTransport` only closes, then re-open and setup a transport.
+  // This could be handled correctly even if through IPC, as long as the close action is triggered correctly on the transport living
+  // in the internal thread.
+  withDevice(data.descriptor, { openTimeoutMs: timeoutMs })(transport => {
     const subject = new Subject<APDUMessage>();
     subject.subscribe({
       next: e => {
+        tracer.trace(`Handling an action on the internal transport instance`, { e });
+
         if (e.type === "exchange") {
           transport
-            .exchange(Buffer.from(e.apduHex, "hex"))
-            .then(response =>
+            .exchange(Buffer.from(e.apduHex, "hex"), { abortTimeoutMs: e.abortTimeoutMs })
+            .then(response => {
+              tracer.trace(`Exchange response`, { response });
+
               process.send?.({
                 type: transportExchangeChannel,
                 data: response.toString("hex"),
                 requestId: e.requestId,
-              }),
-            )
-            .catch(error =>
+              });
+            })
+            .catch(error => {
+              tracer.trace(`Exchange error`, { error });
+
               process.send?.({
                 type: transportExchangeChannel,
                 error: serializeError(error),
                 requestId: e.requestId,
-              }),
-            );
+              });
+            });
         } else if (e.type === "exchangeBulk") {
           const apdus = e.apdusHex.map(apduHex => Buffer.from(apduHex, "hex"));
           const subscription = transport.exchangeBulk(apdus, {
@@ -90,7 +110,10 @@ export const transportOpen = ({ data, requestId }: MessagesMap["transport:open"]
           }
         }
       },
-      complete: () => {
+      // TODO: async or not async ?
+      complete: async () => {
+        tracer.trace("Cleaning transport subject");
+        await transport.close();
         transports.delete(data.descriptor);
       },
     });
@@ -112,7 +135,9 @@ export const transportOpen = ({ data, requestId }: MessagesMap["transport:open"]
 };
 
 export const transportExchange = ({ data, requestId }: MessagesMap["transport:exchange"]) => {
-  const subject = transports.get(data.descriptor);
+  const { descriptor, apduHex, abortTimeoutMs } = data;
+  const subject = transports.get(descriptor);
+
   if (!subject) {
     process.send?.({
       type: transportExchangeChannel,
@@ -123,7 +148,8 @@ export const transportExchange = ({ data, requestId }: MessagesMap["transport:ex
     });
     return;
   }
-  subject.next({ type: "exchange", apduHex: data.apduHex, requestId });
+
+  subject.next({ type: "exchange", apduHex, requestId, abortTimeoutMs });
 };
 
 export const transportExchangeBulk = ({
@@ -197,6 +223,12 @@ export const transportListenUnsubscribe = ({
 };
 
 export const transportClose = ({ data, requestId }: MessagesMap["transport:close"]) => {
+  trace({
+    type: LOG_TYPE,
+    message: "Received open transport request",
+    context: { data, requestId },
+  });
+
   const subject = transports.get(data.descriptor);
   if (!subject) {
     process.send?.({
@@ -210,6 +242,7 @@ export const transportClose = ({ data, requestId }: MessagesMap["transport:close
   }
   subject.subscribe({
     complete: () => {
+      trace({ type: LOG_TYPE, message: "Close complete", context: { data, requestId } });
       process.send?.({
         type: transportCloseChannel,
         data,
