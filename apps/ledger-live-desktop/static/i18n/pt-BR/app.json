@@ -539,13 +539,17 @@
         "swap" : {
           "title" : "Trocar",
           "label" : "Populares",
-          "body" : "Converta cripto para cripto em segurança"
+          "body" : "Troque cripto por cripto em segurança"
         },
         "receive" : {
           "title" : "Receber",
           "body" : "Receba cripto na sua carteira"
         }
       }
+    },
+    "getFundsModal" : {
+      "text" : "Obter {{coin}} para fazer staking",
+      "description" : "Compre, troque ou receba criptomoedas diretamente em sua Ledger pelo Ledger Live."
     }
   },
   "lottieDebugger" : {
@@ -1387,7 +1391,7 @@
       },
       "swap" : {
         "title" : "Trocar",
-        "description" : "Converta cripto para cripto em segurança",
+        "description" : "Troque cripto por cripto em segurança",
         "label" : "Populares"
       },
       "earn" : {
@@ -1700,7 +1704,8 @@
   "DeviceAction" : {
     "allowAppPermission" : "Abra o aplicativo {{wording}} no seu dispositivo",
     "allowAppPermissionSubtitleToken" : "para gerenciar seus tokens {{token}}",
-    "allowManagerPermission" : "Permitir {{wording}} no seu dispositivo",
+    "allowManagerPermission" : "Permitir uma conexão segura no seu dispositivo",
+    "allowRenaming" : "Permitir renomeação do seu dispositivo",
     "loading" : "Carregando...",
     "connectAndUnlockDevice" : "Conecte e desbloqueie seu dispositivo",
     "unlockDevice" : "Desbloqueie seu dispositivo",
@@ -2064,7 +2069,8 @@
         "parentAccount" : "1. Selecione a conta {{currencyName}}",
         "token" : "2. Selecione um token",
         "verifyTokenType" : "Verifique se <0>{{token}}</0> é um token <0>{{tokenType}}</0>. Qualquer outro criptoativo enviado para uma conta de {{currency}} poderá ser perdido.",
-        "warningTokenType" : "Envie apenas <0>{{ticker}}</0> ou tokens <0>{{tokenType}}</0> para contas de {{currency}}. O envio de outros criptoativos poderá resultar na perda permanente dos fundos."
+        "warningTokenType" : "Envie apenas <0>{{ticker}}</0> ou tokens <0>{{tokenType}}</0> para contas de {{currency}}. O envio de outros criptoativos poderá resultar na perda permanente dos fundos.",
+        "depositFromCexBannerTitle" : "Depositar criptomoedas da sua conta Coinbase"
       },
       "connectDevice" : {
         "title" : "Dispositivo",
@@ -4061,7 +4067,7 @@
     "downloadProgress" : "{{progress}}% concluído",
     "checking" : "Verificando Atualização...",
     "checkSuccess" : "Nova atualização do Ledger Live disponível, ela será instalada automaticamente quando você fechar o aplicativo",
-    "quitAndInstall" : "Instalar agora",
+    "quitAndInstall" : "Instalar e reiniciar agora",
     "updateAvailable" : "Atualização para a versão {{version}} do Ledger Live disponível",
     "error" : "Erro durante a atualização. Baixe Novamente",
     "reDownload" : "Baixar Novamente",
@@ -5309,6 +5315,10 @@
     "UserRefusedOnDevice" : {
       "title" : "Ação Rejeitada",
       "description" : "O usuário rejeitou a operação no dispositivo"
+    },
+    "ExpertModeRequired" : {
+      "title" : "Requer modo Expert",
+      "description" : "É necessário ativar o modo Expert."
     },
     "TransactionRefusedOnDevice" : {
       "title" : "Operação negada no dispositivo",
