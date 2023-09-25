@@ -546,6 +546,10 @@
           "body" : "Recibe cripto en tu billetera"
         }
       }
+    },
+    "getFundsModal" : {
+      "text" : "Consigue {{coin}} para poner en participación",
+      "description" : "Compra, permuta o recibe cripto directamente en tu Ledger mediante Ledger Live."
     }
   },
   "lottieDebugger" : {
@@ -1700,7 +1704,8 @@
   "DeviceAction" : {
     "allowAppPermission" : "Abre la aplicación {{wording}} en tu dispositivo",
     "allowAppPermissionSubtitleToken" : "para administrar los tokens {{token}}",
-    "allowManagerPermission" : "Permite {{wording}} en tu dispositivo",
+    "allowManagerPermission" : "Permitir Ledger Manager en tu dispositivo",
+    "allowRenaming" : "Permitir renombrar en tu dispositivo",
     "loading" : "Cargando...",
     "connectAndUnlockDevice" : "Conecta y desbloquea tu dispositivo",
     "unlockDevice" : "Desbloquea tu dispositivo",
@@ -2064,7 +2069,8 @@
         "parentAccount" : "1. Selecciona la cuenta de {{currencyName}}",
         "token" : "2. Selecciona un token",
         "verifyTokenType" : "Verifica que el token <0>{{token}}</0> sea un token <0>{{tokenType}}</0>. Es posible que se pierdan los activos de cualquier otro tipo si son enviados a una cuenta de {{currency}}.",
-        "warningTokenType" : "Solamente debes enviar tokens <0>{{ticker}}</0> o <0>{{tokenType}}</0> una cuenta de {{currency}}. El envío de cualquier otro tipo de activos cripto puede provocar la pérdida permanente de fondos."
+        "warningTokenType" : "Solamente debes enviar tokens <0>{{ticker}}</0> o <0>{{tokenType}}</0> una cuenta de {{currency}}. El envío de cualquier otro tipo de activos cripto puede provocar la pérdida permanente de fondos.",
+        "depositFromCexBannerTitle" : "Deposita cripto desde tu cuenta de Coinbase"
       },
       "connectDevice" : {
         "title" : "Dispositivo",
@@ -4061,7 +4067,7 @@
     "downloadProgress" : "{{progress}}% completado",
     "checking" : "Comprobando actualización...",
     "checkSuccess" : "Nueva actualización de Ledger Live disponible, se instalará automáticamente cuando cierres la aplicación.",
-    "quitAndInstall" : "Instalar ahora",
+    "quitAndInstall" : "Instalar ahora y reiniciar",
     "updateAvailable" : "Se encuentra disponible la actualización a la versión {{version}} de Ledger Live",
     "error" : "Error durante la actualización. Descárgala de nuevo",
     "reDownload" : "Descargar de nuevo",
@@ -5309,6 +5315,10 @@
     "UserRefusedOnDevice" : {
       "title" : "Acción rechazada",
       "description" : "El usuario rechazó la operación en el dispositivo"
+    },
+    "ExpertModeRequired" : {
+      "title" : "Se requiere el modo Experto",
+      "description" : "Es necesario activar el modo Experto."
     },
     "TransactionRefusedOnDevice" : {
       "title" : "Operación denegada en el dispositivo",
