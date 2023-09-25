@@ -47,9 +47,9 @@ const NoFundsStakeModal = ({ account, parentAccount, entryPoint }: NoFundsStakeM
 
   const currency: CryptoCurrency = parentAccount?.currency || (account as Account).currency;
 
-  const { isCurrencySupported } = useRampCatalog();
+  const { isCurrencyAvailable } = useRampCatalog();
 
-  const availableOnBuy = currency && isCurrencySupported(currency.id, "onRamp");
+  const availableOnBuy = !!(currency && isCurrencyAvailable(currency.id, "onRamp"));
 
   const availableOnSwap = useMemo(() => {
     return currency && currenciesAll.includes(currency.id);

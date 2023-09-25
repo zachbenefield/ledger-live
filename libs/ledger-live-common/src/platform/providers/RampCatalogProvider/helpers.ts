@@ -10,7 +10,7 @@ export function getCryptoCurrencyIds(entries: CurrenciesPerProvider): Array<stri
   return uniq(Object.values(entries).flat());
 }
 
-export function isCurrencySupportedInCatalog(
+export function isCurrencyInCatalog(
   currencyId: string | CryptoCurrency["id"],
   catalog: RampCatalog,
   status: "onRamp" | "offRamp",

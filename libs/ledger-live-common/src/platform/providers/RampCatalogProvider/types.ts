@@ -20,16 +20,5 @@ export type RampCatalog = {
   offRamp: CurrenciesPerProvider;
 };
 
-export type BuyServiceProvider =
-  | "transak"
-  | "coinify"
-  | "moonpay"
-  | "btcdirect"
-  | "mercuryo"
-  | "paypal"
-  | "banxa"
-  | "sardine"
-  | "juno"
-  | "simplex"
-  | "loopipay"
-  | "ramp";
+/** E.g. "transak", "coinify", "moonpay" */
+export type BuyServiceProvider = string;

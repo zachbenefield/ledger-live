@@ -55,9 +55,9 @@ export default function NoFunds({ route }: Props) {
   const navigation = useNavigation();
   const currency = parentAccount?.currency || account?.currency;
 
-  const { isCurrencySupported } = useRampCatalog();
+  const { isCurrencyAvailable } = useRampCatalog();
 
-  const availableOnBuy = isCurrencySupported(currency.id, "onRamp");
+  const availableOnBuy = !!currency && isCurrencyAvailable(currency.id, "onRamp");
 
   const swapAvailableIds = currenciesAll;
 

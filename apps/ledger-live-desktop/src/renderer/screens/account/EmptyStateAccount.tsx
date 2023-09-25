@@ -35,10 +35,10 @@ type Props = OwnProps & {
 function EmptyStateAccount({ t, account, parentAccount, openModal }: Props) {
   const mainAccount = getMainAccount(account, parentAccount);
   const currency = getAccountCurrency(account);
-  const { isCurrencySupported } = useRampCatalog();
+  const { isCurrencyAvailable } = useRampCatalog();
   const history = useHistory();
 
-  const availableOnBuy = isCurrencySupported(currency.id, "onRamp");
+  const availableOnBuy = !!currency && isCurrencyAvailable(currency.id, "onRamp");
 
   const hasTokens =
     mainAccount.subAccounts &&

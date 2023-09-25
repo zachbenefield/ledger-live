@@ -104,9 +104,9 @@ export default function MarketCoinScreen() {
     chartData,
   } = currency || {};
 
-  const { isCurrencySupported } = useRampCatalog();
+  const { isCurrencyAvailable } = useRampCatalog();
 
-  const availableOnBuy = isCurrencySupported(currency.id, "onRamp");
+  const availableOnBuy = !!currency && isCurrencyAvailable(currency.id, "onRamp");
 
   const availableOnSwap = internalCurrency && currenciesAll.includes(internalCurrency.id);
 

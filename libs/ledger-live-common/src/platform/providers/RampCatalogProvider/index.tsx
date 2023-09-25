@@ -27,6 +27,7 @@ export const rampCatalogContext = createContext<RampCatalogContextType>({
 type RampCatalogProviderProps = {
   children: React.ReactNode;
   updateFrequency: number;
+  provider?: string; // "production" - only for backwards compatibility
 };
 
 export function useRampCatalogContext() {

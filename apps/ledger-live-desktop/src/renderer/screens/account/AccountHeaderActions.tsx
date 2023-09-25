@@ -169,10 +169,10 @@ const AccountHeaderActions = ({ account, parentAccount, openModal }: Props) => {
   const ReceiveAction = specific?.accountActions?.ReceiveAction || ReceiveActionDefault;
   const currency = getAccountCurrency(account);
 
-  const { isCurrencySupported } = useRampCatalog();
+  const { isCurrencyAvailable } = useRampCatalog();
 
-  const availableOnBuy = !!currency && isCurrencySupported(currency.id, "onRamp");
-  const availableOnSell = !!currency && isCurrencySupported(currency.id, "offRamp");
+  const availableOnBuy = !!currency && isCurrencyAvailable(currency.id, "onRamp");
+  const availableOnSell = !!currency && isCurrencyAvailable(currency.id, "offRamp");
 
   // don't show buttons until we know whether or not we can show swap button, otherwise possible click jacking
   const showButtons = !!getAvailableProviders();

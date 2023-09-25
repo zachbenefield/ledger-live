@@ -71,9 +71,9 @@ export default function AssetBalanceSummaryHeader({
   }, [countervalueFirst, data]);
   const primaryKey = data[0].unit.code;
   const secondaryKey = data[1].unit.code;
-  const { isCurrencySupported } = useRampCatalog();
+  const { isCurrencyAvailable } = useRampCatalog();
 
-  const availableOnBuy = isCurrencySupported(currency.id, "onRamp");
+  const availableOnBuy = !!currency && isCurrencyAvailable(currency.id, "onRamp");
 
   const startStakeFlow = useStakeFlow();
   const stakeProgramsFeatureFlag = useFeature("stakePrograms");

@@ -2,11 +2,7 @@
   'https://swap.ledger.com/buy/v1/provider/currencies?currency=crypto' \
   -H 'accept: application/json' */
 
-import {
-  getCryptoCurrencyIds,
-  getRampServiceProviders,
-  isCurrencySupportedInCatalog,
-} from "./helpers";
+import { getCryptoCurrencyIds, getRampServiceProviders, isCurrencyInCatalog } from "./helpers";
 import { CurrenciesPerProvider } from "./types";
 
 const apiData = {
@@ -93,17 +89,17 @@ describe("RampCatalogProvider > getCryptoCurrencyIds()", () => {
 
 describe("RampCatalogProvider > getRampStatusForCurrency()", () => {
   it("should return true for a currency that is supported by at least one provider", () => {
-    const result = isCurrencySupportedInCatalog("ethereum", apiData, "onRamp");
+    const result = isCurrencyInCatalog("ethereum", apiData, "onRamp");
     expect(result).toEqual(true);
   });
 
   it("should return false for an offRamp currency search that is only supported by onRamp providers", () => {
-    const result = isCurrencySupportedInCatalog("ethereum", apiData, "offRamp");
+    const result = isCurrencyInCatalog("ethereum", apiData, "offRamp");
     expect(result).toEqual(false);
   });
 
   it("should return false for a currency that is not supported by at least one provider", () => {
-    const result = isCurrencySupportedInCatalog("madeup/coin", apiData, "onRamp");
+    const result = isCurrencyInCatalog("madeup/coin", apiData, "onRamp");
     expect(result).toEqual(false);
   });
 });

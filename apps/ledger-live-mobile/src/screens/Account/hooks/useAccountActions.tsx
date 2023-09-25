@@ -58,10 +58,10 @@ export default function useAccountActions({ account, parentAccount, colors }: Pr
 
   const isWalletConnectSupported = ["ethereum", "bsc", "polygon"].includes(currency.id);
 
-  const { isCurrencySupported } = useRampCatalog();
+  const { isCurrencyAvailable } = useRampCatalog();
 
-  const canBeBought = isCurrencySupported(currency.id, "onRamp");
-  const canBeSold = isCurrencySupported(currency.id, "offRamp");
+  const canBeBought = !!currency && isCurrencyAvailable(currency.id, "onRamp");
+  const canBeSold = !!currency && isCurrencyAvailable(currency.id, "offRamp");
 
   const { data: currenciesAll } = useFetchCurrencyAll();
   const availableOnSwap = currency && currenciesAll.includes(currency.id);

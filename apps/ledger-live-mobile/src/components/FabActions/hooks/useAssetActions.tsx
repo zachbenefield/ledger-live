@@ -51,10 +51,10 @@ export default function useAssetActions({ currency, accounts }: useAssetActionsP
   );
   const availableOnSwap = currency && currenciesAll.includes(currency.id);
 
-  const { isCurrencySupported } = useRampCatalog();
+  const { isCurrencyAvailable } = useRampCatalog();
 
-  const canBeBought = !!currency && isCurrencySupported(currency.id, "onRamp");
-  const canBeSold = !!currency && isCurrencySupported(currency.id, "offRamp");
+  const canBeBought = !!currency && isCurrencyAvailable(currency.id, "onRamp");
+  const canBeSold = !!currency && isCurrencyAvailable(currency.id, "offRamp");
 
   const featureFlag = useFeature("stakePrograms");
   const stakeFlagEnabled = featureFlag?.enabled;

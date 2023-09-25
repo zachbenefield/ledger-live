@@ -242,8 +242,8 @@ const CurrencyRow = memo(function CurrencyRowItem({
   const internalCurrency = currency ? currency.internalCurrency : null;
   const isStarred = currency && starredMarketCoins.includes(currency.id);
 
-  const { isCurrencySupported } = useRampCatalog();
-  const availableOnBuy = isCurrencySupported(currency.id, "onRamp");
+  const { isCurrencyAvailable } = useRampCatalog();
+  const availableOnBuy = !!currency && isCurrencyAvailable(currency.id, "onRamp");
 
   const availableOnSwap = internalCurrency && swapAvailableIds.includes(internalCurrency.id);
   const stakeProgramsFeatureFlag = useFeature("stakePrograms");
