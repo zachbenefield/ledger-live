@@ -528,7 +528,7 @@
   },
   "stake" : {
     "noFundsModal" : {
-      "title" : "Acheter, échanger ou recevoir",
+      "title" : "{{actions, list(type: disjunction)}}",
       "text" : "Votre solde de {{coin}} est insuffisant pour staker",
       "description" : "Ne vous inquiétez pas. Vous pouvez acheter, échanger ou recevoir des cryptos en toute sécurité via Ledger Live.",
       "options" : {
@@ -1280,7 +1280,7 @@
     },
     "postOnboardingBanner" : {
       "title" : "Que faire ensuite avec votre Ledger Stax ?",
-      "description" : "Demandez votre NFT Infinity Pass, personnalisez\n l’écran de verrouillage ou transférez vos actifs.",
+      "description" : "Demandez votre NFT Infinity Pass, personnalisez\n le fond d’écran ou transférez vos actifs.",
       "link" : "Découvrir la suite"
     }
   },
@@ -1369,31 +1369,7 @@
     }
   },
   "walletconnect" : {
-    "titleAccount" : "WalletConnect",
-    "disconnect" : "Déconnecter",
-    "disconnected" : "Déconnecté",
-    "connected" : "Connecté",
-    "connecting" : "Connexion en cours...",
-    "invalidAccount" : "Identifiant de compte invalide",
-    "steps" : {
-      "paste" : {
-        "title" : "Coller le lien",
-        "label" : "Adresse WalletConnect",
-        "placeholder" : "Coller le lien WalletConnect"
-      },
-      "confirm" : {
-        "title" : "Connecter",
-        "details" : "Souhaite se connecter au compte suivant via votre wallet :",
-        "deeplinkDetails" : "Souhaite se connecter à Ledger Live. Choisissez votre compte :",
-        "noAccount" : "Vous n’avez aucun compte compatible. Veuillez ajouter un compte compatible pour utiliser WalletConnect.",
-        "alreadyConnected" : "Ledger Live est déjà connecté à une dApp. Veuillez vous déconnecter de la dApp actuellement connectée, puis connectez Ledger Live à la nouvelle dApp."
-      }
-    },
-    "connectedscreen" : {
-      "info" : "Vous pouvez accéder à la dApp {{name}} sur votre navigateur.",
-      "warning" : "Partager des adresses de bénéficiaire par dApp n’est pas sécurisé. Utilisez toujours Ledger Live lorsque vous partagez votre adresse pour recevoir des fonds.",
-      "disconnected" : "Il y a un problème de connexion entre la dApp, WalletConnect et Ledger Live. Merci de patienter quelques instants ou de réessayer de vous connecter."
-    }
+    "titleAccount" : "WalletConnect"
   },
   "dashboard" : {
     "title" : "Portefeuille",
@@ -1724,7 +1700,8 @@
   "DeviceAction" : {
     "allowAppPermission" : "Ouvrez l’app {{wording}} sur votre appareil",
     "allowAppPermissionSubtitleToken" : "pour gérer vos tokens {{token}}",
-    "allowManagerPermission" : "Autorisez {{wording}} sur votre appareil.",
+    "allowManagerPermission" : "Autorisez la connexion sécurisée sur votre appareil",
+    "allowRenaming" : "Autorisez le changement de nom sur votre appareil",
     "loading" : "Chargement...",
     "connectAndUnlockDevice" : "Connectez et déverrouillez votre appareil.",
     "unlockDevice" : "Déverrouillez votre appareil.",
@@ -1795,7 +1772,7 @@
       "capacity" : "Capacité",
       "used" : "Utilisé",
       "OSVersion" : "Système d’exploitation",
-      "genuine" : "Votre Ledger est authentique.",
+      "genuine" : "Votre appareil est authentique.",
       "incomplete" : "Certaines applications n’ont pas été reconnues. Merci de les désinstaller puis les réinstaller."
     },
     "applist" : {
@@ -1908,7 +1885,7 @@
       "title" : "Mettez à jour votre {{productName}}",
       "steps" : {
         "preparingUpdate" : "Préparation de la mise à jour",
-        "transferringUpdate" : "Transfert de la mise à jour vers {{productName}}",
+        "transferringUpdate" : "Transfert de la mise à jour vers votre {{productName}}",
         "prepare" : "Préparation",
         "install" : "Installation",
         "restore" : "Restauration réglages",
@@ -2292,6 +2269,7 @@
     "header" : "Répartition des comptes ({{count}})"
   },
   "elrond" : {
+    "guardedAccountWarning" : "Si votre compte est protégé par un Guardian, vous ne pourrez pas envoyer de transactions via Ledger Live.",
     "summary" : {
       "availableBalanceTooltip" : "Ce montant peut être transféré.",
       "availableBalance" : "Solde disponible",
@@ -4280,11 +4258,11 @@
           },
           "2" : {
             "title" : "Connecter un {{deviceName}}",
-            "description" : "Si votre Ledger est déjà configuré, connectez-le à Ledger Live."
+            "description" : "Si votre appareil Ledger est déjà configuré, connectez-le à Ledger Live."
           },
           "3" : {
             "title" : "Restaurer une phrase de récupération sur un nouvel appareil",
-            "description" : "Utilisez une phrase de récupération existante pour restaurer vos clés privées sur votre nouveau Nano."
+            "description" : "Utilisez une phrase de récupération existante pour restaurer vos clés privées sur votre nouveau Ledger Nano."
           },
           "4" : {
             "title" : "Restaurer avec Ledger Recover",
@@ -5693,10 +5671,6 @@
       "title" : "Échec du téléchargement de l’image",
       "description" : "Veuillez réessayer avec une autre image."
     },
-    "ImageMetadataLoadingError" : {
-      "title" : "Échec du chargement des métadonnées de l’image",
-      "description" : "Veuillez réessayer avec une autre image."
-    },
     "ImageTooLargeError" : {
       "title" : "Image trop grande",
       "description" : "Veuillez essayer avec une image plus petite."
@@ -5726,8 +5700,8 @@
       "description" : "Si ce fond d’écran ne vous plaît pas, choisissez une autre image."
     },
     "ImageDoesNotExistOnDevice" : {
-      "title" : "Aucun fond d’écran de verrouillage à supprimer sur votre Ledger Stax",
-      "description" : "Vous avez déjà supprimé votre fond d’écran de verrouillage."
+      "title" : "Aucun fond d’écran à supprimer sur votre Ledger Stax",
+      "description" : "Vous avez déjà supprimé votre fond d’écran."
     },
     "RestoreImageCommitRefusedOnDevice" : {
       "title" : "Restauration du fond d’écran annulée sur votre Ledger Stax",
@@ -5816,8 +5790,8 @@
     }
   },
   "customImage" : {
-    "title" : "Écran de verrouillage personnalisé",
-    "cta" : "Écran de verrouillage personnalisé",
+    "title" : "Fond d’écran personnalisé",
+    "cta" : "Fond d’écran personnalisé",
     "managerCTA" : "Fond d’écran",
     "managerCTARemove" : "Retirer",
     "steps" : {
@@ -5858,7 +5832,7 @@
       "description" : "Avec un fond d’écran unique",
       "actionCompletedPopupLabel" : "Appareil personnalisé"
     },
-    "customImageSet" : "Écran de verrouillage défini",
+    "customImageSet" : "Fond d’écran défini",
     "finishCTA" : "Terminer"
   },
   "onboardingAppInstall" : {
