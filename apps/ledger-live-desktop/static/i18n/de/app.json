@@ -546,6 +546,10 @@
           "body" : "Empfangen Sie Kryptowährungen in Ihrer Wallet"
         }
       }
+    },
+    "getFundsModal" : {
+      "text" : "Holen Sie sich {{coin}} zum Staken",
+      "description" : "Kaufen, tauschen oder empfangen Sie Kryptowährungen mit Ledger Live direkt auf Ihrem Ledger-Gerät."
     }
   },
   "lottieDebugger" : {
@@ -1700,7 +1704,8 @@
   "DeviceAction" : {
     "allowAppPermission" : "Öffnen Sie die {{wording}} App auf Ihrem Gerät",
     "allowAppPermissionSubtitleToken" : "zum Verwalten Ihrer {{token}}-Tokens",
-    "allowManagerPermission" : "Erlauben Sie {{wording}} auf Ihrem Gerät",
+    "allowManagerPermission" : "Ledger Manager auf Ihrem Gerät zulassen",
+    "allowRenaming" : "Umbenennen auf Ihrem Gerät zulassen",
     "loading" : "Lade Daten...",
     "connectAndUnlockDevice" : "Verbinden und entsperren Sie Ihr Gerät",
     "unlockDevice" : "Entsperren Sie Ihr Gerät",
@@ -4061,7 +4066,7 @@
     "downloadProgress" : "{{progress}}% abgeschlossen",
     "checking" : "Prüfen des Updates ...",
     "checkSuccess" : "Ein neues Update für Ledger Live ist verfügbar. Es wird automatisch installiert, wenn Sie die App schließen",
-    "quitAndInstall" : "Jetzt installieren",
+    "quitAndInstall" : "Jetzt installieren und neu starten",
     "updateAvailable" : "Update auf Ledger Live Version {{version}} ist verfügbar",
     "error" : "Fehler beim Update. Bitte erneut herunterladen",
     "reDownload" : "Erneut herunterladen",
@@ -5309,6 +5314,10 @@
     "UserRefusedOnDevice" : {
       "title" : "Aktion abgelehnt",
       "description" : "Der Benutzer hat die Aktion am Gerät abgelehnt"
+    },
+    "ExpertModeRequired" : {
+      "title" : "Expertenmodus erforderlich",
+      "description" : "Der Expertenmodus muss aktiviert werden."
     },
     "TransactionRefusedOnDevice" : {
       "title" : "Aktion auf Gerät verweigert",
