@@ -1,6 +1,6 @@
 module.exports = {
   rootDir: "..",
-  maxWorkers: 1,
+  maxWorkers: "50%",
   preset: "ts-jest",
   globals: {
     "ts-jest": {
