@@ -226,7 +226,7 @@ const CurrencyRow = memo(function CurrencyRowItem({
   swapAvailableIds,
   style,
 }: {
-  data: CurrencyData[];
+  data: CurrencyData[]; // NB: CurrencyData.id is different to Currency.id
   index: number;
   counterCurrency?: string;
   loading: boolean;
@@ -243,7 +243,11 @@ const CurrencyRow = memo(function CurrencyRowItem({
   const isStarred = currency && starredMarketCoins.includes(currency.id);
 
   const { isCurrencyAvailable } = useRampCatalog();
-  const availableOnBuy = !!currency && isCurrencyAvailable(currency.id, "onRamp");
+
+  const availableOnBuy =
+    !!internalCurrency &&
+    !!internalCurrency?.id &&
+    isCurrencyAvailable(internalCurrency.id, "onRamp");
 
   const availableOnSwap = internalCurrency && swapAvailableIds.includes(internalCurrency.id);
   const stakeProgramsFeatureFlag = useFeature("stakePrograms");
