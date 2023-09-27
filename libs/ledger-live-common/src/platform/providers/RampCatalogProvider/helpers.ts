@@ -16,7 +16,7 @@ export function isCurrencyInCatalog(
   status: "onRamp" | "offRamp",
 ) {
   if (!catalog || isEmpty(catalog[status])) {
-    return null;
+    return false;
   }
   const currencies = getCryptoCurrencyIds(catalog[status]);
 

@@ -1,4 +1,4 @@
-import { useCallback, useEffect } from "react";
+import { useCallback } from "react";
 import { getCryptoCurrencyIds, isCurrencyInCatalog } from "./helpers";
 import { useRampCatalogContext } from "./index";
 import type { CryptoCurrency } from "@ledgerhq/wallet-api-core/lib/currencies/types";
@@ -8,14 +8,12 @@ type UseRampCatalog = {
   isCurrencyAvailable: (
     currencyId: CryptoCurrency["id"] | string,
     mode: "onRamp" | "offRamp",
-  ) => boolean | null;
+  ) => boolean;
   getSupportedCryptoCurrencyIds: (mode: "onRamp" | "offRamp") => CryptoCurrency["id"][] | null;
 };
 
 export function useRampCatalog(): UseRampCatalog {
   const state = useRampCatalogContext();
-
-  useEffect(() => {}, [state.value]);
 
   /** @param mode "onRamp" for can buy, "offRamp" for can sell. */
   const getSupportedCryptoCurrencyIds = useCallback(
@@ -37,7 +35,7 @@ export function useRampCatalog(): UseRampCatalog {
       mode: "onRamp" | "offRamp",
     ) => {
       if (!state.value) {
-        return null;
+        return false;
       }
       return isCurrencyInCatalog(currencyId, state.value, mode);
     },
