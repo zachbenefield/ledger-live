@@ -19,7 +19,7 @@ import {
   selectedTimeRangeSelector,
   SettingsState,
   VaultSigner,
-  supportedCountervaluesData,
+  SupportedCountervaluesData,
 } from "~/renderer/reducers/settings";
 import { useRefreshAccountsOrdering } from "~/renderer/actions/general";
 import { Language, Locale } from "~/config/languages";
@@ -346,7 +346,7 @@ export const setVaultSigner = (payload: VaultSigner) => ({
   payload,
 });
 
-export const setSupportedCounterValues = (payload: supportedCountervaluesData[]) => ({
+export const setSupportedCounterValues = (payload: SupportedCountervaluesData[]) => ({
   type: "SET_SUPPORTED_COUNTER_VALUES",
   payload,
 });

@@ -5,6 +5,7 @@ import {
 } from "@ledgerhq/cryptoassets";
 import { CryptoCurrency, CryptoCurrencyId, FiatCurrency } from "@ledgerhq/types-cryptoassets";
 import { getEnv } from "@ledgerhq/live-env";
+import { log } from "@ledgerhq/logs";
 
 // set by user side effect to precise which currencies are considered supported (typically by live)
 let userSupportedCurrencies: CryptoCurrency[] = [];
@@ -74,7 +75,7 @@ async function initializeUserSupportedFiats() {
       return getFiatCurrencyByTicker(id);
     });
   } catch (error) {
-    console.error("Error:", error);
+    log("debug", `Failed to get supported Fiats. Error Message: ${error}`);
   }
 }
 
@@ -112,7 +113,7 @@ export async function listSupportedFiats(): Promise<FiatCurrency[]> {
       await initializeUserSupportedFiats();
     } catch (error) {
       // Handle initialization error
-      console.error("Failed to initialize userSupportedFiats:", error);
+      log("debug", `Failed to initialize userSupportedFiats. Error Message: ${error}`);
       return [];
     }
     return userSupportedFiats || [];

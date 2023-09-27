@@ -105,7 +105,7 @@ export type SettingsState = {
   };
   featureFlagsButtonVisible: boolean;
   vaultSigner: VaultSigner;
-  supportedCounterValues: supportedCountervaluesData[];
+  supportedCounterValues: SupportedCountervaluesData[];
 };
 
 export const getInitialLanguageAndLocale = (): { language: Language; locale: Locale } => {
@@ -239,7 +239,7 @@ type HandlersPayloads = {
     featureFlagsButtonVisible: boolean;
   };
   SET_VAULT_SIGNER: VaultSigner;
-  SET_SUPPORTED_COUNTER_VALUES: supportedCountervaluesData[];
+  SET_SUPPORTED_COUNTER_VALUES: SupportedCountervaluesData[];
 };
 type SettingsHandlers<PreciseKey = true> = Handlers<SettingsState, HandlersPayloads, PreciseKey>;
 
@@ -469,13 +469,13 @@ const defaultsForCurrency: (a: Currency) => CurrencySettings = crypto => {
   };
 };
 
-export type supportedCountervaluesData = {
+export type SupportedCountervaluesData = {
   value: string;
   label: string;
   currency: Currency;
 };
 
-export const getsupportedCountervalues = async (): Promise<supportedCountervaluesData[]> => {
+export const getsupportedCountervalues = async (): Promise<SupportedCountervaluesData[]> => {
   const supportedFiats = await listSupportedFiats();
   const data = [...supportedFiats, ...possibleIntermediaries]
     .map(currency => ({
