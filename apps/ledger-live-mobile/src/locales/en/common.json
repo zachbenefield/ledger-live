@@ -4147,7 +4147,7 @@
     "beginUpdate": "Begin update",
     "updateDevice": "{{deviceName}} OS Update",
     "releaseNotesTitle": "What's in this OS update?",
-    "updateDone": "All done! Your {{deviceName}} is up to date",
+    "updateDone": "Your {{deviceName}} OS is now up to date",
     "updateDoneDescription": "New OS Version: {{firmwareVersion}}",
     "preparing": "Preparing the firmware update, please keep your device awake and connected. We will notify you of the progress",
     "confirmIdentifierText": "Verify that the identifier on your device is the same as the identifier below. Confirm and enter your PIN code if requested.",
@@ -4165,9 +4165,9 @@
     "waitForFirmwareUpdate": "Wait for the firmware update to finish on your device",
     "waitForInstallationToFinish": "Wait for installation to finish on your {{deviceName}}",
     "staxBatteryLow": "Ledger Stax battery too low to update",
-    "staxBatteryLowDescription": "To perform an OS update, your Ledger must have a minimum of 20% charge, or be charging.",
-    "updateCancelled": "Update was cancelled on {{deviceName}}",
-    "updateCancelledDescription": "The installation of OS update {{newFirmwareVersion}} was refused on {{deviceName}}. If this was a mistake, restart the update",
+    "staxBatteryLowDescription": "To start the OS update, a minimum of 20% charge is needed, or your Ledger Stax must be charging.",
+    "updateCancelled": "OS update install cancelled on {{deviceName}}",
+    "updateCancelledDescription": "If this was a mistake, restart the update.",
     "updateNotYetComplete": "Update is not complete yet",
     "updateNotYetCompleteDescription": "If you interrupt the update, your apps, language, and lock screen picture may not be restored correctly.",
     "restartUpdate": "Restart OS update",
@@ -4219,16 +4219,16 @@
         "description": "Your settings and blockchain apps will be restored.",
         "restoreLockScreenPicture": "Restoring lock screen picture",
         "restoreLanguage": "Restoring language",
-        "imageLoadRequested": "Allow lock screen picture restoration on {{deviceName}}",
-        "imageCommitRequested": "Confirm the picture on your {{deviceName}}",
-        "allowLanguageInstallation": "Allow language restoration on {{deviceName}}",
-        "allowAppsRestoration": "Allow app restoration on {{deviceName}}",
+        "imageLoadRequested": "Tap on “Load picture” to restore lock screen picture",
+        "imageCommitRequested": "Tap on “keep” to keep set your lock screen picture",
+        "allowLanguageInstallation": "Tap on “Allow” to restore language",
+        "allowAppsRestoration": "Tap on “Allow” to restore apps",
         "errors": {
-          "description": "If this was a mistake you can retry the restoration, or you may skip this step",
-          "LanguageInstallRefusedOnDevice": "Language change was cancelled on {{deviceName}}",
-          "ImageLoadRefusedOnDevice": "Restoration of lock screen picture was cancelled on {{deviceName}}",
-          "ImageCommitRefusedOnDevice": "Restoration of lock screen picture was cancelled on {{deviceName}}",
-          "UserRefusedAllowManager": "Restoration of apps was cancelled on {{deviceName}}"
+          "description": "If this was a mistake, retry now.",
+          "LanguageInstallRefusedOnDevice": "Language restore cancelled on {{deviceName}}",
+          "ImageLoadRefusedOnDevice": "Restore of lock screen picture cancelled on {{deviceName}}",
+          "ImageCommitRefusedOnDevice": "Restore of lock screen picture cancelled on {{deviceName}}",
+          "UserRefusedAllowManager": "Restore of apps cancelled on {{deviceName}}"
         },
         "installingApps": "Restoring apps"
       }
@@ -4258,7 +4258,7 @@
         "description": "The update was unable to complete because we lost connection to {{deviceName}}"
       },
       "CantOpenDevice": {
-        "title": "Sorry, connection failed",
+        "title": "Connection to Ledger  device lost",
         "description": "The update was unable to complete because we lost connection to {{deviceName}}."
       }
     }
