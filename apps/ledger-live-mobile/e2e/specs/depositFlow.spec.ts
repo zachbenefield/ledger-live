@@ -34,7 +34,11 @@ describe("Deposit Flow", () => {
     receivePage = new ReceivePage();
   });
 
-  it("Should verify the address after importing an account working on a single network", async () => {
+  beforeEach(async () => {
+    await device.launchApp();
+  });
+
+  it.only("Should verify the address after importing an account working on a single network", async () => {
     await portfolioPage.waitForPortfolioPageToLoad();
     await portfolioPage.openTransferMenu();
     await portfolioPage.navigateToDepositFromTransferMenu();
@@ -95,4 +99,9 @@ describe("Deposit Flow", () => {
     await depositPage.selectReconfirmDontVerify();
     await depositPage.expectDepositPageIsDisplayed("XRP", "XRP 2");
   });
+
+  /*
+  afterEach(async () => {
+    await device.terminateApp();
+  });*/
 });
