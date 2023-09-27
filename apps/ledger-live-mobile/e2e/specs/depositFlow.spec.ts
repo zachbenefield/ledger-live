@@ -19,7 +19,6 @@ const knownDevice = {
 };
 
 const deviceActionSteps = async () => {
-  await device.disableSynchronization();
   await deviceAction.selectMockDevice();
   await deviceAction.openApp();
 };
@@ -47,7 +46,7 @@ describe("Deposit Flow", () => {
     await deviceActionSteps();
     await depositPage.selectAccount("Bitcoin 1");
     await depositPage.selectVerifyAddress();
-    await deviceActionSteps();
+    await deviceAction.openApp();
     await depositPage.expectAddressIsVerified(btcDepositAddress);
   });
 
@@ -67,7 +66,7 @@ describe("Deposit Flow", () => {
     await depositPage.selectAsset("ETH");
     await receivePage.selectCurrency("optimism");
     await depositPage.createAccount();
-    await deviceActionSteps();
+    await deviceAction.openApp();
     await depositPage.selectAsset("OP Mainnet 1");
     await depositPage.selectAsset("OP Mainnet 2");
     await depositPage.selectAsset("OP Mainnet 3");
@@ -82,7 +81,7 @@ describe("Deposit Flow", () => {
     await depositPage.searchAsset("pol");
     await depositPage.selectAsset("MATIC");
     await receivePage.selectCurrency("bsc");
-    await deviceActionSteps();
+    await deviceAction.openApp();
     await depositPage.selectAsset("Binance Smart Chain 1");
     await depositPage.selectDontVerifyAddress();
     await depositPage.selectReconfirmDontVerify();
@@ -99,9 +98,4 @@ describe("Deposit Flow", () => {
     await depositPage.selectReconfirmDontVerify();
     await depositPage.expectDepositPageIsDisplayed("XRP", "XRP 2");
   });
-
-  /*
-  afterEach(async () => {
-    await device.terminateApp();
-  });*/
 });
