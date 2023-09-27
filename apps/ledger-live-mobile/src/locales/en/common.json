@@ -4039,7 +4039,7 @@
       "modalDesc": "Please download Ledger Live on your computer to update the device firmware.",
       "contactUs": "Contact us"
     },
-    "myApps": "My apps",
+    "myApps": "My blockchain apps",
     "token": {
       "title": "{{appName}} tokens",
       "noAppNeeded": "{{tokenName}} is a token using the {{appName}} app. There is no app to install.",
@@ -4201,14 +4201,14 @@
           "titlePreparingUpdate": "Preparing update for install",
           "description": "Transferring the update to {{deviceName}}."
         },
-        "titleBackingUp": "Backing up apps and settings",
+        "titleBackingUp": "Preparing update for install",
         "titleTransferring": "Transferring update",
         "description": "Backing up your configuration and transferring the update to {{deviceName}}."
       },
       "installUpdate": {
         "titleInactive": "Install update",
         "titleActive": "Installing update",
-        "description": "{{deviceName}} will restart multiple times.\n\nAfter installation is finished on your {{deviceName}}, unlock your device to complete installation"
+        "description": "{{deviceName}} will restart multiple times.\n\nTo complete the update, unlock {{deviceName}} with your PIN after installation has finished."
       },
       "restoreSettings": {
         "earlySecurityCheck": {
