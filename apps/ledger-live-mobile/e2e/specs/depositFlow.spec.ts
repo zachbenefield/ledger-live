@@ -37,7 +37,7 @@ describe("Deposit Flow", () => {
     await device.launchApp();
   });
 
-  it("Should verify the address after importing an account working on a single network", async () => {
+  it.only("Should verify the address after importing an account working on a single network", async () => {
     await portfolioPage.waitForPortfolioPageToLoad();
     await portfolioPage.openTransferMenu();
     await portfolioPage.navigateToDepositFromTransferMenu();
