@@ -70,7 +70,7 @@ const AccountCard = ({
               numberOfLines={1}
               color={disabled ? "neutral.c50" : "neutral.c100"}
               flexShrink={1}
-              testID={"test-id-account-" + account.name}
+              testID={"test-id-account-" + (account as Account).name}
             >
               {account.type === "TokenAccount"
                 ? parentAccount
